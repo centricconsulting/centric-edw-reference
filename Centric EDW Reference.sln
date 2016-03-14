@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Warehouse Post Process", "SSIS\Warehouse Post Process\Warehouse Post Process.dtproj", "{FF43F8C2-D282-4E45-A437-D098B3129640}"
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Warehouse Post Process", "ETL\Warehouse Post Process\Warehouse Post Process.dtproj", "{FF43F8C2-D282-4E45-A437-D098B3129640}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ETL", "ETL", "{06A4240A-CB2C-474D-83B0-CB0CDBD6E11F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{4799BC22-C493-442F-BF86-847077354497}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reporting", "Reporting", "{B3775420-3A7F-49C1-A0C5-82C4EC390718}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analysis", "Analysis", "{B3775420-3A7F-49C1-A0C5-82C4EC390718}"
 EndProject
-Project("{6870E480-7721-4708-BFB8-9AE898AA21B3}") = "Centric Analytics", "SSAS\Centric Analytics\Centric Analytics.smproj", "{8CE414BB-95B2-4C99-9E03-51BA72086E22}"
+Project("{6870E480-7721-4708-BFB8-9AE898AA21B3}") = "Centric Analytics", "Analysis\Centric Analytics\Centric Analytics.smproj", "{8CE414BB-95B2-4C99-9E03-51BA72086E22}"
 EndProject
-Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Centric Reporting", "SSRS\Centric Reporting\Centric Reporting.rptproj", "{83EAA3F6-54DC-482B-A778-31A5DF14F599}"
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Centric Reporting", "Analysis\Centric Reporting\Centric Reporting.rptproj", "{83EAA3F6-54DC-482B-A778-31A5DF14F599}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Warehouse", "Database\Warehouse\Warehouse.sqlproj", "{F5E850E2-1E04-4C44-8F34-B6DB2DB37DB1}"
 EndProject
