@@ -1,0 +1,1669 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/13/2014 11:49:15 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CEN705"
+  DTS:CreatorName="CEN705\greg.block"
+  DTS:DTSID="{490CAD01-326B-4167-BF2C-5B21F8F3A2A5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="12.0.2430.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="REBUILD_CACHE_FILES"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="123"
+  DTS:VersionGUID="{A475B710-F210-41A5-85B7-0A8A76AF95CA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7822DA72-E5A9-4FBC-8303-970D29D90AF3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="batch_key">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A46C9808-7901-459B-9ED8-5C991D4BA13A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="completed_ind">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B3B728B0-E08C-4FCC-8397-DF4E0A5C489B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="package_error_flag">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F5C0CCE0-51C1-4D73-8300-CB2F8CDD84E9}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_STR, 8, 1252) @[System::VersionMajor] + &quot;.&quot; + (DT_STR, 8, 1252) @[System::VersionMinor] + &quot;.&quot; + (DT_STR, 8, 1252) @[System::VersionBuild]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="package_version">
+      <DTS:VariableValue
+        DTS:DataType="8">1.0.123</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0861B8C8-C2EB-4A3B-98DD-9DEF89FB8ACA}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::ProjectName] + &quot;.&quot; +  @[System::PackageName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="process_uid">
+      <DTS:VariableValue
+        DTS:DataType="8">Apps Source To Warehouse.REBUILD_CACHE_FILES</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT - APPS_RESOURCE_CACHE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{34915597-7E56-4AED-B025-0E4613E19D3D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT - APPS_RESOURCE_CACHE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT - APPS_RESOURCE_CACHE\Cache Transform"
+              componentClassID="Microsoft.Cache"
+              contactInfo="Cache Transform;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Writes data to a cache (a .caw file) with the Cache Connection Manager. Reuse the cache between multiple Lookup transforms to reduce database load. Share the cache to reduce memory usage. Note: cache data is stored in clear text and not recommended for sensitive data."
+              name="Cache Transform"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - APPS_RESOURCE_CACHE\Cache Transform.Connections[CacheConnection]"
+                  connectionManagerID="{5F36E865-9023-4161-953E-029C819DDA8B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Apps Resource Cache]"
+                  description="The connection used to access the cache."
+                  name="CacheConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - APPS_RESOURCE_CACHE\Cache Transform.Inputs[Cache Input]"
+                  hasSideEffects="true"
+                  name="Cache Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - APPS_RESOURCE_CACHE\Cache Transform.Inputs[Cache Input].Columns[resource_uid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="101"
+                      cachedName="resource_uid"
+                      lineageId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[resource_uid]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="The cache column associated with the input column."
+                          name="CacheColumnName">resource_uid</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - APPS_RESOURCE_CACHE\Cache Transform.Inputs[Cache Input].Columns[AppsEmployeeID]"
+                      cachedDataType="i4"
+                      cachedName="AppsEmployeeID"
+                      lineageId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[AppsEmployeeID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="The cache column associated with the input column."
+                          name="CacheColumnName">AppsEmployeeID</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - APPS_RESOURCE_CACHE\Cache Transform.Outputs[Cache Output]"
+                  name="Cache Output"
+                  synchronousInputId="Package\DFT - APPS_RESOURCE_CACHE\Cache Transform.Inputs[Cache Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+  x.EmployeeID AS AppsEmployeeID
+, SUBSTRING(RTRIM(x.network_login),1,200) AS resource_uid
+FROM
+(
+
+SELECT
+  e.ID AS EmployeeID
+, CASE
+  WHEN LEN(e.NetworkID) &gt; 0  THEN e.NetworkID
+  WHEN e.EmailAddress LIKE '%@centricconsulting.com' THEN SUBSTRING(e.EmailAddress, 1, LEN(e.EmailAddress) - 22)
+  WHEN e.FirstName IS NOT NULL AND e.LastName IS NOT NULL AND e.FirstName LIKE '[a-Z]%' THEN LOWER(e.FirstName + '.' + e.LastName)
+  ELSE 'Employee ID #' + CAST(e.ID AS VARCHAR(20))
+  END AS network_login
+, CAST(e.TS_EmployeeID AS INT) AS TS_EmployeeID
+FROM
+EmployeeMaster e
+
+) x</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{441C5A61-AEA4-436D-8348-BFDEB4F05FFE}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Apps Source]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[resource_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[resource_uid]"
+                      length="101"
+                      lineageId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[resource_uid]"
+                      name="resource_uid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[AppsEmployeeID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AppsEmployeeID]"
+                      lineageId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[AppsEmployeeID]"
+                      name="AppsEmployeeID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[resource_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="101"
+                      name="resource_uid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AppsEmployeeID]"
+                      dataType="i4"
+                      name="AppsEmployeeID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AppsEmployeeID]"
+                      dataType="i4"
+                      lineageId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AppsEmployeeID]"
+                      name="AppsEmployeeID" />
+                    <outputColumn
+                      refId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[resource_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="101"
+                      lineageId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[resource_uid]"
+                      name="resource_uid" />
+                    <outputColumn
+                      refId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT - APPS_RESOURCE_CACHE.Paths[OLE DB Source Output]"
+              endId="Package\DFT - APPS_RESOURCE_CACHE\Cache Transform.Inputs[Cache Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DFT - DOVICO_CLIENT_CACHE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{974b0a87-12c0-4656-b565-9eab3ccb2e57}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT - DOVICO_CLIENT_CACHE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT - DOVICO_CLIENT_CACHE\Cache Transform"
+              componentClassID="Microsoft.Cache"
+              contactInfo="Cache Transform;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Writes data to a cache (a .caw file) with the Cache Connection Manager. Reuse the cache between multiple Lookup transforms to reduce database load. Share the cache to reduce memory usage. Note: cache data is stored in clear text and not recommended for sensitive data."
+              name="Cache Transform"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - DOVICO_CLIENT_CACHE\Cache Transform.Connections[CacheConnection]"
+                  connectionManagerID="{266B6922-29CA-494D-84DA-F3F648E53AE3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Dovico Client Cache]"
+                  description="The connection used to access the cache."
+                  name="CacheConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - DOVICO_CLIENT_CACHE\Cache Transform.Inputs[Cache Input]"
+                  hasSideEffects="true"
+                  name="Cache Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - DOVICO_CLIENT_CACHE\Cache Transform.Inputs[Cache Input].Columns[DovicoClientID]"
+                      cachedDataType="i4"
+                      cachedName="DovicoClientID"
+                      lineageId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[DovicoClientID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="The cache column associated with the input column."
+                          name="CacheColumnName">DovicoClientID</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - DOVICO_CLIENT_CACHE\Cache Transform.Inputs[Cache Input].Columns[client_uid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="client_uid"
+                      lineageId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[client_uid]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="The cache column associated with the input column."
+                          name="CacheColumnName">client_uid</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - DOVICO_CLIENT_CACHE\Cache Transform.Outputs[Cache Output]"
+                  name="Cache Output"
+                  synchronousInputId="Package\DFT - DOVICO_CLIENT_CACHE\Cache Transform.Inputs[Cache Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+  CAST(SourceSystemValue AS INT) AS DovicoClientID 
+, CAST(ClientID AS VARCHAR(200)) AS client_uid
+FROM dbo.[vwClientSourceSystemValue_External]
+WHERE
+SourceSystemValue IS NOT NULL</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{441C5A61-AEA4-436D-8348-BFDEB4F05FFE}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Apps Source]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[DovicoClientID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DovicoClientID]"
+                      lineageId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[DovicoClientID]"
+                      name="DovicoClientID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[client_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[client_uid]"
+                      length="200"
+                      lineageId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[client_uid]"
+                      name="client_uid"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DovicoClientID]"
+                      dataType="i4"
+                      name="DovicoClientID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[client_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="client_uid" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DovicoClientID]"
+                      dataType="i4"
+                      lineageId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DovicoClientID]"
+                      name="DovicoClientID" />
+                    <outputColumn
+                      refId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[client_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[client_uid]"
+                      name="client_uid" />
+                    <outputColumn
+                      refId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT - DOVICO_CLIENT_CACHE.Paths[OLE DB Source Output]"
+              endId="Package\DFT - DOVICO_CLIENT_CACHE\Cache Transform.Inputs[Cache Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DFT - DOVICO_PROJECT_CACHE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{73dd1834-d163-4a54-99b1-aa19001d312c}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT - DOVICO_PROJECT_CACHE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT - DOVICO_PROJECT_CACHE\Cache Transform"
+              componentClassID="Microsoft.Cache"
+              contactInfo="Cache Transform;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Writes data to a cache (a .caw file) with the Cache Connection Manager. Reuse the cache between multiple Lookup transforms to reduce database load. Share the cache to reduce memory usage. Note: cache data is stored in clear text and not recommended for sensitive data."
+              name="Cache Transform"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - DOVICO_PROJECT_CACHE\Cache Transform.Connections[CacheConnection]"
+                  connectionManagerID="{1275EE5F-49F6-48BD-ADCD-F3200AE72AA6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Dovico Project Cache]"
+                  description="The connection used to access the cache."
+                  name="CacheConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - DOVICO_PROJECT_CACHE\Cache Transform.Inputs[Cache Input]"
+                  hasSideEffects="true"
+                  name="Cache Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - DOVICO_PROJECT_CACHE\Cache Transform.Inputs[Cache Input].Columns[DovicoProjectID]"
+                      cachedDataType="i4"
+                      cachedName="DovicoProjectID"
+                      lineageId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[DovicoProjectID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="The cache column associated with the input column."
+                          name="CacheColumnName">DovicoProjectID</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - DOVICO_PROJECT_CACHE\Cache Transform.Inputs[Cache Input].Columns[project_uid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="project_uid"
+                      lineageId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[project_uid]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="The cache column associated with the input column."
+                          name="CacheColumnName">project_uid</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - DOVICO_PROJECT_CACHE\Cache Transform.Outputs[Cache Output]"
+                  name="Cache Output"
+                  synchronousInputId="Package\DFT - DOVICO_PROJECT_CACHE\Cache Transform.Inputs[Cache Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT CAST(PROJECTID AS VARCHAR(200)) AS project_uid
+, CAST([TimesheetProjectID] AS INT) AS DovicoProjectID 
+FROM dbo.[vwProjectsTimesheet_AllTypes]
+WHERE
+[TimesheetProjectID]  IS NOT NULL</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{441C5A61-AEA4-436D-8348-BFDEB4F05FFE}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Apps Source]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[DovicoProjectID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DovicoProjectID]"
+                      lineageId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[DovicoProjectID]"
+                      name="DovicoProjectID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[project_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[project_uid]"
+                      length="200"
+                      lineageId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[project_uid]"
+                      name="project_uid"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DovicoProjectID]"
+                      dataType="i4"
+                      name="DovicoProjectID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[project_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="project_uid" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DovicoProjectID]"
+                      dataType="i4"
+                      lineageId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DovicoProjectID]"
+                      name="DovicoProjectID" />
+                    <outputColumn
+                      refId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[project_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[project_uid]"
+                      name="project_uid" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT - DOVICO_PROJECT_CACHE.Paths[OLE DB Source Output]"
+              endId="Package\DFT - DOVICO_PROJECT_CACHE\Cache Transform.Inputs[Cache Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DFT - DOVICO_RESOURCE_CACHE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{b27c19ac-7098-478b-a9c7-f1e153401207}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT - DOVICO_RESOURCE_CACHE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT - DOVICO_RESOURCE_CACHE\Cache Transform"
+              componentClassID="Microsoft.Cache"
+              contactInfo="Cache Transform;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Writes data to a cache (a .caw file) with the Cache Connection Manager. Reuse the cache between multiple Lookup transforms to reduce database load. Share the cache to reduce memory usage. Note: cache data is stored in clear text and not recommended for sensitive data."
+              name="Cache Transform"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - DOVICO_RESOURCE_CACHE\Cache Transform.Connections[CacheConnection]"
+                  connectionManagerID="{838566EB-5B99-4193-85E1-CDD67282BE29}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Dovico Resource Cache]"
+                  description="The connection used to access the cache."
+                  name="CacheConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT - DOVICO_RESOURCE_CACHE\Cache Transform.Inputs[Cache Input]"
+                  hasSideEffects="true"
+                  name="Cache Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - DOVICO_RESOURCE_CACHE\Cache Transform.Inputs[Cache Input].Columns[DovicoEmployeeID]"
+                      cachedDataType="i4"
+                      cachedName="DovicoEmployeeID"
+                      lineageId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[DovicoEmployeeID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="The cache column associated with the input column."
+                          name="CacheColumnName">DovicoEmployeeID</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT - DOVICO_RESOURCE_CACHE\Cache Transform.Inputs[Cache Input].Columns[resource_uid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="101"
+                      cachedName="resource_uid"
+                      lineageId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[resource_uid]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="The cache column associated with the input column."
+                          name="CacheColumnName">resource_uid</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - DOVICO_RESOURCE_CACHE\Cache Transform.Outputs[Cache Output]"
+                  name="Cache Output"
+                  synchronousInputId="Package\DFT - DOVICO_RESOURCE_CACHE\Cache Transform.Inputs[Cache Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+  x.TS_EmployeeID AS DovicoEmployeeID
+, SUBSTRING(RTRIM(x.network_login),1,200) AS resource_uid
+FROM
+(
+
+SELECT
+  e.ID AS EmployeeID
+, CASE
+  WHEN LEN(e.NetworkID) &gt; 0  THEN e.NetworkID
+  WHEN e.EmailAddress LIKE '%@centricconsulting.com' THEN SUBSTRING(e.EmailAddress, 1, LEN(e.EmailAddress) - 22)
+  WHEN e.FirstName IS NOT NULL AND e.LastName IS NOT NULL AND e.FirstName LIKE '[a-Z]%' THEN LOWER(e.FirstName + '.' + e.LastName)
+  ELSE 'Employee ID #' + CAST(e.ID AS VARCHAR(20))
+  END AS network_login
+, CAST(e.TS_EmployeeID AS INT) AS TS_EmployeeID
+FROM
+EmployeeMaster e
+
+) x
+WHERE
+x.TS_EmployeeID IS NOT NULL</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{441C5A61-AEA4-436D-8348-BFDEB4F05FFE}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Apps Source]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[DovicoEmployeeID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DovicoEmployeeID]"
+                      lineageId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[DovicoEmployeeID]"
+                      name="DovicoEmployeeID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[resource_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[resource_uid]"
+                      length="101"
+                      lineageId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].Columns[resource_uid]"
+                      name="resource_uid"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DovicoEmployeeID]"
+                      dataType="i4"
+                      name="DovicoEmployeeID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[resource_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="101"
+                      name="resource_uid" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DovicoEmployeeID]"
+                      dataType="i4"
+                      lineageId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DovicoEmployeeID]"
+                      name="DovicoEmployeeID" />
+                    <outputColumn
+                      refId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[resource_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="101"
+                      lineageId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[resource_uid]"
+                      name="resource_uid" />
+                    <outputColumn
+                      refId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT - DOVICO_RESOURCE_CACHE.Paths[OLE DB Source Output]"
+              endId="Package\DFT - DOVICO_RESOURCE_CACHE\Cache Transform.Inputs[Cache Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{6A99DF35-7AD1-4114-89F5-49DCD3DB81CB}"
+      DTS:EventID="409684820"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{4D60F1ED-F423-4032-A79D-0EC7A7402570}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Log Process Batch Error"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{EC4E245B-0FDE-4AD2-A45E-54EC89E45DFC}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Process Batch Error"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{525821FA-B163-47DF-B2DB-E736FF4FACA3}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="EXEC cdm.batch_error_log&#xA;  @batch_key = ?&#xA;, @error_scope = ?&#xA;, @error_number = ?&#xA;, @error_message = ?&#xA;, @error_type_cd = 'E'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::batch_key"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="2000" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="200" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Set Package Error Flag To True"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{A3026BAF-B371-4EE8-B9F1-963719FB6A61}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Set Package Error Flag To True"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::package_error_flag] = True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPostExecute]"
+      DTS:CreationName="OnPostExecute"
+      DTS:DTSID="{6BB36002-DE82-4630-91D1-137B966FF6D7}"
+      DTS:EventID="313290304"
+      DTS:EventName="OnPostExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{EC4CDD56-AD87-4359-A142-DED7F4C485C9}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{1ACD1705-71DE-4C64-A13B-F0E289753CA8}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Assign Completed Indicator"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::completed_ind] =  @[User::package_error_flag] ? 0 : 1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\Conclude Process Batch"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6F2862CE-51ED-489A-B800-204E5D1FF4B2}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:FailPackageOnFailure="True"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conclude Process Batch"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{525821FA-B163-47DF-B2DB-E736FF4FACA3}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="EXEC cdm.batch_conclude&#xA;  @completed_ind = ?&#xA;, @batch_key = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::batch_key"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::completed_ind"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\Entry Point"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Script Task"
+          DTS:DTSID="{C741C6CD-E64B-431D-B90D-B6E649A39E32}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Entry Point">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_aa78db7a06f94cc4bacaba10353bb495"
+              VSTAMajorVersion="3"
+              VSTAMinorVersion="0"
+              Language="CSharp" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{22D9B75F-031B-46EA-9D28-FCC977A7E370}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[System::SourceID] == @[System::PackageID]"
+          DTS:From="Package.EventHandlers[OnPostExecute]\Entry Point"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
+          DTS:Value="2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{FBB62AC6-A003-4240-BFCB-4E91B459617D}"
+          DTS:From="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package.EventHandlers[OnPostExecute]\Conclude Process Batch" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPreExecute]"
+      DTS:CreationName="OnPreExecute"
+      DTS:DTSID="{763B9E50-AC40-4310-81A7-7198F1D3B97B}"
+      DTS:EventID="409706036"
+      DTS:EventName="OnPreExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{5A565699-1B0A-4132-82A1-39844FE266CD}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPreExecute]\Branch Control Logic"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Script Task"
+          DTS:DTSID="{BA8154E1-26C8-4594-80E8-804F13C4D805}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Branch Control Logic">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_6d5ffc4a9df746a28d4fc2f9383e641e"
+              VSTAMajorVersion="3"
+              VSTAMinorVersion="0"
+              Language="CSharp" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPreExecute]\Initiate Process Batch"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{44161514-AC8C-485B-8E86-BF6ED970F78B}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Initiate Process Batch"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:EventHandlers>
+            <DTS:EventHandler
+              DTS:refId="Package.EventHandlers[OnPreExecute]\Initiate Process Batch.EventHandlers[OnError]"
+              DTS:CreationName="OnError"
+              DTS:DTSID="{0824112F-A229-44CC-8E15-0FCE1FCA4F9E}"
+              DTS:EventID="361532856"
+              DTS:EventName="OnError"
+              DTS:LocaleID="-1">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:Description="The propagate property of the event"
+                  DTS:DTSID="{C0460EF4-CB82-4845-A17B-224F01D59A8A}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="System"
+                  DTS:ObjectName="Propagate">
+                  <DTS:VariableValue
+                    DTS:DataType="11">-1</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:Executables />
+            </DTS:EventHandler>
+          </DTS:EventHandlers>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{525821FA-B163-47DF-B2DB-E736FF4FACA3}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="EXEC cdm.batch_initiate_internal&#xA;  @process_uid = ?&#xA;, @workflow_name = ?&#xA;, @workflow_guid = ?&#xA;, @workflow_version=?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="batch_key"
+                SQLTask:DtsVariableName="User::batch_key" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::process_uid"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="50" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="200" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::PackageID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="200" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::package_version"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="20" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnPreExecute].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{30DD6ED8-625F-49E9-8703-BF8DF210B081}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[System::SourceID] ==  @[System::PackageID]"
+          DTS:From="Package.EventHandlers[OnPreExecute]\Branch Control Logic"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnPreExecute]\Initiate Process Batch"
+          DTS:Value="2" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="231,42"
+          Id="Package\DFT - APPS_RESOURCE_CACHE"
+          TopLeft="232.875,155" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\DFT - DOVICO_CLIENT_CACHE"
+          TopLeft="233.875,348" />
+        <NodeLayout
+          Size="237,42"
+          Id="Package\DFT - DOVICO_PROJECT_CACHE"
+          TopLeft="229.875,250" />
+        <NodeLayout
+          Size="246,42"
+          Id="Package\DFT - DOVICO_RESOURCE_CACHE"
+          TopLeft="225.375,439" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="192,42"
+          Id="Package.EventHandlers[OnError]\Log Process Batch Error"
+          TopLeft="23.1,5.49999999999995" />
+        <NodeLayout
+          Size="227,42"
+          Id="Package.EventHandlers[OnError]\Set Package Error Flag To True"
+          TopLeft="5.50000000000001,104.1" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="210,42"
+          Id="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
+          TopLeft="5.50000000000003,107.1" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package.EventHandlers[OnPostExecute]\Conclude Process Batch"
+          TopLeft="14.3,208.7" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package.EventHandlers[OnPostExecute]\Entry Point"
+          TopLeft="43.9,5.49999999999995" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint]"
+          TopLeft="110.3,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-33.9655859375,18.25,67.931171875,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint 1]"
+          TopLeft="110.3,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="178,42"
+          Id="Package.EventHandlers[OnPreExecute]\Branch Control Logic"
+          TopLeft="7.90000000000002,5.49999999999995" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package.EventHandlers[OnPreExecute]\Initiate Process Batch"
+          TopLeft="5.50000000000001,107.1" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnPreExecute].PrecedenceConstraints[Constraint]"
+          TopLeft="96.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-33.9655859375,18.25,67.931171875,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\DFT - APPS_RESOURCE_CACHE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source"
+          TopLeft="319,44" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\DFT - APPS_RESOURCE_CACHE\Cache Transform"
+          TopLeft="317,170" />
+        <EdgeLayout
+          Id="Package\DFT - APPS_RESOURCE_CACHE.Paths[OLE DB Source Output]"
+          TopLeft="396.25,86">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,84"
+              Start="0,0"
+              End="0,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - APPS_RESOURCE_CACHE\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT - DOVICO_CLIENT_CACHE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source"
+          TopLeft="67,60" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\DFT - DOVICO_CLIENT_CACHE\Cache Transform"
+          TopLeft="60,235" />
+        <EdgeLayout
+          Id="Package\DFT - DOVICO_CLIENT_CACHE.Paths[OLE DB Source Output]"
+          TopLeft="141.75,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,133"
+              Start="0,0"
+              End="0,125.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,125.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - DOVICO_CLIENT_CACHE\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT - DOVICO_PROJECT_CACHE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source"
+          TopLeft="67,60" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\DFT - DOVICO_PROJECT_CACHE\Cache Transform"
+          TopLeft="60,235" />
+        <EdgeLayout
+          Id="Package\DFT - DOVICO_PROJECT_CACHE.Paths[OLE DB Source Output]"
+          TopLeft="141.75,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,133"
+              Start="0,0"
+              End="0,125.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,125.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - DOVICO_PROJECT_CACHE\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT - DOVICO_RESOURCE_CACHE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source"
+          TopLeft="319,44" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\DFT - DOVICO_RESOURCE_CACHE\Cache Transform"
+          TopLeft="323,206" />
+        <EdgeLayout
+          Id="Package\DFT - DOVICO_RESOURCE_CACHE.Paths[OLE DB Source Output]"
+          TopLeft="395,86">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.5,120"
+              Start="0,0"
+              End="8.5,112.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,56"
+                    Point2="0,60"
+                    Point3="4,60" />
+                  <mssgle:LineSegment
+                    End="4.5,60" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.5,60"
+                    Point2="8.5,60"
+                    Point3="8.5,64" />
+                  <mssgle:LineSegment
+                    End="8.5,112.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - DOVICO_RESOURCE_CACHE\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

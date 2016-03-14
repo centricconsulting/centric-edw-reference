@@ -1,0 +1,29 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Dovico Client Cache"
+  DTS:DTSID="{266B6922-29CA-494D-84DA-F3F648E53AE3}"
+  DTS:CreationName="CACHE">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::RawFileDestination] + "\\" +  @[$Project::DovicoClientCacheFilename]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:UseFile="True"
+      DTS:ConnectionString="C:\Temp\DOVICO_CLIENT_CACHE.caw">
+      <DTS:CacheColumns>
+        <DTS:CacheColumn
+          DTS:DataType="129"
+          DTS:Length="200"
+          DTS:CodePage="1252"
+          DTS:ObjectName="client_uid"
+          DTS:DTSID="{65F27E4C-E2E8-4AC5-A388-E76FCAFE0135}"
+          DTS:CreationName="" />
+        <DTS:CacheColumn
+          DTS:DataType="3"
+          DTS:IndexPosition="1"
+          DTS:ObjectName="DovicoClientID"
+          DTS:DTSID="{03CEC7CE-EB68-45B7-86E7-CA60B8B84A53}"
+          DTS:CreationName="" />
+      </DTS:CacheColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
