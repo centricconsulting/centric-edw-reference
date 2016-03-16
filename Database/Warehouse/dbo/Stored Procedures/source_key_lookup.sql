@@ -24,7 +24,7 @@ HISTORY:
 
 ################################################################################ */
 
-CREATE PROCEDURE [dbo].[source_lookup_key]
+CREATE PROCEDURE [dbo].[source_key_lookup]
   @source_uid varchar(20)
 AS
 BEGIN

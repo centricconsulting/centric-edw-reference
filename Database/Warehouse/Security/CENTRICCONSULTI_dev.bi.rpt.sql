@@ -1,6 +1,0 @@
-﻿CREATE USER [CENTRICCONSULTI\dev.bi.rpt] FOR LOGIN [CENTRICCONSULTI\dev.bi.rpt];
-
-
-
-
-

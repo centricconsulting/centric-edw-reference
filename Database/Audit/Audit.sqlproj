@@ -112,4 +112,7 @@
     <Build Include="Security\cdm.sql" />
     <Build Include="cdm\Sequences\batch_provider.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Audit.publish.xml" />
+  </ItemGroup>
 </Project>

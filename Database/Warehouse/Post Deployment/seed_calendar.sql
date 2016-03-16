@@ -17,3 +17,4 @@ Prepare Variables
 */
 
 exec dbo.calendar_rebuild 2010,2020;
+exec dbo.calendar_index_refresh @current_dt = NULL;

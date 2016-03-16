@@ -19,8 +19,7 @@ Prepare Variables
 DECLARE
   @dw_source_key int
 , @gov_source_key int
-, @process_batch_key int = 0
-, @environment varchar(20) = 'development'
+, @process_batch_key int = 0;
 
 , @unk_key int = 0
 , @unk_uid varchar(20) = 'UNK'
@@ -49,29 +48,4 @@ Seed remaining tables
 #######################################################################
 */
 
-
-:r .\drop_foreign_keys.sql
-
 :r .\seed_calendar.sql
-
-:r .\seed_operating_group_type.sql
-
-:r .\seed_resource_type.sql
-
-:r .\seed_gl_tran.sql
-
-:r .\seed_operating_group.sql
-
-:r .\seed_project_stage.sql
-
-:r .\seed_project_type.sql
-
-:r .\seed_project.sql
-
-:r .\seed_client.sql
-
-:r .\seed_resource.sql
-
-:r .\seed_operating_group_projection.sql
-
-:r .\seed_project_resource_plan.sql

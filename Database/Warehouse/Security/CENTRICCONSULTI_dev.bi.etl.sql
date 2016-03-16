@@ -1,6 +1,0 @@
-﻿CREATE USER [CENTRICCONSULTI\dev.bi.etl] FOR LOGIN [CENTRICCONSULTI\dev.bi.etl];
-
-
-
-
-

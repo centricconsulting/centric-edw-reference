@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE calendar_index_refresh
+﻿CREATE PROCEDURE dbo.calendar_index_refresh
   @current_dt date = NULL
 AS
 BEGIN
@@ -119,7 +119,6 @@ BEGIN
   , CASE
     WHEN @current_dt = c.[date] THEN 1 
     ELSE 0 END AS current_ind
-  , CASE WHEN c.utility_hours > 0 THEN 'Y' ELSE 'N' END AS workday_flag
   INTO #tmp_date
   FROM
   calendar c
@@ -128,7 +127,7 @@ BEGIN
   ;
 
   UPDATE c
-  SET c.date_index = (b.date_basis - bc.date_basis)
+  SET c.day_index = (b.date_basis - bc.date_basis)
   FROM
   calendar c
   INNER JOIN #tmp_date b ON b.date_key = c.date_key
@@ -136,67 +135,6 @@ BEGIN
   WHERE
   c.date_key NOT IN (0,99999999)
   ;
-
-   -- update workday index
-  SELECT 
-    date_key
-  , row_number() OVER (ORDER BY date_key) AS date_basis
-  , CASE
-    WHEN @current_dt = c.[date] THEN 1 
-    ELSE 0 END AS current_ind
-  INTO #tmp_wd
-  FROM
-  calendar c
-  WHERE
-  date_key NOT IN (0,99999999)
-  AND c.utility_hours > 0
-  ;
-
-  DECLARE 
-    @recent_workday_date_key int
-  , @last_workday_date_key INT
-  , @first_workday_date_key INT;
-
-  SELECT
-    @recent_workday_date_key = MAX(date_key)
-  FROM #tmp_date WHERE workday_flag = 'Y'
-  AND date_key < (SELECT date_key FROM #tmp_date WHERE current_ind = 1)
-  ;
-
-  SELECT
-    @last_workday_date_key  = MAX(date_key)
-  , @first_workday_date_key = MIN(date_key)
-  FROM #tmp_date WHERE workday_flag = 'Y'
-  ;
-
-  UPDATE c
-  SET c.workday_index = (b.date_basis - bc.date_basis)
-  FROM
-  calendar c
-  INNER JOIN #tmp_wd b ON b.date_key = c.date_key
-  LEFT JOIN #tmp_wd bc ON bc.date_key = @recent_workday_date_key
-  WHERE
-  c.date_key NOT IN (0,99999999)
-  ;
-
-
-  UPDATE c
-  SET c.next_workday_index = CASE 
-    WHEN x.date_key BETWEEN @first_workday_date_key AND @last_workday_date_key 
-    THEN x.next_workday_index END
-  FROM
-  calendar c
-  INNER JOIN (
-  
-	select cx.date_key, MIN(ca.workday_index) next_workday_index
-    FROM calendar cx 
-    LEFT JOIN calendar ca ON ca.date_key >= cx.date_key AND ca.workday_index IS NOT NULL
-    group by cx.date_key
-    
-
-  ) x ON x.date_key = c.date_key
-  ;
-  
   
 
 END
