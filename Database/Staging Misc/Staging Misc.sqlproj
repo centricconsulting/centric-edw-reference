@@ -98,7 +98,7 @@
   <ItemGroup>
     <Build Include="dbo\Tables\QB_PL_Detail.sql" />
     <Build Include="dbo\Tables\QB_AR.sql" />
-    <Build Include="dbo\fiscal_period.sql" />
+    <Build Include="dbo\FiscalPeriod.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Staging Misc.publish.xml" />

@@ -19,20 +19,18 @@ Populate the source map table.
 INSERT INTO map.source (
   source_key
 , source_uid
-, process_batch_key
+, batch_key
 )
 SELECT x.* FROM (
 
 SELECT 
-  @unk_key AS source_key
-, 'DW' as source_uid
-, @process_batch_key as process_batch_key
-UNION ALL SELECT 100, 'DOV', 0
-UNION ALL SELECT 101, 'APPS', 0
-UNION ALL SELECT 102, 'ADP', 0
-UNION ALL SELECT 103, 'GOV', 0
-UNION ALL SELECT 104, 'CEDW', 0
-UNION ALL SELECT 105, 'QB', 0
+  @unknown_key AS source_key
+, @dw_source_uid as source_uid
+, @unknown_key as process_batch_key
+UNION ALL SELECT 100, @gov_source_uid, @unknown_key
+
+-- custom data sources follow
+UNION ALL SELECT 101, 'AW', @unknown_key
 
 ) x
 WHERE
@@ -51,21 +49,32 @@ INSERT INTO dbo.source (
   source_key
 , source_name
 , source_desc
-, process_batch_key
+, batch_key
 )
 SELECT x.* FROM (
 
 SELECT 
-  @unk_key AS source_key
+  @unknown_key AS source_key
 , 'Data Warehouse' as source_name
-, 'Centric Data Warehouse' AS source_desc
-, @process_batch_key as process_batch_key
-UNION ALL SELECT 100, 'Dovico','Centric time tracking applicition', 0
-UNION ALL SELECT 101, 'Centric Apps','Centric internal operations applications', 0
-UNION ALL SELECT 102, 'ADP', 'Centric payroll feeds',0
-UNION ALL SELECT 103, 'Governance', 'Centric governance (master and mapping) data', 0
-UNION ALL SELECT 104, 'Centric EDW', 'Prior Centric data warehouse; contains master data', 0
-UNION ALL SELECT 105, 'QB', 'General Ledger data from QuickBooks', 0
+, 'Data Warehouse internally generated data.' AS source_desc
+, @unknown_key as process_batch_key
+UNION ALL 
+
+SELECT
+  100 AS source_key
+, 'Governance' as source_name
+, 'Manually maintained data.'  AS source_desc
+, @unknown_key AS batch_key
+
+-- custom data sources follow
+UNION ALL 
+
+SELECT
+  101 AS source_key
+, 'Adventure Works' as source_name
+, 'Adventure Works operational system.'  AS source_desc
+, @unknown_key AS batch_key
+
 ) x
 WHERE
 NOT EXISTS (

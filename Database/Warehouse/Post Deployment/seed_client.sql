@@ -15,6 +15,7 @@ Post-Deployment Script Template
 Insert Map Records
 #######################################################################
 */
+/*
 
 SET IDENTITY_INSERT map.client ON;
 
@@ -27,22 +28,22 @@ INSERT INTO map.client (
 SELECT x.* FROM (
 
 SELECT
-  @unk_key as client_key
+  @unknown_key as client_key
 , @dw_source_key AS source_key
-, @unk_uid as client_uid
-, @process_batch_key as process_batch_key
+, @unknown_uid as client_uid
+, @unknown_key as process_batch_key
 UNION ALL
 SELECT
-  @na_key as client_key
+  @not_applicable_key as client_key
 , @dw_source_key AS source_key
-, @na_uid as client_uid
-, @process_batch_key as process_batch_key
+, @not_applicable_uid as client_uid
+, @unknown_key as process_batch_key
 UNION ALL
 SELECT
   1 as client_key
 , @dw_source_key AS source_key
 , 'CENTRIC' as client_uid
-, @process_batch_key as process_batch_key
+, @unknown_key as process_batch_key
 
 ) x
 WHERE
@@ -51,13 +52,14 @@ NOT EXISTS (
 );
 
 SET IDENTITY_INSERT map.client OFF;
+*/
 
 /*
 #######################################################################
 Insert Content Records
 #######################################################################
 */
-
+/*
 INSERT INTO dbo.client (
   client_key
 , client_desc
@@ -70,24 +72,24 @@ INSERT INTO dbo.client (
 SELECT x.* FROM (
 
 SELECT
-  @unk_key AS client_key
-, @unk_desc AS client_desc
+  @unknown_key AS client_key
+, @unknown_desc AS client_desc
 , @dw_source_key AS source_key
 , CURRENT_TIMESTAMP AS source_revision_dtm
 , NULL AS source_revision_actor
-, @process_batch_key AS init_process_batch_key
-, @process_batch_key AS process_batch_key
+, @unknown_key AS init_process_batch_key
+, @unknown_key AS process_batch_key
 
 UNION ALL
 
 SELECT
-  @na_key AS client_key
-, @na_desc AS client_desc
+  @not_applicable_key AS client_key
+, @not_applicable_desc AS client_desc
 , @dw_source_key AS source_key
 , CURRENT_TIMESTAMP AS source_revision_dtm
 , NULL AS source_revision_actor
-, @process_batch_key AS init_process_batch_key
-, @process_batch_key AS process_batch_key
+, @unknown_key AS init_process_batch_key
+, @unknown_key AS process_batch_key
 
 UNION ALL
 
@@ -97,8 +99,8 @@ SELECT
 , @dw_source_key AS source_key
 , CURRENT_TIMESTAMP AS source_revision_dtm
 , NULL AS source_revision_actor
-, @process_batch_key AS init_process_batch_key
-, @process_batch_key AS process_batch_key
+, @unknown_key AS init_process_batch_key
+, @unknown_key AS process_batch_key
 
 
 ) x
@@ -108,3 +110,4 @@ NOT EXISTS (
 );
 
 
+*/

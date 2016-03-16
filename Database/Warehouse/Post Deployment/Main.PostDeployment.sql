@@ -17,17 +17,19 @@ Prepare Variables
 */
 
 DECLARE
-  @dw_source_key int
-, @gov_source_key int
-, @process_batch_key int = 0;
+  @unknown_key int = 0
+, @unknown_uid varchar(20) = 'UNK'
+, @unknown_desc varchar(200) = 'Unknown'
 
-, @unk_key int = 0
-, @unk_uid varchar(20) = 'UNK'
-, @unk_desc varchar(200) = 'Unknown'
+, @not_applicable_key int = -1
+, @not_applicable_uid varchar(20) = 'NA'
+, @not_applicable_desc varchar(200) = 'Not Applicable'
 
-, @na_key int = -1
-, @na_uid varchar(20) = 'NA'
-, @na_desc varchar(200) = 'Not Applicable';
+, @unresolved_key int = -2
+, @unresolved_uid varchar(20) = 'UNR'
+, @unresolved_desc varchar(200) = 'Unresolved'
+;
+
 
 /*
 #######################################################################
@@ -37,10 +39,18 @@ EXECUTE 2nd: Lookup the @xxx_source_keys
 #######################################################################
 */
 
+
+DECLARE
+  @dw_source_uid varchar(20) = 'DW'
+, @gov_source_uid varchar(20) = 'GOV'
+, @dw_source_key int
+, @gov_source_key int
+;
+
 :r .\seed_source.sql
 
-SELECT @dw_source_key = source_key FROM map.source WHERE source_uid = 'DW';
-SELECT @gov_source_key = source_key FROM map.source WHERE source_uid = 'GOV';
+SELECT @dw_source_key = source_key FROM map.source WHERE source_uid = @dw_source_uid;
+SELECT @gov_source_key = source_key FROM map.source WHERE source_uid = @gov_source_uid;
 
 /*
 #######################################################################

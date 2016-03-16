@@ -58,8 +58,14 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Security" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Mart.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Security\cube.sql" />
+    <Build Include="Security\report.sql" />
+    <Build Include="Security\star.sql" />
   </ItemGroup>
 </Project>
