@@ -19,7 +19,7 @@ Populate the source map table.
 INSERT INTO map.source (
   source_key
 , source_uid
-, batch_key
+, process_batch_key
 )
 SELECT x.* FROM (
 
@@ -49,7 +49,7 @@ INSERT INTO dbo.source (
   source_key
 , source_name
 , source_desc
-, batch_key
+, process_batch_key
 )
 SELECT x.* FROM (
 
@@ -64,7 +64,7 @@ SELECT
   100 AS source_key
 , 'Governance' as source_name
 , 'Manually maintained data.'  AS source_desc
-, @unknown_key AS batch_key
+, @unknown_key AS process_batch_key
 
 -- custom data sources follow
 UNION ALL 
@@ -73,7 +73,7 @@ SELECT
   101 AS source_key
 , 'Adventure Works' as source_name
 , 'Adventure Works operational system.'  AS source_desc
-, @unknown_key AS batch_key
+, @unknown_key AS process_batch_key
 
 ) x
 WHERE

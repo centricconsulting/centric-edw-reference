@@ -5,5 +5,7 @@
 , BeginDate date NOT NULL
 , EndDate date NULL
 , DisplayMonthOfYear int NOT NULL
+
+, process_batch_key int NOT NULL
 , CONSTRAINT FiscalPeriod_PK PRIMARY KEY (FiscalYear, FiscalPeriodOfYear)
 )

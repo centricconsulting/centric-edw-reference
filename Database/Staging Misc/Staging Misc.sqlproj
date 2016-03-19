@@ -96,9 +96,8 @@
     <Folder Include="Security\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\QB_PL_Detail.sql" />
-    <Build Include="dbo\Tables\QB_AR.sql" />
-    <Build Include="dbo\FiscalPeriod.sql" />
+    <Build Include="dbo\Tables\Holiday.sql" />
+    <Build Include="dbo\Tables\FiscalPeriod.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Staging Misc.publish.xml" />

@@ -16,5 +16,8 @@ Prepare Variables
 #######################################################################
 */
 
+DECLARE @current_dt date
+SET @current_dt = GETDATE();
+
 exec dbo.calendar_rebuild 2010,2020;
-exec dbo.calendar_index_refresh @current_dt = NULL;
+exec dbo.calendar_index_refresh @current_dt;
