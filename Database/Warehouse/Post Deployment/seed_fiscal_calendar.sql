@@ -16,5 +16,6 @@ Prepare Variables
 #######################################################################
 */
 
-exec dbo.calendar_rebuild 2010,2030;
-exec dbo.calendar_index_refresh @current_dt;
+
+exec dbo.fiscal_calendar_rebuild;
+exec dbo.fiscal_calendar_index_refresh @current_dt;

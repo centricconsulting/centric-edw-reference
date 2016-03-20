@@ -10,7 +10,12 @@ BEGIN
     @unknown_key int = 0
   , @indefinite_key int = 99999999
 
-  -- update year index
+  /* 
+  ###############################################################
+  YEAR INDEX
+  ###############################################################
+  */
+
   SELECT 
     year_key
   , ROW_NUMBER() OVER (ORDER BY year_key) AS year_basis
@@ -35,7 +40,13 @@ BEGIN
   c.date_key NOT IN (@unknown_key, @indefinite_key)
   ;
 
-  -- update quarter index
+
+  /* 
+  ###############################################################
+  QUARTER INDEX
+  ###############################################################
+  */
+
   SELECT 
     quarter_key
   , ROW_NUMBER() OVER (ORDER BY quarter_key) AS quarter_basis
@@ -60,7 +71,12 @@ BEGIN
   c.date_key NOT IN (@unknown_key, @indefinite_key)
   ;
 
-  -- update month index
+  /* 
+  ###############################################################
+  MONTH INDEX
+  ###############################################################
+  */
+
   SELECT 
     month_key
   , ROW_NUMBER() OVER (ORDER BY month_key) AS month_basis
@@ -85,7 +101,12 @@ BEGIN
   c.date_key NOT IN (@unknown_key, @indefinite_key)
   ;
 
-  -- update week index
+  /* 
+  ###############################################################
+  WEEK INDEX
+  ###############################################################
+  */
+
   SELECT 
     week_key
   , ROW_NUMBER() OVER (ORDER BY week_key) AS week_basis
@@ -113,7 +134,12 @@ BEGIN
   c.date_key NOT IN (@unknown_key, @indefinite_key)
   ;
 
-  -- update date index
+  /* 
+  ###############################################################
+  DAY INDEX
+  ###############################################################
+  */
+
   SELECT 
     date_key
   , ROW_NUMBER() OVER (ORDER BY date_key) AS date_basis

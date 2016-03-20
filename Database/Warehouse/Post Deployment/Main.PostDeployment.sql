@@ -58,4 +58,9 @@ Seed remaining tables
 #######################################################################
 */
 
+DECLARE @current_dt date
+SET @current_dt = GETDATE();
+
 :r .\seed_calendar.sql
+
+:r .\seed_fiscal_calendar.sql

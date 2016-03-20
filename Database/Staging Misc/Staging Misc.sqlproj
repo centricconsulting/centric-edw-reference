@@ -94,6 +94,7 @@
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
     <Folder Include="Security\" />
+    <Folder Include="Post Deployment" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Holiday.sql" />
@@ -101,5 +102,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Staging Misc.publish.xml" />
+    <None Include="Post Deployment\seed_Holiday.sql" />
+    <None Include="Post Deployment\seed_FiscalPeriod.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Post Deployment\Main.PostDeployment.sql" />
   </ItemGroup>
 </Project>

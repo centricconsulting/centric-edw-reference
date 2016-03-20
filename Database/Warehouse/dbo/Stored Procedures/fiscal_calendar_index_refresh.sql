@@ -1,140 +1,189 @@
 ﻿CREATE PROCEDURE dbo.fiscal_calendar_index_refresh
-  @current_dt date = NULL
+  @current_dt date
 AS
 BEGIN
 
   SET NOCOUNT ON
 
-  IF @current_dt IS NULL
-	SET @current_dt = CAST(CURRENT_TIMESTAMP AS date)
-  ;
+  /* 
+  ###############################################################
+  FISCAL YEAR INDEX
+  ###############################################################
+  */
 
-  -- update year index
   SELECT 
-    year_key
-  , row_number() OVER (ORDER BY year_key) AS year_basis
+    fiscal_year_key
+  , ROW_NUMBER() OVER (ORDER BY fiscal_year_key) AS fiscal_year_basis
   , CASE
-    WHEN @current_dt BETWEEN year_start_dt AND year_end_dt THEN 1 
+    WHEN @current_dt BETWEEN fiscal_year_begin_dt AND fiscal_year_end_dt THEN 1 
     ELSE 0 END AS current_ind
-  INTO #tmp_year
+  INTO #tmp_fiscal_year
   FROM
-  calendar
+  dbo.fiscal_calendar
   WHERE
-  day_of_year = 1
-  OR date_key IN (0,99999999)
+  fiscal_day_of_year = 1
   ;
 
   UPDATE c
-  SET c.year_index = (b.year_basis - bc.year_basis)
+  SET c.fiscal_year_index = (b.fiscal_year_basis - bc.fiscal_year_basis)
   FROM
-  calendar c
-  INNER JOIN #tmp_year b ON b.year_key = c.year_key
-  LEFT JOIN #tmp_year bc ON bc.current_ind = 1
-  WHERE
-  c.date_key NOT IN (0,99999999)
+  dbo.fiscal_calendar c
+  INNER JOIN #tmp_fiscal_year b ON b.fiscal_year_key = c.fiscal_year_key
+  LEFT JOIN #tmp_fiscal_year bc ON bc.current_ind = 1
   ;
 
-  -- update quarter index
+  /* 
+  ###############################################################
+  CLOSED FISCAL YEAR INDEX
+  ###############################################################
+  */
+
   SELECT 
-    quarter_key
-  , row_number() OVER (ORDER BY quarter_key) AS quarter_basis
+    fiscal_year_key
+  , ROW_NUMBER() OVER (ORDER BY fiscal_year_key) AS fiscal_year_basis
   , CASE
-    WHEN @current_dt BETWEEN quarter_start_dt AND quarter_end_dt THEN 1 
+    WHEN fiscal_year IN (
+     
+      -- return the max fiscal year of all those that have all periods closed
+      SELECT MAX(xx.fiscal_year) FROM (
+        SELECT x.fiscal_year FROM dbo.fiscal_calendar x
+        GROUP BY x.fiscal_year HAVING MIN(x.fiscal_year_closed_ind) > 0
+      ) xx
+
+    ) THEN 1 
     ELSE 0 END AS current_ind
-  INTO #tmp_quarter
+  INTO #tmp_closed_fiscal_year
   FROM
-  calendar c
+  dbo.fiscal_calendar
   WHERE
-  day_of_quarter = 1
-  OR date_key IN (0,99999999)
+  fiscal_day_of_year = 1
   ;
 
   UPDATE c
-  SET c.quarter_index = (b.quarter_basis - bc.quarter_basis)
+  SET c.closed_fiscal_year_index = (b.fiscal_year_basis - bc.fiscal_year_basis)
   FROM
-  calendar c
-  INNER JOIN #tmp_quarter b ON b.quarter_key = c.quarter_key
-  LEFT JOIN #tmp_quarter bc ON bc.current_ind = 1
-  WHERE
-  c.date_key NOT IN (0,99999999)
+  dbo.fiscal_calendar c
+  INNER JOIN #tmp_closed_fiscal_year b ON b.fiscal_year_key = c.fiscal_year_key
+  LEFT JOIN #tmp_closed_fiscal_year bc ON bc.current_ind = 1
   ;
 
-  -- update month index
+
+  /* 
+  ###############################################################
+  FISCAL QUARTER YEAR INDEX
+  ###############################################################
+  */
+
   SELECT 
-    month_key
-  , row_number() OVER (ORDER BY month_key) AS month_basis
+    fiscal_quarter_key
+  , ROW_NUMBER() OVER (ORDER BY fiscal_quarter_key) AS fiscal_quarter_basis
   , CASE
-    WHEN @current_dt BETWEEN month_start_dt AND month_end_dt THEN 1 
+    WHEN @current_dt BETWEEN fiscal_quarter_begin_dt AND fiscal_quarter_end_dt THEN 1 
     ELSE 0 END AS current_ind
-  INTO #tmp_month
+  INTO #tmp_fiscal_quarter
   FROM
-  calendar c
+  dbo.fiscal_calendar c
   WHERE
-  day_of_month = 1
-  OR date_key IN (0,99999999)
+  fiscal_day_of_quarter = 1
   ;
 
   UPDATE c
-  SET c.month_index = (b.month_basis - bc.month_basis)
+  SET c.fiscal_quarter_index = (b.fiscal_quarter_basis - bc.fiscal_quarter_basis)
   FROM
-  calendar c
-  INNER JOIN #tmp_month b ON b.month_key = c.month_key
-  LEFT JOIN #tmp_month bc ON bc.current_ind = 1
-  WHERE
-  c.date_key NOT IN (0,99999999)
+  dbo.fiscal_calendar c
+  INNER JOIN #tmp_fiscal_quarter b ON b.fiscal_quarter_key = c.fiscal_quarter_key
+  LEFT JOIN #tmp_fiscal_quarter bc ON bc.current_ind = 1
   ;
 
-  -- update week index
+  /* 
+  ###############################################################
+  FISCAL PERIOD INDEX
+  ###############################################################
+  */
+
   SELECT 
-    week_key
-  , row_number() OVER (ORDER BY week_key) AS week_basis
+    fiscal_period_key
+  , ROW_NUMBER() OVER (ORDER BY fiscal_period_key) AS fiscal_period_basis
   , CASE
-    WHEN @current_dt BETWEEN week_start_dt AND week_end_dt THEN 1 
+    WHEN @current_dt BETWEEN fiscal_period_begin_dt AND fiscal_period_end_dt THEN 1 
     ELSE 0 END AS current_ind
-  INTO #tmp_week
+  INTO #tmp_fiscal_period
   FROM
-  calendar c
+  dbo.fiscal_calendar c
   WHERE
-  c.day_of_week = 1
-  -- must manually include the first non-zero date key because
-  -- the first day of week is not necessarily (1)
-  OR c.date_key = (SELECT MIN(cx.date_key) FROM calendar cx WHERE cx.date_key != 0)
-  OR c.date_key IN (0,99999999)
+  fiscal_day_of_period = 1
   ;
 
   UPDATE c
-  SET c.week_index = (b.week_basis - bc.week_basis)
+  SET c.fiscal_period_index = (b.fiscal_period_basis - bc.fiscal_period_basis)
   FROM
-  calendar c
-  INNER JOIN #tmp_week b ON b.week_key = c.week_key
-  LEFT JOIN #tmp_week bc ON bc.current_ind = 1
-  WHERE
-  c.date_key NOT IN (0,99999999)
+  dbo.fiscal_calendar c
+  INNER JOIN #tmp_fiscal_period b ON b.fiscal_period_key = c.fiscal_period_key
+  LEFT JOIN #tmp_fiscal_period bc ON bc.current_ind = 1
   ;
 
-  -- update date index
+  /* 
+  ###############################################################
+  CLOSED FISCAL PERIOD INDEX
+  ###############################################################
+  */
+
+
   SELECT 
-    date_key
-  , row_number() OVER (ORDER BY date_key) AS date_basis
+    fiscal_period_key
+  , ROW_NUMBER() OVER (ORDER BY fiscal_period_key) AS fiscal_period_basis
   , CASE
-    WHEN @current_dt = c.[date] THEN 1 
+    WHEN fiscal_period_key IN (
+     
+      -- select max fiscal period of all those that are closed
+      SELECT MAX(xx.fiscal_period_key) FROM (
+        SELECT x.fiscal_period_key FROM dbo.fiscal_calendar x
+        GROUP BY x.fiscal_period_key HAVING MIN(x.fiscal_period_closed_ind) > 0
+      ) xx
+
+    ) THEN 1 
     ELSE 0 END AS current_ind
-  INTO #tmp_date
+  INTO #tmp_closed_fiscal_period
   FROM
-  calendar c
+  dbo.fiscal_calendar c
   WHERE
-  date_key NOT IN (0,99999999)
+  fiscal_day_of_period = 1
   ;
 
   UPDATE c
-  SET c.day_index = (b.date_basis - bc.date_basis)
+  SET c.closed_fiscal_period_index = (b.fiscal_period_basis - bc.fiscal_period_basis)
   FROM
-  calendar c
-  INNER JOIN #tmp_date b ON b.date_key = c.date_key
-  LEFT JOIN #tmp_date bc ON bc.current_ind = 1
-  WHERE
-  c.date_key NOT IN (0,99999999)
+  dbo.fiscal_calendar c
+  INNER JOIN #tmp_closed_fiscal_period b ON b.fiscal_period_key = c.fiscal_period_key
+  LEFT JOIN #tmp_closed_fiscal_period bc ON bc.current_ind = 1
   ;
-  
+
+  /* 
+  ###############################################################
+  FISCAL WEEK INDEX
+  ###############################################################
+  */
+
+  SELECT 
+    fiscal_week_key
+  , ROW_NUMBER() OVER (ORDER BY fiscal_week_key) AS fiscal_week_basis
+  , CASE
+    WHEN @current_dt BETWEEN fiscal_week_begin_dt AND fiscal_week_end_dt THEN 1 
+    ELSE 0 END AS current_ind
+  INTO #tmp_fiscal_week
+  FROM
+  dbo.fiscal_calendar c
+  WHERE
+  c.fiscal_day_of_week = 1
+  ;
+
+  UPDATE c
+  SET c.fiscal_week_index = (b.fiscal_week_basis - bc.fiscal_week_basis)
+  FROM
+  dbo.fiscal_calendar c
+  INNER JOIN #tmp_fiscal_week b ON b.fiscal_week_key = c.fiscal_week_key
+  LEFT JOIN #tmp_fiscal_week bc ON bc.current_ind = 1
+  ;
+
 
 END

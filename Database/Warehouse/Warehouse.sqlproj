@@ -106,6 +106,7 @@
     <Folder Include="ver" />
     <Folder Include="ver\Tables" />
     <Folder Include="dbo\Views" />
+    <Folder Include="Extra" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\calendar.sql" />
@@ -131,13 +132,16 @@
     <Build Include="ver\Tables\customer.sql" />
     <Build Include="dbo\Views\customer.sql" />
     <Build Include="dbo\Tables\fiscal_calendar.sql" />
-    <None Include="dbo\Stored Procedures\fiscal_calendar_rebuild.sql" />
-    <None Include="dbo\Stored Procedures\fiscal_calendar_index_refresh.sql" />
+    <Build Include="dbo\Stored Procedures\fiscal_calendar_rebuild.sql" />
+    <Build Include="dbo\Stored Procedures\fiscal_calendar_index_refresh.sql" />
     <Build Include="dbo\Tables\calendar_holiday.sql" />
+    <None Include="Extra\Manual.LoadFiscalPeriod.sql" />
+    <None Include="Post Deployment\seed_fiscal_calendar.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Post Deployment\seed_client.sql" />
     <None Include="Warehouse.publish.xml" />
+    <None Include="Extra\Manual.LoadHoliday.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Post Deployment\Main.PostDeployment.sql" />

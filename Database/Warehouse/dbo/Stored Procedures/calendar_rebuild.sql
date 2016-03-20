@@ -449,7 +449,6 @@ BEGIN
       
     /* OTHER */
 
-
   , @source_key -- source_key
   , 'SYSTEM' -- source_revision_actor
   , CURRENT_TIMESTAMP -- source_revision_dtm
