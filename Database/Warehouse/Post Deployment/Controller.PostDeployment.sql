@@ -16,6 +16,7 @@ Prepare Variables
 #######################################################################
 */
 
+
 DECLARE
   @unknown_key int = 0
 , @unknown_uid varchar(20) = 'UNK'
@@ -41,26 +42,40 @@ EXECUTE 2nd: Lookup the @xxx_source_keys
 
 
 DECLARE
-  @dw_source_uid varchar(20) = 'DW'
-, @gov_source_uid varchar(20) = 'GOV'
-, @dw_source_key int
-, @gov_source_key int
+  @warehouse_source_uid varchar(20) = 'EDW'
+, @governance_source_uid varchar(20) = 'GOV'
+, @warehouse_source_key int
+, @governance_source_key int
 ;
 
-:r .\seed_source.sql
+:r .\Seed.source.sql
 
-SELECT @dw_source_key = source_key FROM map.source WHERE source_uid = @dw_source_uid;
-SELECT @gov_source_key = source_key FROM map.source WHERE source_uid = @gov_source_uid;
+-- lookup special source keys
+SELECT @warehouse_source_key = source_key FROM map.source WHERE source_uid = @warehouse_source_uid;
+SELECT @governance_source_key = source_key FROM map.source WHERE source_uid = @governance_source_uid;
 
 /*
 #######################################################################
-Seed remaining tables
+Rebuild the calendars
 #######################################################################
 */
 
 DECLARE @current_dt date
 SET @current_dt = GETDATE();
 
-:r .\seed_calendar.sql
+:r .\Seed.calendar.sql
+:r .\Seed.fiscal_calendar.sql
 
-:r .\seed_fiscal_calendar.sql
+/*
+#######################################################################
+Seed additional tables
+#######################################################################
+*/
+
+:r .\Seed.customer.sql
+
+
+
+
+
+

@@ -1,4 +1,16 @@
-﻿CREATE TABLE dbo.calendar (
+﻿/*
+##################################################################
+Note that the Date keys are smart keys of the form YYYYMMDD.
+
+Smart keys  are generally forbidden in the architecture, however
+we use them for Dates and Fiscal Periods due to their consistently
+understood meaning and presumed zero of risk that values may
+come from anywhere other than our manual control.  
+##################################################################
+*/
+
+
+CREATE TABLE dbo.calendar (
   date_key int NOT NULL
 , [date] date NULL
 , day_of_week int NULL

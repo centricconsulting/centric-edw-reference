@@ -2,6 +2,7 @@
     [batch_key]                   INT           NOT NULL,
     [process_uid]                 VARCHAR (100)  NOT NULL,
     [status]                      VARCHAR (100)  NULL,
+    [channel]                     VARCHAR(200) NULL,
     [completed_ind]               BIT           DEFAULT ((0)) NULL,
     [initiate_dtm]                DATETIME      NULL,
     [conclude_dtm]                DATETIME      NULL,

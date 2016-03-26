@@ -1,4 +1,15 @@
-﻿CREATE TABLE [dbo].[fiscal_period]
+﻿/*
+##################################################################
+Note that the Fiscal Period keys are smart keys of the form YYYYMM.
+
+Smart keys  are generally forbidden in the architecture, however
+we use them for Dates and Fiscal Periods due to their consistently
+understood meaning and presumed zero of risk that values may
+come from anywhere other than our manual control.  
+##################################################################
+*/
+
+CREATE TABLE [dbo].[fiscal_period]
 (
   fiscal_period_key int NOT NULL
 , fiscal_year int NOT NULL

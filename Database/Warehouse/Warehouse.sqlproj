@@ -116,8 +116,8 @@
     <Build Include="dbo\Stored Procedures\calendar_rebuild.sql" />
     <Build Include="Security\map.sql" />
     <Build Include="Security\Permissions.sql" />
-    <None Include="Post Deployment\seed_source.sql" />
-    <None Include="Post Deployment\seed_calendar.sql" />
+    <None Include="Post Deployment\Seed.source.sql" />
+    <None Include="Post Deployment\Seed.calendar.sql" />
     <Build Include="dbo\Stored Procedures\calendar_index_refresh.sql" />
     <Build Include="dbo\Stored Procedures\source_key_lookup.sql" />
     <Build Include="Security\ver.sql" />
@@ -136,14 +136,16 @@
     <Build Include="dbo\Stored Procedures\fiscal_calendar_index_refresh.sql" />
     <Build Include="dbo\Tables\calendar_holiday.sql" />
     <None Include="Extra\Manual.LoadFiscalPeriod.sql" />
-    <None Include="Post Deployment\seed_fiscal_calendar.sql" />
+    <None Include="Post Deployment\Seed.fiscal_calendar.sql" />
+    <None Include="Post Deployment\Seed.customer_type.sql" />
+    <Build Include="dbo\Tables\customer_type.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Post Deployment\seed_client.sql" />
+    <None Include="Post Deployment\Seed.customer.sql" />
     <None Include="Warehouse.publish.xml" />
     <None Include="Extra\Manual.LoadHoliday.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Post Deployment\Main.PostDeployment.sql" />
+    <PostDeploy Include="Post Deployment\Controller.PostDeployment.sql" />
   </ItemGroup>
 </Project>

@@ -11,7 +11,7 @@
   geography_key int,
 
   -- NOTE: other attributes besides keys
-	customer_name datetime NOT NULL,
+	customer_name varchar(200) NOT NULL,
 	primary_contact_name varchar(200) NULL,
 	primary_contact_phone_nbr varchar(50) NULL,
   

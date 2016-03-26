@@ -54,8 +54,9 @@ CREATE PROCEDURE cdm.batch_initiate_internal
 , @workflow_name VARCHAR(200)    
 , @workflow_guid VARCHAR(100)
 , @workflow_version VARCHAR(20)
+, @channel VARCHAR(200) = NULL
 , @limit_process_uid VARCHAR(100) = NULL
-, @comments VARCHAR(200) = NULL 
+, @comments VARCHAR(200) = NULL
 AS
 BEGIN
 
@@ -65,11 +66,13 @@ BEGIN
   , @workflow_name
   , @workflow_guid
   , @workflow_version
+  , @channel
   , 1 -- @internal_sequence_ind
   , 1 -- @increment_sequence_ind 
   , NULL -- @current_sequence_key
   , NULL -- @current_sequence_dtm
   , @limit_process_uid
   , @comments
+  ;
   
 END

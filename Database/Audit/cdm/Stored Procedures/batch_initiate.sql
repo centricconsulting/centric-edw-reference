@@ -66,6 +66,7 @@ CREATE PROCEDURE cdm.batch_initiate
 , @workflow_name VARCHAR(200)    
 , @workflow_guid VARCHAR(100)
 , @workflow_version VARCHAR(20)
+, @channel VARCHAR(200) = NULL
 , @internal_sequence_ind BIT = 0
 , @increment_sequence_ind BIT = 1 
 , @current_sequence_key BIGINT = NULL
@@ -131,6 +132,7 @@ BEGIN
     batch_key
   , process_uid
   , status
+  , channel
   , completed_ind
   , initiate_dtm
   , current_sequence_key
@@ -150,6 +152,7 @@ BEGIN
     @batch_key
   , @process_uid
   , 'Started' -- status
+  , @channel
   , 0 -- completed_ind
   , @initiate_dtm
   , @current_sequence_key
