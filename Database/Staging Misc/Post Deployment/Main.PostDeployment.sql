@@ -17,3 +17,7 @@ DECLARE
 :r .\Seed.FiscalPeriod.sql
 
 :r .\Seed.Holiday.sql
+
+:r .\Seed.CurrencyExchangeRate.sql
+
+:r .\Seed.CountryForecast.sql

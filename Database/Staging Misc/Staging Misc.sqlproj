@@ -99,6 +99,10 @@
   <ItemGroup>
     <Build Include="dbo\Tables\Holiday.sql" />
     <Build Include="dbo\Tables\FiscalPeriod.sql" />
+    <Build Include="dbo\Tables\CountryForecast.sql" />
+    <Build Include="dbo\Tables\CurrencyExchangeRate.sql" />
+    <None Include="Post Deployment\Seed.CurrencyExchangeRate.sql" />
+    <None Include="Post Deployment\Seed.CountryForecast.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Staging Misc.publish.xml" />

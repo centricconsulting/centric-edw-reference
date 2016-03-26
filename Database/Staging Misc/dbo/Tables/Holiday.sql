@@ -4,5 +4,5 @@
 , HolidayDesc varchar(100) NOT NULL
 
 , process_batch_key int NOT NULL
-, CONSTRAINT Holiday_PK PRIMARY KEY (HolidayDate)
+, CONSTRAINT dbo_Holiday_PK PRIMARY KEY (HolidayDate)
 );
