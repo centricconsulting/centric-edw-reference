@@ -102,8 +102,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Staging Misc.publish.xml" />
-    <None Include="Post Deployment\seed_Holiday.sql" />
-    <None Include="Post Deployment\seed_FiscalPeriod.sql" />
+    <None Include="Post Deployment\Seed.Holiday.sql" />
+    <None Include="Post Deployment\Seed.FiscalPeriod.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Post Deployment\Main.PostDeployment.sql" />

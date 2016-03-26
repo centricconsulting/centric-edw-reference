@@ -58,8 +58,48 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Sales\" />
+    <Folder Include="Sales\Tables\" />
+    <Folder Include="Purchasing\" />
+    <Folder Include="Purchasing\Tables\" />
+    <Folder Include="Production\" />
+    <Folder Include="Production\Tables\" />
+    <Folder Include="Person\" />
+    <Folder Include="Person\Tables\" />
+    <Folder Include="Security\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Staging AW.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Sales\Tables\SalesOrderHeader.sql" />
+    <Build Include="Sales\Tables\SalesOrderDetail.sql" />
+    <Build Include="Sales\Tables\Customer.sql" />
+    <Build Include="Sales\Tables\Currency.sql" />
+    <Build Include="Sales\Tables\Store.sql" />
+    <Build Include="Purchasing\Tables\PurchaseOrderHeader.sql" />
+    <Build Include="Purchasing\Tables\PurchaseOrderDetail.sql" />
+    <Build Include="Purchasing\Tables\Vendor.sql" />
+    <Build Include="Purchasing\Tables\ProductVendor.sql" />
+    <Build Include="Production\Tables\Product.sql" />
+    <Build Include="Production\Tables\ProductSubcategory.sql" />
+    <Build Include="Production\Tables\ProductDescription.sql" />
+    <Build Include="Production\Tables\ProductCategory.sql" />
+    <Build Include="Person\Tables\PhoneNumberType.sql" />
+    <Build Include="Person\Tables\PersonPhone.sql" />
+    <Build Include="Person\Tables\Person.sql" />
+    <Build Include="Person\Tables\EmailAddress.sql" />
+    <Build Include="Person\Tables\CountryRegion.sql" />
+    <Build Include="Person\Tables\ContactType.sql" />
+    <Build Include="Person\Tables\BusinessEntityContact.sql" />
+    <Build Include="Person\Tables\BusinessEntityAddress.sql" />
+    <Build Include="Person\Tables\BusinessEntity.sql" />
+    <Build Include="Person\Tables\StateProvince.sql" />
+    <Build Include="Person\Tables\AddressType.sql" />
+    <Build Include="Person\Tables\Address.sql" />
+    <Build Include="Security\Sales.sql" />
+    <Build Include="Security\Purchasing.sql" />
+    <Build Include="Security\Production.sql" />
+    <Build Include="Security\Person.sql" />
   </ItemGroup>
 </Project>

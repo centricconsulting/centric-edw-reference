@@ -14,6 +14,6 @@ DECLARE
   @unknown_key int = 0
 ;
 
-:r .\seed_FiscalPeriod.sql
+:r .\Seed.FiscalPeriod.sql
 
-:r .\seed_Holiday.sql
+:r .\Seed.Holiday.sql
