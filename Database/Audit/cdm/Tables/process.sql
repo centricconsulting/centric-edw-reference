@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [cdm].[process] (
     [process_uid]            VARCHAR (100) NOT NULL,
-    [completed_batch_key]    INT           NULL,
+    [completed_process_batch_key]    INT           NULL,
     [completed_sequence_key] BIGINT        NULL,
     [completed_sequence_dtm] DATETIME      NULL,
     [initiate_dtm]           DATETIME      NULL,

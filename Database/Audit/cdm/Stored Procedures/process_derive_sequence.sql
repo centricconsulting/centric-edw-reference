@@ -2,7 +2,7 @@
 
 /* ################################################################################
 
-OBJECT: cdm.derive_sequence
+OBJECT: cdm.process_derive_sequence
 
 DESCRIPTION: Given a Data Management Process UID this procedure determines the 
   next Start and End Sequence Keys (or Datetimes) needed to bound incremental
@@ -26,10 +26,10 @@ PARAMETERS:
   
 OUTPUT PARAMETERS:
 
-  @prior_batch_key INT OUTPUT
-  @limit_batch_key INT OUTPUT
-  @start_sequence_key BIGINT OUTPUT
-  @start_sequence_dtm DATETIME OUTPUT
+  @prior_process_batch_key INT OUTPUT
+  @limit_process_batch_key INT OUTPUT
+  @begin_sequence_key BIGINT OUTPUT
+  @begin_sequence_dtm DATETIME OUTPUT
   @end_sequence_key BIGINT OUTPUT
   @end_sequence_dtm DATETIME OUTPUT
   
@@ -45,7 +45,7 @@ HISTORY:
 
 ################################################################################ */
 
-CREATE PROCEDURE [cdm].[derive_sequence] 
+CREATE PROCEDURE [cdm].[process_derive_sequence] 
 
   @process_uid VARCHAR(100)
 , @limit_process_uid VARCHAR(100) = NULL
@@ -54,10 +54,10 @@ CREATE PROCEDURE [cdm].[derive_sequence]
 , @current_sequence_dtm DATETIME = NULL
 
   -- output variables
-, @prior_batch_key INT OUTPUT
-, @limit_batch_key INT OUTPUT
-, @start_sequence_key BIGINT OUTPUT
-, @start_sequence_dtm DATETIME OUTPUT
+, @prior_process_batch_key INT OUTPUT
+, @limit_process_batch_key INT OUTPUT
+, @begin_sequence_key BIGINT OUTPUT
+, @begin_sequence_dtm DATETIME OUTPUT
 , @end_sequence_key BIGINT OUTPUT
 , @end_sequence_dtm DATETIME OUTPUT
   
@@ -75,12 +75,12 @@ BEGIN
   -- exist in the master table
   /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
     
-  EXEC cdm.register
+  EXEC cdm.process_register
     @process_uid
     
   IF @limit_process_uid IS NOT NULL
   BEGIN  
-    EXEC cdm.register
+    EXEC cdm.process_register
       @limit_process_uid
   END
   
@@ -90,9 +90,9 @@ BEGIN
   /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */  
   
   SELECT
-    @prior_batch_key = cdm.completed_batch_key
-  , @start_sequence_key = cdm.completed_sequence_key
-  , @start_sequence_dtm = cdm.completed_sequence_dtm
+    @prior_process_batch_key = cdm.completed_process_batch_key
+  , @begin_sequence_key = cdm.completed_sequence_key
+  , @begin_sequence_dtm = cdm.completed_sequence_dtm
   FROM
   cdm.process cdm
   WHERE
@@ -106,7 +106,7 @@ BEGIN
   
   IF @increment_sequence_ind = 1
   BEGIN
-   SET @start_sequence_key = @start_sequence_key + 1;
+   SET @begin_sequence_key = @begin_sequence_key + 1;
   END
      
 
@@ -116,14 +116,14 @@ BEGIN
   -- current sequence value must be non-null
   /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
   
-  IF @start_sequence_key IS NULL AND @current_sequence_key IS NOT NULL
+  IF @begin_sequence_key IS NULL AND @current_sequence_key IS NOT NULL
   BEGIN
-    SET @start_sequence_key = @default_sequence_key;
+    SET @begin_sequence_key = @default_sequence_key;
   END;
   
-  IF @start_sequence_dtm IS NULL AND @current_sequence_dtm IS NOT NULL
+  IF @begin_sequence_dtm IS NULL AND @current_sequence_dtm IS NOT NULL
   BEGIN
-    SET @start_sequence_dtm = @default_sequence_dtm;
+    SET @begin_sequence_dtm = @default_sequence_dtm;
   END;
 
 
@@ -135,7 +135,7 @@ BEGIN
 
     -- inherit the limit from a prior completed process
     SELECT
-      @limit_batch_key = cdm.completed_batch_key
+      @limit_process_batch_key = cdm.completed_process_batch_key
     , @end_sequence_key = cdm.completed_sequence_key
     , @end_sequence_dtm = cdm.completed_sequence_dtm
     FROM

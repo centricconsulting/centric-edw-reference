@@ -101,14 +101,14 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="cdm\Tables\process.sql" />
-    <Build Include="cdm\Tables\batch.sql" />
-    <Build Include="cdm\Tables\batch_error.sql" />
-    <Build Include="cdm\Stored Procedures\register.sql" />
-    <Build Include="cdm\Stored Procedures\derive_sequence.sql" />
-    <Build Include="cdm\Stored Procedures\batch_initiate.sql" />
-    <Build Include="cdm\Stored Procedures\batch_initiate_internal.sql" />
-    <Build Include="cdm\Stored Procedures\batch_conclude.sql" />
-    <Build Include="cdm\Stored Procedures\batch_error_log.sql" />
+    <Build Include="cdm\Tables\process_batch.sql" />
+    <Build Include="cdm\Tables\process_batch_error.sql" />
+    <Build Include="cdm\Stored Procedures\process_register.sql" />
+    <Build Include="cdm\Stored Procedures\process_derive_sequence.sql" />
+    <Build Include="cdm\Stored Procedures\process_batch_initiate.sql" />
+    <Build Include="cdm\Stored Procedures\process_batch_initiate_internal.sql" />
+    <Build Include="cdm\Stored Procedures\process_batch_conclude.sql" />
+    <Build Include="cdm\Stored Procedures\process_batch_error_log.sql" />
     <Build Include="Security\cdm.sql" />
     <Build Include="cdm\Sequences\batch_provider.sql" />
   </ItemGroup>

@@ -2,13 +2,13 @@
 
 /* ################################################################################
 
-OBJECT: cdm.batch_conclude
+OBJECT: cdm.process_batch_conclude
 
 DESCRIPTION: Given a Process Batch Key, conclude the batch indicating failure or success.
 
 PARAMETERS:
 
-  @batch_key INT = Key identifying the new process batch.
+  @process_batch_key INT = Key identifying the new process batch.
 
   @completed_ind BIT = Indicates whether the process completed successfully. 0=Failed, 1=Successful.
  
@@ -44,8 +44,8 @@ HISTORY:
 
 ################################################################################ */
 
-CREATE PROCEDURE [cdm].[batch_conclude]
-  @batch_key INTEGER
+CREATE PROCEDURE [cdm].[process_batch_conclude]
+  @process_batch_key INTEGER
 , @completed_ind BIT = 0
 , @source_record_ct INTEGER = NULL
 , @inserted_record_ct INTEGER = NULL
@@ -84,7 +84,7 @@ BEGIN
   -- update the process batch record
   /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
-  UPDATE cdm.batch SET
+  UPDATE cdm.process_batch SET
     status = @status
   , completed_ind = @completed_ind
   , source_record_ct = @source_record_ct
@@ -98,7 +98,7 @@ BEGIN
   , exception_record_ct = @exception_record_ct
   , conclude_dtm = CURRENT_TIMESTAMP
   WHERE
-  batch_key = @batch_key;
+  process_batch_key = @process_batch_key;
   
   -- if the batch completed successfull, update the process control
   /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */    
@@ -109,16 +109,16 @@ BEGIN
       
     -- the completed sequences is taken from the limit of the corressponding process
     UPDATE cdm SET
-      completed_batch_key = @batch_key
+      completed_process_batch_key = @process_batch_key
     , completed_sequence_key = cdmb.end_sequence_key
     , completed_sequence_dtm = cdmb.end_sequence_dtm
     , initiate_dtm = cdmb.initiate_dtm
     , conclude_dtm = cdmb.conclude_dtm
     FROM
     cdm.process cdm
-    INNER JOIN cdm.batch cdmb ON cdmb.process_uid = cdm.process_uid
+    INNER JOIN cdm.process_batch cdmb ON cdmb.process_uid = cdm.process_uid
     WHERE
-    cdmb.batch_key = @batch_key
+    cdmb.process_batch_key = @process_batch_key
             
   END;
 

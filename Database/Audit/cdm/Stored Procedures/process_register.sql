@@ -2,7 +2,7 @@
 
 /* ################################################################################
 
-OBJECT: cdm.register
+OBJECT: cdm.process_register
 
 DESCRIPTION: Creates Data Management Process UID if it does not already exist in the cdmROC table.
 
@@ -22,7 +22,7 @@ HISTORY:
 
 ################################################################################ */
 
-CREATE procedure [cdm].[register]
+CREATE procedure [cdm].[process_register]
   @process_uid VARCHAR(100)
 AS
 BEGIN

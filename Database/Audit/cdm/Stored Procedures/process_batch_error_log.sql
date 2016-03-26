@@ -1,13 +1,13 @@
 ﻿
 /* ################################################################################
 
-OBJECT: cdm.batch_error_log
+OBJECT: cdm.process_batch_error_log
 
 DESCRIPTION: Logs an error associated with a Process Batch Key.
 
 PARAMETERS:
 
-  @batch_key INT = Key identifying the new process batch.
+  @process_batch_key INT = Key identifying the new process batch.
 
   @error_scope VARCHAR(200) = Scope of executing code where the error was raised.
 
@@ -32,8 +32,8 @@ HISTORY:
 
 ################################################################################ */
 
-CREATE PROCEDURE cdm.batch_error_log
-  @batch_key INT
+CREATE PROCEDURE cdm.process_batch_error_log
+  @process_batch_key INT
 , @error_scope VARCHAR(200)
 , @error_type_cd CHAR(1)
 , @error_number INTEGER
@@ -43,14 +43,14 @@ BEGIN
 
   BEGIN TRANSACTION;
   
-  INSERT INTO batch_error (
-    batch_key
+  INSERT INTO cdm.process_batch_error (
+    process_batch_key
   , error_scope
   , error_type_cd
   , error_number
   , error_message
   ) values (
-    @batch_key
+    @process_batch_key
   , @error_scope
   , @error_type_cd
   , @error_number

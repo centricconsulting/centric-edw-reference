@@ -1,7 +1,7 @@
 ﻿
 /* ################################################################################
 
-OBJECT: cdm.batch_initiate
+OBJECT: cdm.process_batch_initiate
 
 DESCRIPTION: Given a Data Management Process UID this procedure initiates a new process batch.
 
@@ -37,18 +37,18 @@ OUTPUT PARAMETERS: None.
   
 RETURN VALUE:
 
-  batch_key INT = Key identifying the new process batch.
+  process_batch_key INT = Key identifying the new process batch.
 
 RETURN DATASET:
 
   NOTE: Only a single record will be returned.
 
-  batch_key INT = Key identifying the new process batch.
+  process_batch_key INT = Key identifying the new process batch.
   initiate_dtm DATETIME = Datetime the process batch was initiated.
   initiate_dtm_text CHAR(23) = Text representation of the Initiated Datetime, having the format CONVERT(char(23),<<datetime>>,121)
-  start_sequence_key BIGINT = Integer value representing the start of the range to be considered in processing the batch.
-  start_sequence_dtm DATETIME = Datetime value representing the start of the range to be considered in processing the batch.
-  start_sequence_dtm_text CHAR(23) = Text representation of the Start Sequence Datetime, having the format CONVERT(char(23),<<datetime>>,121)
+  begin_sequence_key BIGINT = Integer value representing the start of the range to be considered in processing the batch.
+  begin_sequence_dtm DATETIME = Datetime value representing the start of the range to be considered in processing the batch.
+  begin_sequence_dtm_text CHAR(23) = Text representation of the Start Sequence Datetime, having the format CONVERT(char(23),<<datetime>>,121)
   end_sequence_key BIGINT = Integer value representing the end of the range to be considered in processing the batch.
   end_sequence_dtm DATETIME = Datetime value representing the end of the range to be considered in processing the batch.
   end_sequence_dtm_text CHAR(23) = Text representation of the End Sequence Datetime, having the format CONVERT(char(23),<<datetime>>,121)
@@ -61,7 +61,7 @@ HISTORY:
 
 ################################################################################ */
 
-CREATE PROCEDURE cdm.batch_initiate 
+CREATE PROCEDURE cdm.process_batch_initiate 
   @process_uid VARCHAR(100)
 , @workflow_name VARCHAR(200)    
 , @workflow_guid VARCHAR(100)
@@ -79,12 +79,12 @@ BEGIN
   SET NOCOUNT ON -- added to ensure correct performance of SCOPE_IDENTITY
 
   DECLARE
-    @batch_key INT
+    @process_batch_key INT
   , @initiate_dtm DATETIME
-  , @prior_batch_key INT
-  , @limit_batch_key INT
-  , @start_sequence_key BIGINT
-  , @start_sequence_dtm DATETIME
+  , @prior_process_batch_key INT
+  , @limit_process_batch_key INT
+  , @begin_sequence_key BIGINT
+  , @begin_sequence_dtm DATETIME
   , @end_sequence_key BIGINT
   , @end_sequence_dtm DATETIME  
 
@@ -94,31 +94,31 @@ BEGIN
 
   -- generate a new batch key from the sequence
   /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-  SET @batch_key = NEXT VALUE FOR batch_provider
+  SET @process_batch_key = NEXT VALUE FOR batch_provider
 
-  -- override the current sequence key and dtm with the current_batch_key, initiate_dtm
+  -- override the current sequence key and dtm with the current_process_batch_key, initiate_dtm
   -- if internal sequences are active otherwise use current parameters
   /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
   
   IF @internal_sequence_ind = 1
   BEGIN
-    SET @current_sequence_key = @batch_key;
+    SET @current_sequence_key = @process_batch_key;
     SET @current_sequence_dtm = @initiate_dtm;
   END;
       
   
   -- determine start and end sequence values
   /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */    
-  EXEC cdm.derive_sequence 
+  EXEC cdm.process_derive_sequence 
     @process_uid
   , @limit_process_uid
   , @increment_sequence_ind
   , @current_sequence_key
   , @current_sequence_dtm
-  , @prior_batch_key output
-  , @limit_batch_key output
-  , @start_sequence_key output
-  , @start_sequence_dtm output
+  , @prior_process_batch_key output
+  , @limit_process_batch_key output
+  , @begin_sequence_key output
+  , @begin_sequence_dtm output
   , @end_sequence_key output
   , @end_sequence_dtm output
   
@@ -128,8 +128,8 @@ BEGIN
   
   BEGIN TRANSACTION;
     
-  INSERT INTO cdm.batch (
-    batch_key
+  INSERT INTO cdm.process_batch (
+    process_batch_key
   , process_uid
   , status
   , channel
@@ -137,11 +137,11 @@ BEGIN
   , initiate_dtm
   , current_sequence_key
   , current_sequence_dtm
-  , prior_batch_key
-  , start_sequence_key
-  , start_sequence_dtm
+  , prior_process_batch_key
+  , begin_sequence_key
+  , begin_sequence_dtm
   , limit_process_uid
-  , limit_batch_key
+  , limit_process_batch_key
   , end_sequence_key
   , end_sequence_dtm
   , workflow_name
@@ -149,7 +149,7 @@ BEGIN
   , workflow_version
   , comments
   ) values (
-    @batch_key
+    @process_batch_key
   , @process_uid
   , 'Started' -- status
   , @channel
@@ -157,11 +157,11 @@ BEGIN
   , @initiate_dtm
   , @current_sequence_key
   , @current_sequence_dtm
-  , @prior_batch_key
-  , @start_sequence_key
-  , @start_sequence_dtm
+  , @prior_process_batch_key
+  , @begin_sequence_key
+  , @begin_sequence_dtm
   , @limit_process_uid
-  , @limit_batch_key
+  , @limit_process_batch_key
   , @end_sequence_key
   , @end_sequence_dtm
   , @workflow_name
@@ -173,16 +173,16 @@ BEGIN
   COMMIT TRANSACTION;
   
   SELECT
-    @batch_key as batch_key
+    @process_batch_key as process_batch_key
   , @initiate_dtm as initiate_dtm
   , CONVERT(char(23),@initiate_dtm,121) as initiate_dtm_text
-  , @start_sequence_key as start_sequence_key
-  , @start_sequence_dtm as start_sequence_dtm
-  , CONVERT(char(23),@start_sequence_dtm,121) as start_sequence_dtm_text
+  , @begin_sequence_key as begin_sequence_key
+  , @begin_sequence_dtm as begin_sequence_dtm
+  , CONVERT(char(23),@begin_sequence_dtm,121) as begin_sequence_dtm_text
   , @end_sequence_key as end_sequence_key
   , @end_sequence_dtm as end_sequence_dtm
   , CONVERT(char(23),@end_sequence_dtm,121) as end_sequence_dtm_text
 
-  RETURN @batch_key;
+  RETURN @process_batch_key;
   
 END;

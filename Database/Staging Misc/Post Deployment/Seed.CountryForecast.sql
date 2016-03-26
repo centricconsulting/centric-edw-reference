@@ -28,6 +28,7 @@ SELECT
 , 'USD' AS ForecastCurrencyCode
 , ROUND(
     SUM(UnitPrice * OrderQty) 
+    -- use modulus as a method of randomizing
     + ((CAST(SUM(UnitPrice * OrderQty) AS INT) % 30) - 16) / 100.0 * SUM(UnitPrice * OrderQty)
   , -3) AS ForecastSales
 

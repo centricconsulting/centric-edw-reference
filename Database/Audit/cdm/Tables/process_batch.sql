@@ -1,5 +1,5 @@
-﻿CREATE TABLE [cdm].[batch] (
-    [batch_key]                   INT           NOT NULL,
+﻿CREATE TABLE [cdm].[process_batch] (
+    [process_batch_key]                   INT           NOT NULL,
     [process_uid]                 VARCHAR (100)  NOT NULL,
     [status]                      VARCHAR (100)  NULL,
     [channel]                     VARCHAR(200) NULL,
@@ -18,17 +18,17 @@
     [exception_record_ct]         INT           NULL,
     [current_sequence_key]        BIGINT        NULL,
     [current_sequence_dtm]        DATETIME      NULL,
-    [prior_batch_key]             INT           NULL,
-    [start_sequence_key]          BIGINT        NULL,
-    [start_sequence_dtm]          DATETIME      NULL,
+    [prior_process_batch_key]             INT           NULL,
+    [begin_sequence_key]          BIGINT        NULL,
+    [begin_sequence_dtm]          DATETIME      NULL,
     [limit_process_uid]           VARCHAR (50)  NULL,
-    [limit_batch_key]             INT           NULL,
+    [limit_process_batch_key]             INT           NULL,
     [end_sequence_key]            BIGINT        NULL,
     [end_sequence_dtm]            DATETIME      NULL,
     [workflow_name]               VARCHAR (200) NULL,
     [workflow_guid]               VARCHAR (100) NULL,
     [workflow_version]            VARCHAR (200) NULL,
     [comments]                    VARCHAR (200) NULL,
-    CONSTRAINT [batch_pk] PRIMARY KEY CLUSTERED ([batch_key] ASC)
+    CONSTRAINT [batch_pk] PRIMARY KEY CLUSTERED ([process_batch_key] ASC)
 );
 

@@ -1,5 +1,5 @@
-﻿CREATE TABLE [cdm].[batch_error] (
-    [batch_key]     INT            NOT NULL,
+﻿CREATE TABLE [cdm].[process_batch_error] (
+    [process_batch_key]     INT            NOT NULL,
     [error_type_cd] CHAR (1)       NULL,
     [error_scope]   VARCHAR (200)  NULL,
     [error_number]  INT            NULL,
