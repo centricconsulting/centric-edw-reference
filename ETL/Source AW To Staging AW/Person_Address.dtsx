@@ -6,21 +6,39 @@
   DTS:CreatorComputerName="Centric Consulting"
   DTS:CreatorName="Centric Consulting"
   DTS:DelayValidation="True"
-  DTS:DTSID="{9E31CD9E-2527-4BB2-A9EF-67F6692B6213}"
+  DTS:DTSID="{232B329B-6D38-4AFB-923F-17B8CF804D11}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="12.0.2430.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="CONTROLLER_MASTER"
+  DTS:ObjectName="Person_Address"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="221"
-  DTS:VersionGUID="{AFB50A3A-AE67-4623-9015-4401EAA299CA}"
+  DTS:VersionBuild="208"
+  DTS:VersionGUID="{FCCAACDF-7425-4492-8CCA-D48C32C7EE03}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8EF554B7-6694-407D-A483-DB36BB1A4587}"
+      DTS:DTSID="{3FA96B6A-D309-4E22-AABA-8AEA958EC59A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="begin_sequence_dtm">
+      <DTS:VariableValue
+        DTS:DataType="7">12:00:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{64EF3A66-652B-4A01-99CE-C36572483394}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="begin_sequence_key">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1A27F7E3-7F64-464E-992E-E560A882C757}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="completed_ind">
@@ -29,7 +47,52 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{3B93402D-4CD3-48B2-8972-B1B2A3ED75D4}"
+      DTS:DTSID="{5BE630D8-BDE9-45C6-AA1E-698417AA1152}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="deleted_record_ct">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9F77AB02-1B6C-4497-B2A5-D3E6F0DAC2AD}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="end_sequence_dtm">
+      <DTS:VariableValue
+        DTS:DataType="7">12:00:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{455E2085-D205-473C-8371-F6212754900F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="end_sequence_key">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{17FEAA2F-FF13-4090-B936-856E654FB069}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="initiate_dtm_text">
+      <DTS:VariableValue
+        DTS:DataType="8">"1900-01-01"</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{36EBD89E-68D1-4B78-BB05-440FC9623E37}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="inserted_record_count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{03223055-4A3F-4B36-938C-1212B70CD1FD}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="package_error_flag">
@@ -38,18 +101,18 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A99F2EC4-E6F4-4746-9A59-0878C9397A5E}"
+      DTS:DTSID="{7098EB3E-F8D1-4B65-AD52-B9500797D738}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="(DT_STR, 8, 1252) @[System::VersionMajor] + &quot;.&quot; + (DT_STR, 8, 1252) @[System::VersionMinor] + &quot;.&quot; + (DT_STR, 8, 1252) @[System::VersionBuild]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">0.0.221</DTS:VariableValue>
+        DTS:DataType="8">0.0.208</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5EDD32C4-1143-41A3-858A-5C309F2690C5}"
+      DTS:DTSID="{9C07FF1B-5FA7-41CE-91DA-0715B0B1ECA8}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="process_batch_key">
@@ -58,431 +121,812 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{AF687A83-EB02-4D6B-9974-4DEED4211878}"
+      DTS:DTSID="{63DD574B-0BB0-4495-A168-7C1FCC280B8F}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[$Project::ProjectName]  + &quot;::&quot; +   @[System::PackageName]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="process_uid">
       <DTS:VariableValue
-        DTS:DataType="8">Source AW To Staging AW::CONTROLLER_MASTER</DTS:VariableValue>
+        DTS:DataType="8">Source AW To Staging AW::Person_Address</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C5A16CC8-6A03-40C4-BA4A-EE5A14550421}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="source_record_count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5BE858A7-1F85-4310-9B1F-EE9B371FC4AF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="unprocessed_record_count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{84760700-53C4-47C5-BF9A-8C960C8F68B0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="updated_record_count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Execute Person_Address"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{10c709e6-7c37-4bf0-88a4-ff424feb5803}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:refId="Package\Insert Source Records"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D7AD10E4-5156-41A0-B1FF-737A2BAE3839}"
+      DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Person_Address"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      DTS:ObjectName="Insert Source Records"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Person_Address.dtsx</PackageName>
-        </ExecutePackageTask>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Insert Source Records\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Insert Source Records\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert Source Records\Data Conversion.Inputs[Data Conversion Input].Columns[GUID.rowguid]"
+                      cachedDataType="guid"
+                      cachedName="GUID.rowguid"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[GUID.rowguid]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Insert Source Records\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Output].Columns[rowguid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Output].Columns[rowguid]"
+                      name="rowguid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[GUID.rowguid]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Insert Source Records\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert Source Records\Inject Variables"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Inject Variables"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Insert Source Records\Inject Variables.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Insert Source Records\Inject Variables.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Output].Columns[process_batch_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Output].Columns[process_batch_key]"
+                      name="process_batch_key"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::process_batch_key]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::process_batch_key]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Insert Source Records\Inject Variables.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert Source Records\Inserted Record Counter"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Inserted Record Counter">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::inserted_record_count</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Insert Source Records\Inserted Record Counter.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Source Records\Inserted Record Counter.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Insert Source Records\Inserted Record Counter.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert Source Records\Source Query"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source Query"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Person].[Address]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+  s.CurrencyCode
+, s.[Name] AS UnicodeName
+, s.ModifiedDate
+FROM
+Sales.Currency s</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert Source Records\Source Query.Connections[OleDbConnection]"
+                  connectionManagerID="{05F80DCE-F01C-4D58-A24D-269CD8645A7E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Source AW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      name="ModifiedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[AddressID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[AddressID]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[AddressID]"
+                      name="AddressID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[AddressLine1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[AddressLine1]"
+                      length="60"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[AddressLine1]"
+                      name="AddressLine1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[AddressLine2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[AddressLine2]"
+                      length="60"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[AddressLine2]"
+                      name="AddressLine2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      length="30"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[StateProvinceID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[StateProvinceID]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[StateProvinceID]"
+                      name="StateProvinceID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[PostalCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[PostalCode]"
+                      length="15"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[PostalCode]"
+                      name="PostalCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[SpatialLocation]"
+                      dataType="image"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[SpatialLocation]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[SpatialLocation]"
+                      name="SpatialLocation"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[GUID.rowguid]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[GUID.rowguid]"
+                      name="GUID.rowguid"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[AddressID]"
+                      dataType="i4"
+                      name="AddressID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[AddressLine1]"
+                      dataType="wstr"
+                      length="60"
+                      name="AddressLine1" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[AddressLine2]"
+                      dataType="wstr"
+                      length="60"
+                      name="AddressLine2" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="30"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[StateProvinceID]"
+                      dataType="i4"
+                      name="StateProvinceID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[PostalCode]"
+                      dataType="wstr"
+                      length="15"
+                      name="PostalCode" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[SpatialLocation]"
+                      dataType="image"
+                      name="SpatialLocation" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
+                      dataType="guid"
+                      name="rowguid" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[AddressID]"
+                      dataType="i4"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[AddressID]"
+                      name="AddressID" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[AddressLine1]"
+                      dataType="wstr"
+                      length="60"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[AddressLine1]"
+                      name="AddressLine1" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[AddressLine2]"
+                      dataType="wstr"
+                      length="60"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[AddressLine2]"
+                      name="AddressLine2" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[City]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[StateProvinceID]"
+                      dataType="i4"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[StateProvinceID]"
+                      name="StateProvinceID" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[PostalCode]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[PostalCode]"
+                      name="PostalCode" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[SpatialLocation]"
+                      dataType="image"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[SpatialLocation]"
+                      name="SpatialLocation" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[rowguid]"
+                      dataType="guid"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[rowguid]"
+                      name="rowguid" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      name="ModifiedDate" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert Source Records\Source Record Counter"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Source Record Counter">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::source_record_count</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Insert Source Records\Source Record Counter.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Source Records\Source Record Counter.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Insert Source Records\Source Record Counter.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert Source Records\Target Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Target Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Person].[Address]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 10000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert Source Records\Target Table.Connections[OleDbConnection]"
+                  connectionManagerID="{640E18A5-95A3-4651-B9DD-FF37D7B7A46D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Staging AW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].Columns[ModifiedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ModifiedDate"
+                      externalMetadataColumnId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[ModifiedDate]" />
+                    <inputColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].Columns[process_batch_key]"
+                      cachedDataType="i4"
+                      cachedName="process_batch_key"
+                      externalMetadataColumnId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[process_batch_key]"
+                      lineageId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Output].Columns[process_batch_key]" />
+                    <inputColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].Columns[AddressID]"
+                      cachedDataType="i4"
+                      cachedName="AddressID"
+                      externalMetadataColumnId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[AddressID]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[AddressID]" />
+                    <inputColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].Columns[AddressLine1]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="AddressLine1"
+                      externalMetadataColumnId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[AddressLine1]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[AddressLine1]" />
+                    <inputColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].Columns[AddressLine2]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="AddressLine2"
+                      externalMetadataColumnId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[AddressLine2]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[AddressLine2]" />
+                    <inputColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].Columns[StateProvinceID]"
+                      cachedDataType="i4"
+                      cachedName="StateProvinceID"
+                      externalMetadataColumnId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[StateProvinceID]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[StateProvinceID]" />
+                    <inputColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].Columns[PostalCode]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="PostalCode"
+                      externalMetadataColumnId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[PostalCode]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[PostalCode]" />
+                    <inputColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].Columns[SpatialLocation]"
+                      cachedDataType="image"
+                      cachedName="SpatialLocation"
+                      externalMetadataColumnId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[SpatialLocation]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[SpatialLocation]" />
+                    <inputColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].Columns[rowguid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="rowguid"
+                      externalMetadataColumnId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[rowguid]"
+                      lineageId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Output].Columns[rowguid]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[process_batch_key]"
+                      dataType="i4"
+                      name="process_batch_key" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[AddressID]"
+                      dataType="i4"
+                      name="AddressID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[AddressLine1]"
+                      dataType="wstr"
+                      length="60"
+                      name="AddressLine1" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[AddressLine2]"
+                      dataType="wstr"
+                      length="60"
+                      name="AddressLine2" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="30"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[StateProvinceID]"
+                      dataType="i4"
+                      name="StateProvinceID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[PostalCode]"
+                      dataType="wstr"
+                      length="15"
+                      name="PostalCode" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[SpatialLocation]"
+                      dataType="image"
+                      name="SpatialLocation" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[rowguid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="rowguid" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Source Records\Target Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Source Records\Target Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Source Records\Target Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Target Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Source Records\Target Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insert Source Records.Paths[Data Conversion Output]"
+              endId="Package\Insert Source Records\Inject Variables.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Insert Source Records.Paths[Derived Column Output]"
+              endId="Package\Insert Source Records\Inserted Record Counter.Inputs[Row Count Input 1]"
+              name="Derived Column Output"
+              startId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Insert Source Records.Paths[OLE DB Source Output]"
+              endId="Package\Insert Source Records\Source Record Counter.Inputs[Row Count Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Insert Source Records.Paths[Row Count Output 1]"
+              endId="Package\Insert Source Records\Data Conversion.Inputs[Data Conversion Input]"
+              name="Row Count Output 1"
+              startId="Package\Insert Source Records\Source Record Counter.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Insert Source Records.Paths[Row Count Output 11]"
+              endId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\Insert Source Records\Inserted Record Counter.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Execute Person_AddressType"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{f506a38f-8ee7-4d44-bc14-d8a8e31ccd28}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:refId="Package\Truncate Target Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B528A149-8F4E-4E74-A87B-7EBD8CA3D9C9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Person_AddressType"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      DTS:ObjectName="Truncate Target Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Person_AddressType.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Person_BusinessEntity"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{30e679ce-6183-4e3e-ad23-6d04ebf8acbd}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Person_BusinessEntity"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Person.BusinessEntity.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Person_BusinessEntityAddress"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{18523251-5d9d-41d7-bd1f-07ae460a4350}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Person_BusinessEntityAddress"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Person_BusinessEntityAddress.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Person_BusinessEntityContact"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{03a3a9a3-39ca-4f12-b476-8418f888449c}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Person_BusinessEntityContact"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Person_BusinessEntityContact.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Person_ContactType"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{de36ae68-652d-4f2f-921c-3da5d1b75db6}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Person_ContactType"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Person_ContactType.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Person_CountryRegion"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{ebb357ab-3a4e-4fbd-af00-1c3bc793bcd1}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Person_CountryRegion"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Person_CountryRegion.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Person_EmailAddress"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{2b17db6f-9c45-426d-adab-787bd8085ca7}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Person_EmailAddress"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Person_EmailAddress.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Person_Person"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{38d7b9de-009b-4c30-9c81-9bbe9063fcd4}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Person_Person"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Person_Person.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Person_PersonPhone"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{3bb95f7e-3d2d-47b4-8aa9-d2dbeb3b3770}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Person_PersonPhone"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Person_PersonPhone.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Person_PhoneNumberType"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{378d78ca-31f6-4e78-8e3d-175162bc9f26}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Person_PhoneNumberType"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Person_PhoneNumberType.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Person_StateProvince"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{42b0d84e-9417-49f3-a786-c2853dd014c5}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Person_StateProvince"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Person_StateProvince.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Production_Product"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{c441aa5c-aa0b-4039-8c52-1d37419f7b06}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Production_Product"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Production_Product.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Production_ProductCategory"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{a252583e-6903-4b46-8ca9-6b8fd437854f}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Production_ProductCategory"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Production_ProductCategory.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Production_ProductSubCategory"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{1f804311-c605-47a3-ac9b-cf91fa784d81}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Production_ProductSubCategory"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Production_ProductSubcategory.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Purchasing_ProductVendor"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{f7bfed4d-e135-4b1a-9884-6f14c9294221}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Purchasing_ProductVendor"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Purchasing_ProductVendor.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Purchasing_PurchaseOrderDetail"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{cf672e74-3390-4a9d-8181-1f747b3492c5}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Purchasing_PurchaseOrderDetail"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Purchasing_PurchaseOrderDetail.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Purchasing_PurchaseOrderHeader"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{0ba6963f-944e-42d9-bd7e-a510b3959825}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Purchasing_PurchaseOrderHeader"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Purchasing_PurchaseOrderHeader.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Purchasing_Vendor"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{705b5ec7-aa49-4b57-9eb3-f335074b5952}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Purchasing_Vendor"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Purchasing_Vendor.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Sales_Currency"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{624b7e48-6022-4a41-ae83-a69093ae7441}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Sales_Currency"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Sales_Currency.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Sales_Customer"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{7659B411-9F4D-4F86-8D42-FD8045920816}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Sales_Customer"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Sales_Customer.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Sales_SalesOrderDetail"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{c51eb7b2-74e2-489b-9002-e27ee6ab6f77}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Sales_SalesOrderDetail"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Sales_SalesOrderDetail.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Sales_SalesOrderHeader"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{eef5ff47-cde8-4e34-b506-b937589a6482}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Sales_SalesOrderHeader"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Sales_SalesOrderHeader.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Sales_Store"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{8e29abbc-eae1-45b2-b084-0fbbc4a3f029}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Sales_Store"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Sales_Store.dtsx</PackageName>
-        </ExecutePackageTask>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{640E18A5-95A3-4651-B9DD-FF37D7B7A46D}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE Person.Address" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{0D748D4F-90E5-4CD9-80BA-468BD54A6891}"
+      DTS:From="Package\Truncate Target Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Insert Source Records" />
+  </DTS:PrecedenceConstraints>
   <DTS:EventHandlers>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{DBDA12E0-3A07-4B2A-BA3C-63C82248C9AA}"
+      DTS:DTSID="{88B83216-7534-4C7E-96DD-826326A78057}"
       DTS:EventID="0"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -490,7 +934,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{1CF736A0-48A6-489C-8287-FFB73093C0EA}"
+          DTS:DTSID="{EC7307A2-861A-4BD5-95E4-768C76ED1D0C}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -502,7 +946,7 @@
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\Log Process Batch Error"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:DTSID="{33BB8FA8-338B-41F2-9DEB-91EFD7EA1D79}"
+          DTS:DTSID="{8495BE6F-6C67-4E29-A41A-7A9D4078A88A}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Process Batch Error"
@@ -542,7 +986,7 @@
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\Turn On Package Error Flag"
           DTS:CreationName="Microsoft.ExpressionTask"
-          DTS:DTSID="{6907ED20-8BB3-4BD6-AC1F-DF7E53BE5E78}"
+          DTS:DTSID="{C864B02A-0E90-412F-A999-2F0782773C55}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Turn On Package Error Flag"
@@ -558,7 +1002,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnPostExecute]"
       DTS:CreationName="OnPostExecute"
-      DTS:DTSID="{54864B2B-24CC-414C-B902-C6F00DEC7A8B}"
+      DTS:DTSID="{652EFA84-93DF-4C30-98E7-7144A94264EC}"
       DTS:EventID="0"
       DTS:EventName="OnPostExecute"
       DTS:LocaleID="-1">
@@ -566,7 +1010,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{4197C5E4-F879-4FA3-96AB-2534542F4045}"
+          DTS:DTSID="{11C5553F-B732-4238-8624-F68A91625EF4}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -578,7 +1022,7 @@
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
           DTS:CreationName="Microsoft.ExpressionTask"
-          DTS:DTSID="{D69A02B5-F562-4234-BF22-367080005C16}"
+          DTS:DTSID="{25955F45-CC75-4324-B002-9BF7B2B22B0A}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Assign Completed Indicator"
@@ -592,7 +1036,7 @@
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPostExecute]\Conclude Process Batch"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:DTSID="{49D7D734-4A7D-4C89-B754-C550B1885BC6}"
+          DTS:DTSID="{82401805-9300-4DA2-8C70-9874885CB1BC}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Conclude Process Batch"
@@ -601,7 +1045,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{880E6E59-FE7C-4FA9-8AF4-64008569D203}"
-              SQLTask:SqlStatementSource="EXEC cdm.process_batch_conclude&#xA;        @completed_ind = ?&#xA;      , @process_batch_key = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="EXEC cdm.process_batch_conclude&#xA;        @completed_ind = ?&#xA;      , @process_batch_key = ?&#xA;      , @source_record_ct = ?&#xA;      , @inserted_record_ct = ?&#xA;      , @unprocessed_record_ct = ?&#xA;      , @deleted_record_ct = ?&#xA;      , @updated_record_ct = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::completed_ind"
@@ -614,13 +1058,43 @@
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="3"
                 SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::source_record_count"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::inserted_record_count"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::unprocessed_record_count"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::deleted_record_ct"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::updated_record_count"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPostExecute]\Entry Point"
           DTS:CreationName="Microsoft.ScriptTask"
-          DTS:DTSID="{B6B50938-44EF-40CF-95DF-F12D6EF84057}"
+          DTS:DTSID="{77A74333-7C99-45AE-B3E2-1E18253440B1}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Entry Point">
@@ -1161,7 +1635,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint_EXP - assign completed indicator_To_SQL - conclude process batch]"
           DTS:CreationName=""
-          DTS:DTSID="{C3287F6B-EAB4-4759-A738-396660B64EE8}"
+          DTS:DTSID="{8C96197E-D636-4D34-9708-D0B343F0A1DB}"
           DTS:From="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint_EXP - assign completed indicator_To_SQL - conclude process batch"
@@ -1169,7 +1643,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint_SCR - Branch Control Logic_To_EXP - assign completed indicator]"
           DTS:CreationName=""
-          DTS:DTSID="{1354C661-E5FE-4419-9F55-6B07E60C0818}"
+          DTS:DTSID="{BBC20B01-A99E-4578-AAB2-7CAACA87F8EE}"
           DTS:EvalOp="1"
           DTS:Expression="@[System::SourceID] ==  @[System::PackageID]"
           DTS:From="Package.EventHandlers[OnPostExecute]\Entry Point"
@@ -1182,7 +1656,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnPreExecute]"
       DTS:CreationName="OnPreExecute"
-      DTS:DTSID="{E5AEE869-A60A-4D28-A90E-7C956441ACB2}"
+      DTS:DTSID="{EEA0DDFC-B050-4FDC-9AA6-24363690CF0F}"
       DTS:EventID="0"
       DTS:EventName="OnPreExecute"
       DTS:LocaleID="-1">
@@ -1190,7 +1664,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{A8BD8B8A-C8B0-417F-B7A0-4FDDB9FBC6D6}"
+          DTS:DTSID="{ACEE1101-0222-44F0-B5BC-C1E2E1793C22}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -1202,7 +1676,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPreExecute]\Branch Control Logic"
           DTS:CreationName="Microsoft.ScriptTask"
-          DTS:DTSID="{97AFC335-39DE-4D6D-AE78-AEEDEE322846}"
+          DTS:DTSID="{CC328D93-E62C-4A6A-B6FB-4C9F604FF97D}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Branch Control Logic">
@@ -1741,7 +2215,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPreExecute]\Initiate Process Batch"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:DTSID="{D7640A22-D923-48FD-AC1B-79F16ED5FE2C}"
+          DTS:DTSID="{3DEA8A73-132B-44BE-879B-E949A88AD463}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Initiate Process Batch"
@@ -1755,6 +2229,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
               <SQLTask:ResultBinding
                 SQLTask:ResultName="process_batch_key"
                 SQLTask:DtsVariableName="User::process_batch_key" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="begin_sequence_key"
+                SQLTask:DtsVariableName="User::begin_sequence_key" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="end_sequence_key"
+                SQLTask:DtsVariableName="User::end_sequence_key" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="initiate_dtm_text"
+                SQLTask:DtsVariableName="User::initiate_dtm_text" />
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::process_uid"
@@ -1787,7 +2270,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package.EventHandlers[OnPreExecute].PrecedenceConstraints[Constraint_Branch Control Logic_To_SQL - initiate process batch]"
           DTS:CreationName=""
-          DTS:DTSID="{FF033DD5-F034-4B67-89D1-DBD0E9931C52}"
+          DTS:DTSID="{F68BAA16-6A6B-4551-A72E-426C49318CE5}"
           DTS:EvalOp="1"
           DTS:Expression="@[System::SourceID] ==  @[System::PackageID]"
           DTS:From="Package.EventHandlers[OnPreExecute]\Branch Control Logic"
@@ -1809,103 +2292,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="196,42"
-          Id="Package\Execute Person_Address"
-          TopLeft="528.714285714286,197.766233766234" />
+          Size="185,42"
+          Id="Package\Insert Source Records"
+          TopLeft="329,226" />
         <NodeLayout
-          Size="219,42"
-          Id="Package\Execute Person_AddressType"
-          TopLeft="528.714285714286,264.675324675325" />
-        <NodeLayout
-          Size="226,42"
-          Id="Package\Execute Person_BusinessEntity"
-          TopLeft="528.714285714286,130.857142857143" />
-        <NodeLayout
-          Size="263,42"
-          Id="Package\Execute Person_BusinessEntityAddress"
-          TopLeft="528.714285714286,331.584415584416" />
-        <NodeLayout
-          Size="262,42"
-          Id="Package\Execute Person_BusinessEntityContact"
-          TopLeft="528.714285714286,398.493506493507" />
-        <NodeLayout
-          Size="218,42"
-          Id="Package\Execute Person_ContactType"
-          TopLeft="528.714285714286,465.402597402598" />
-        <NodeLayout
-          Size="228,42"
-          Id="Package\Execute Person_CountryRegion"
-          TopLeft="528.714285714286,532.311688311689" />
-        <NodeLayout
-          Size="222,42"
-          Id="Package\Execute Person_EmailAddress"
-          TopLeft="528.714285714286,599.220779220779" />
-        <NodeLayout
-          Size="191,42"
-          Id="Package\Execute Person_Person"
-          TopLeft="528.714285714286,666.12987012987" />
-        <NodeLayout
-          Size="220,42"
-          Id="Package\Execute Person_PersonPhone"
-          TopLeft="528.714285714286,733.038961038961" />
-        <NodeLayout
-          Size="249,42"
-          Id="Package\Execute Person_PhoneNumberType"
-          TopLeft="528.714285714286,799.948051948052" />
-        <NodeLayout
-          Size="223,42"
-          Id="Package\Execute Person_StateProvince"
-          TopLeft="528.714285714286,866.857142857143" />
-        <NodeLayout
-          Size="213,42"
-          Id="Package\Execute Production_Product"
-          TopLeft="854.714285714286,133.857142857143" />
-        <NodeLayout
-          Size="255,42"
-          Id="Package\Execute Production_ProductCategory"
-          TopLeft="854.714285714286,201.357142857143" />
-        <NodeLayout
-          Size="273,42"
-          Id="Package\Execute Production_ProductSubCategory"
-          TopLeft="854.714285714286,268.857142857143" />
-        <NodeLayout
-          Size="248,42"
-          Id="Package\Execute Purchasing_ProductVendor"
-          TopLeft="1176.38095238095,136.190476190476" />
-        <NodeLayout
-          Size="274,42"
-          Id="Package\Execute Purchasing_PurchaseOrderDetail"
-          TopLeft="1176.38095238095,203.523809523809" />
-        <NodeLayout
-          Size="281,42"
-          Id="Package\Execute Purchasing_PurchaseOrderHeader"
-          TopLeft="1176.38095238095,270.857142857143" />
-        <NodeLayout
-          Size="212,42"
-          Id="Package\Execute Purchasing_Vendor"
-          TopLeft="1176.38095238095,338.190476190476" />
-        <NodeLayout
-          Size="193,42"
-          Id="Package\Execute Sales_Currency"
-          TopLeft="232.714285714286,266.357142857143" />
-        <NodeLayout
-          Size="196,42"
-          Id="Package\Execute Sales_Customer"
-          TopLeft="232.714285714286,199.107142857143" />
-        <NodeLayout
-          Size="229,42"
-          Id="Package\Execute Sales_SalesOrderDetail"
-          TopLeft="232.714285714286,333.607142857143" />
-        <NodeLayout
-          Size="236,42"
-          Id="Package\Execute Sales_SalesOrderHeader"
-          TopLeft="232.714285714286,400.857142857143" />
-        <NodeLayout
-          Size="176,42"
-          Id="Package\Execute Sales_Store"
-          TopLeft="232.714285714286,131.857142857143" />
+          Size="186,42"
+          Id="Package\Truncate Target Table"
+          TopLeft="322,130" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="418.25,172">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <AnnotationLayout
           Text="PLEASE DO NOT CUSTOMIZE TEMPLATE TASK NAMES DURING DEVELOPMENT. &#xA;TASKS ADDED DURING DEVELOPMENT SHOULD BE NAMED BASED ON THEIR&#xA;FUNCTION WITHOUT ANY OBSCURE CODING REGIME."
           ParentId="Package"
@@ -2040,5 +2457,187 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Insert Source Records">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Insert Source Records\Inject Variables"
+          TopLeft="318,354.8" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Insert Source Records\Target Table"
+          TopLeft="326,524" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Insert Source Records\Source Record Counter"
+          TopLeft="300,185.6" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Insert Source Records\Inserted Record Counter"
+          TopLeft="301,439.4" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Insert Source Records\Source Query"
+          TopLeft="319,101" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Insert Source Records\Data Conversion"
+          TopLeft="322,270.2" />
+        <EdgeLayout
+          Id="Package\Insert Source Records.Paths[Row Count Output 1]"
+          TopLeft="398,227.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.6"
+              Start="0,0"
+              End="0,35.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Source Records.Paths[OLE DB Source Output]"
+          TopLeft="393.25,143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.6"
+              Start="0,0"
+              End="0,35.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Source Records.Paths[Derived Column Output]"
+          TopLeft="397.25,396.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.6"
+              Start="0,0"
+              End="0,35.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Source Records.Paths[Data Conversion Output]"
+          TopLeft="398,312.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.6"
+              Start="0,0"
+              End="0,35.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Source Records.Paths[Row Count Output 11]"
+          TopLeft="398,481.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.6"
+              Start="0,0"
+              End="0,35.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="PLEASE DO NOT CUSTOMIZE TEMPLATE COMPONENT NAMES DURING DEVELOPMENT. &#xA;COMPONENTS ADDED DURING DEVELOPMENT SHOULD BE NAMED BASED ON THEIR&#xA;FUNCTION WITHOUT ANY OBSCURE CODING REGIME.  "
+          ParentId="Package\Insert Source Records"
+          FontInfo="{assembly:Null}"
+          Size="502,74"
+          Id="264989cc-23a3-4ca3-81c2-f727ba7fdabe"
+          TopLeft="176,8" />
+        <AnnotationLayout
+          Text="FOR THE DATA FLOW ENTERING THE DESTINATION COMPONENT, PLEASE ENSURE THAT&#xA;BOTH *COLUMN NAMES* AND DATA TYPES IN THE DATA FLOW EXACTLY MATCH THOSE&#xA;IN THE TARGET TABLE."
+          ParentId="Package\Insert Source Records"
+          FontInfo="{assembly:Null}"
+          Size="508,74"
+          Id="3bfa663a-d1ad-4d88-9d7a-06cf99449578"
+          TopLeft="163,593" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert Source Records\Target Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert Source Records\Source Query">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

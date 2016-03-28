@@ -83,7 +83,6 @@
     <Build Include="Purchasing\Tables\ProductVendor.sql" />
     <Build Include="Production\Tables\Product.sql" />
     <Build Include="Production\Tables\ProductSubcategory.sql" />
-    <Build Include="Production\Tables\ProductDescription.sql" />
     <Build Include="Production\Tables\ProductCategory.sql" />
     <Build Include="Person\Tables\PhoneNumberType.sql" />
     <Build Include="Person\Tables\PersonPhone.sql" />

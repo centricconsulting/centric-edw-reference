@@ -19,7 +19,7 @@ CREATE TABLE [Person].[StateProvince] (
     [StateProvinceID]         INT  NOT NULL,
     [StateProvinceCode]       NCHAR (3)        NOT NULL,
     [CountryRegionCode]       NVARCHAR (3)     NOT NULL,
-    [IsOnlyStateProvinceFlag] CHAR(1) NOT NULL,
+    [IsOnlyStateProvinceFlag] BIT NOT NULL,
     [Name]                    VARCHAR(100)    NOT NULL,
     [TerritoryID]             INT              NOT NULL,
     [rowguid]                 VARCHAR(100) NOT NULL,
