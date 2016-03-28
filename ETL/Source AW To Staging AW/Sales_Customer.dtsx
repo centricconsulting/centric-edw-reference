@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Sales_Customer"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="204"
-  DTS:VersionGUID="{D11148D5-6AC9-4A62-89B4-05274184B23C}"
+  DTS:VersionBuild="205"
+  DTS:VersionGUID="{B9E7C83B-E015-4FCC-9228-1D2CF243F739}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
@@ -108,7 +108,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">0.0.204</DTS:VariableValue>
+        DTS:DataType="8">0.0.205</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -145,6 +145,15 @@
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="unprocessed_record_count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D5990AED-A118-48F1-8171-A29BC771C4F3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="updated_record_count">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
@@ -970,7 +979,7 @@ Sales.Currency s</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{880E6E59-FE7C-4FA9-8AF4-64008569D203}"
-              SQLTask:SqlStatementSource="EXEC cdm.process_batch_conclude&#xA;        @completed_ind = ?&#xA;      , @process_batch_key = ?&#xA;      , @source_record_ct = ?&#xA;      , @inserted_record_ct = ?&#xA;      , @unprocessed_record_ct = ?&#xA;      , @deleted_record_ct = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="EXEC cdm.process_batch_conclude&#xA;        @completed_ind = ?&#xA;      , @process_batch_key = ?&#xA;      , @source_record_ct = ?&#xA;      , @inserted_record_ct = ?&#xA;      , @unprocessed_record_ct = ?&#xA;      , @deleted_record_ct = ?&#xA;      , @updated_record_ct = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::completed_ind"
@@ -1007,6 +1016,12 @@ Sales.Currency s</property>
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="3"
                 SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::updated_record_count"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1272,6 +1287,99 @@ Sales.Currency s</property>
                                     }
                                 ]]></ProjectItem>
               <ProjectItem
+                Name="AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[
+                                    using System.Reflection;
+                                    using System.Runtime.CompilerServices;
+
+                                    //
+                                    // General Information about an assembly is controlled through the following
+                                    // set of attributes. Change these attribute values to modify the information
+                                    // associated with an assembly.
+                                    //
+                                    [assembly: AssemblyTitle("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
+                                    [assembly: AssemblyDescription("")]
+                                    [assembly: AssemblyConfiguration("")]
+                                    [assembly: AssemblyCompany("Varigence")]
+                                    [assembly: AssemblyProduct("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
+                                    [assembly: AssemblyCopyright("Copyright @ Varigence 2013")]
+                                    [assembly: AssemblyTrademark("")]
+                                    [assembly: AssemblyCulture("")]
+                                    //
+                                    // Version information for an assembly consists of the following four values:
+                                    //
+                                    //      Major Version
+                                    //      Minor Version
+                                    //      Build Number
+                                    //      Revision
+                                    //
+                                    // You can specify all the values or you can default the Revision and Build Numbers
+                                    // by using the '*' as shown below:
+
+                                    [assembly: AssemblyVersion("1.0.*")]
+                                ]]></ProjectItem>
+              <ProjectItem
+                Name="Project"
+                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:NoContent>Reference;Import;Folder</msb:NoContent>
+		<msb:ProjectId>{e5d675e5-b739-4d96-bfa9-f416c314baf3}</msb:ProjectId>
+		<msb:CodeName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:DisplayName>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:File Include="AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="ScriptMain.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:Project Include="ST_232fecafb70a4e8a904cc21f8870eed0.csproj"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope = "member", Target = "ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings.get_Default():ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings")]
+
+namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties
+{
+
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
+    {
+
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+
+        public static Settings Default
+        {
+            get
+            {
+                return defaultInstance;
+            }
+        }
+
+    }
+}]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="iso-8859-1"?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"  >
+    <Profiles>
+        <Profile Name="(Default)" />
+    </Profiles>
+    <Settings /></SettingsFile>]]></ProjectItem>
+              <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
 // <auto-generated>
@@ -1344,99 +1452,6 @@ namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties {
 
     }
 }]]></ProjectItem>
-              <ProjectItem
-                Name="Project"
-                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-	<msb:PropertyGroup>
-		<msb:NoContent>Reference;Import;Folder</msb:NoContent>
-		<msb:ProjectId>{e5d675e5-b739-4d96-bfa9-f416c314baf3}</msb:ProjectId>
-		<msb:CodeName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:CodeName>
-		<msb:Language>msBuild</msb:Language>
-		<msb:DisplayName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:DisplayName>
-	</msb:PropertyGroup>
-	<msb:ItemGroup>
-		<msb:File Include="AssemblyInfo.cs"/>
-		<msb:File Include="Properties\Resources.resx"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
-		<msb:File Include="Properties\Resources.Designer.cs"/>
-		<msb:File Include="ScriptMain.cs"/>
-		<msb:File Include="Properties\Settings.settings"/>
-		<msb:Project Include="ST_232fecafb70a4e8a904cc21f8870eed0.csproj"/>
-	</msb:ItemGroup>
-</c:Project>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope = "member", Target = "ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings.get_Default():ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings")]
-
-namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties
-{
-
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-
-        public static Settings Default
-        {
-            get
-            {
-                return defaultInstance;
-            }
-        }
-
-    }
-}]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="iso-8859-1"?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"  >
-    <Profiles>
-        <Profile Name="(Default)" />
-    </Profiles>
-    <Settings /></SettingsFile>]]></ProjectItem>
-              <ProjectItem
-                Name="AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[
-                                    using System.Reflection;
-                                    using System.Runtime.CompilerServices;
-
-                                    //
-                                    // General Information about an assembly is controlled through the following
-                                    // set of attributes. Change these attribute values to modify the information
-                                    // associated with an assembly.
-                                    //
-                                    [assembly: AssemblyTitle("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
-                                    [assembly: AssemblyDescription("")]
-                                    [assembly: AssemblyConfiguration("")]
-                                    [assembly: AssemblyCompany("Varigence")]
-                                    [assembly: AssemblyProduct("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
-                                    [assembly: AssemblyCopyright("Copyright @ Varigence 2013")]
-                                    [assembly: AssemblyTrademark("")]
-                                    [assembly: AssemblyCulture("")]
-                                    //
-                                    // Version information for an assembly consists of the following four values:
-                                    //
-                                    //      Major Version
-                                    //      Minor Version
-                                    //      Build Number
-                                    //      Revision
-                                    //
-                                    // You can specify all the values or you can default the Revision and Build Numbers
-                                    // by using the '*' as shown below:
-
-                                    [assembly: AssemblyVersion("1.0.*")]
-                                ]]></ProjectItem>
               <BinaryItem
                 Name="ST_232fecafb70a4e8a904cc21f8870eed0.csproj.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
@@ -1854,6 +1869,99 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                                     }
                                 ]]></ProjectItem>
               <ProjectItem
+                Name="AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[
+                                    using System.Reflection;
+                                    using System.Runtime.CompilerServices;
+
+                                    //
+                                    // General Information about an assembly is controlled through the following
+                                    // set of attributes. Change these attribute values to modify the information
+                                    // associated with an assembly.
+                                    //
+                                    [assembly: AssemblyTitle("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
+                                    [assembly: AssemblyDescription("")]
+                                    [assembly: AssemblyConfiguration("")]
+                                    [assembly: AssemblyCompany("Varigence")]
+                                    [assembly: AssemblyProduct("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
+                                    [assembly: AssemblyCopyright("Copyright @ Varigence 2013")]
+                                    [assembly: AssemblyTrademark("")]
+                                    [assembly: AssemblyCulture("")]
+                                    //
+                                    // Version information for an assembly consists of the following four values:
+                                    //
+                                    //      Major Version
+                                    //      Minor Version
+                                    //      Build Number
+                                    //      Revision
+                                    //
+                                    // You can specify all the values or you can default the Revision and Build Numbers
+                                    // by using the '*' as shown below:
+
+                                    [assembly: AssemblyVersion("1.0.*")]
+                                ]]></ProjectItem>
+              <ProjectItem
+                Name="Project"
+                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:NoContent>Reference;Import;Folder</msb:NoContent>
+		<msb:ProjectId>{5900288c-779f-40b9-be2a-8e0a563c922a}</msb:ProjectId>
+		<msb:CodeName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:DisplayName>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:File Include="AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="ScriptMain.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:Project Include="ST_232fecafb70a4e8a904cc21f8870eed0.csproj"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope = "member", Target = "ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings.get_Default():ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings")]
+
+namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties
+{
+
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
+    {
+
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+
+        public static Settings Default
+        {
+            get
+            {
+                return defaultInstance;
+            }
+        }
+
+    }
+}]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="iso-8859-1"?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"  >
+    <Profiles>
+        <Profile Name="(Default)" />
+    </Profiles>
+    <Settings /></SettingsFile>]]></ProjectItem>
+              <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
 // <auto-generated>
@@ -1926,99 +2034,6 @@ namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties {
 
     }
 }]]></ProjectItem>
-              <ProjectItem
-                Name="Project"
-                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-	<msb:PropertyGroup>
-		<msb:NoContent>Reference;Import;Folder</msb:NoContent>
-		<msb:ProjectId>{5900288c-779f-40b9-be2a-8e0a563c922a}</msb:ProjectId>
-		<msb:CodeName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:CodeName>
-		<msb:Language>msBuild</msb:Language>
-		<msb:DisplayName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:DisplayName>
-	</msb:PropertyGroup>
-	<msb:ItemGroup>
-		<msb:File Include="AssemblyInfo.cs"/>
-		<msb:File Include="Properties\Resources.resx"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
-		<msb:File Include="Properties\Resources.Designer.cs"/>
-		<msb:File Include="ScriptMain.cs"/>
-		<msb:File Include="Properties\Settings.settings"/>
-		<msb:Project Include="ST_232fecafb70a4e8a904cc21f8870eed0.csproj"/>
-	</msb:ItemGroup>
-</c:Project>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope = "member", Target = "ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings.get_Default():ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings")]
-
-namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties
-{
-
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-
-        public static Settings Default
-        {
-            get
-            {
-                return defaultInstance;
-            }
-        }
-
-    }
-}]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="iso-8859-1"?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"  >
-    <Profiles>
-        <Profile Name="(Default)" />
-    </Profiles>
-    <Settings /></SettingsFile>]]></ProjectItem>
-              <ProjectItem
-                Name="AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[
-                                    using System.Reflection;
-                                    using System.Runtime.CompilerServices;
-
-                                    //
-                                    // General Information about an assembly is controlled through the following
-                                    // set of attributes. Change these attribute values to modify the information
-                                    // associated with an assembly.
-                                    //
-                                    [assembly: AssemblyTitle("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
-                                    [assembly: AssemblyDescription("")]
-                                    [assembly: AssemblyConfiguration("")]
-                                    [assembly: AssemblyCompany("Varigence")]
-                                    [assembly: AssemblyProduct("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
-                                    [assembly: AssemblyCopyright("Copyright @ Varigence 2013")]
-                                    [assembly: AssemblyTrademark("")]
-                                    [assembly: AssemblyCulture("")]
-                                    //
-                                    // Version information for an assembly consists of the following four values:
-                                    //
-                                    //      Major Version
-                                    //      Minor Version
-                                    //      Build Number
-                                    //      Revision
-                                    //
-                                    // You can specify all the values or you can default the Revision and Build Numbers
-                                    // by using the '*' as shown below:
-
-                                    [assembly: AssemblyVersion("1.0.*")]
-                                ]]></ProjectItem>
               <BinaryItem
                 Name="ST_232fecafb70a4e8a904cc21f8870eed0.csproj.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
@@ -2304,9 +2319,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2380,23 +2393,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     design-time-name="Package\Insert Source Records">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="190,42"
-          Id="Package\Insert Source Records\Source Record Counter"
-          TopLeft="300,185.6" />
+          Size="141,42"
+          Id="Package\Insert Source Records\Target Table"
+          TopLeft="326,524" />
         <NodeLayout
           Size="154,42"
           Id="Package\Insert Source Records\Inject Variables"
           TopLeft="318,354.8" />
         <NodeLayout
+          Size="190,42"
+          Id="Package\Insert Source Records\Source Record Counter"
+          TopLeft="300,185.6" />
+        <NodeLayout
           Size="145,42"
           Id="Package\Insert Source Records\Source Query"
           TopLeft="319,101" />
-        <NodeLayout
-          Size="141,42"
-          Id="Package\Insert Source Records\Target Table"
-          TopLeft="326,524" />
         <NodeLayout
           Size="197,42"
           Id="Package\Insert Source Records\Inserted Record Counter"
@@ -2405,28 +2418,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Size="158,42"
           Id="Package\Insert Source Records\Data Conversion"
           TopLeft="322,270.2" />
-        <EdgeLayout
-          Id="Package\Insert Source Records.Paths[Row Count Output 11]"
-          TopLeft="398,481.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.6"
-              Start="0,0"
-              End="0,35.1">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.1" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Insert Source Records.Paths[Row Count Output 1]"
           TopLeft="398,227.6">
@@ -2446,7 +2437,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2468,7 +2461,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2490,7 +2485,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2512,21 +2509,47 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Source Records.Paths[Row Count Output 11]"
+          TopLeft="398,481.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.6"
+              Start="0,0"
+              End="0,35.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="PLEASE DO NOT CUSTOMIZE TEMPLATE COMPONENT NAMES DURING DEVELOPMENT. &#xA;COMPONENTS ADDED DURING DEVELOPMENT SHOULD BE NAMED BASED ON THEIR&#xA;FUNCTION WITHOUT ANY OBSCURE CODING REGIME.  "
           ParentId="Package\Insert Source Records"
           FontInfo="{assembly:Null}"
-          Size="502,74"
+          Size="502,NaN"
           Id="264989cc-23a3-4ca3-81c2-f727ba7fdabe"
           TopLeft="176,8" />
         <AnnotationLayout
           Text="FOR THE DATA FLOW ENTERING THE DESTINATION COMPONENT, PLEASE ENSURE THAT&#xA;BOTH *COLUMN NAMES* AND DATA TYPES IN THE DATA FLOW EXACTLY MATCH THOSE&#xA;IN THE TARGET TABLE."
           ParentId="Package\Insert Source Records"
           FontInfo="{assembly:Null}"
-          Size="508,74"
+          Size="508,NaN"
           Id="3bfa663a-d1ad-4d88-9d7a-06cf99449578"
           TopLeft="163,593" />
       </GraphLayout>

@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="CONTROLLER_MASTER"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="208"
-  DTS:VersionGUID="{3A07E86B-A068-4121-95F7-3D35F482D8CB}"
+  DTS:VersionBuild="213"
+  DTS:VersionGUID="{C7D85E82-DBC2-43A4-B9BF-8F24CA83725E}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
@@ -45,7 +45,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">0.0.208</DTS:VariableValue>
+        DTS:DataType="8">0.0.213</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -100,6 +100,40 @@
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
           <PackageName>Sales_Customer.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute Sales_SalesOrderDetail"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{c51eb7b2-74e2-489b-9002-e27ee6ab6f77}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute Sales_SalesOrderDetail"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>Sales_SalesOrderDetail.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute Sales_SalesOrderHeader"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{eef5ff47-cde8-4e34-b506-b937589a6482}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute Sales_SalesOrderHeader"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>Sales_SalesOrderHeader.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -505,99 +539,6 @@
                                     }
                                 ]]></ProjectItem>
               <ProjectItem
-                Name="AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[
-                                    using System.Reflection;
-                                    using System.Runtime.CompilerServices;
-
-                                    //
-                                    // General Information about an assembly is controlled through the following
-                                    // set of attributes. Change these attribute values to modify the information
-                                    // associated with an assembly.
-                                    //
-                                    [assembly: AssemblyTitle("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
-                                    [assembly: AssemblyDescription("")]
-                                    [assembly: AssemblyConfiguration("")]
-                                    [assembly: AssemblyCompany("Varigence")]
-                                    [assembly: AssemblyProduct("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
-                                    [assembly: AssemblyCopyright("Copyright @ Varigence 2013")]
-                                    [assembly: AssemblyTrademark("")]
-                                    [assembly: AssemblyCulture("")]
-                                    //
-                                    // Version information for an assembly consists of the following four values:
-                                    //
-                                    //      Major Version
-                                    //      Minor Version
-                                    //      Build Number
-                                    //      Revision
-                                    //
-                                    // You can specify all the values or you can default the Revision and Build Numbers
-                                    // by using the '*' as shown below:
-
-                                    [assembly: AssemblyVersion("1.0.*")]
-                                ]]></ProjectItem>
-              <ProjectItem
-                Name="Project"
-                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-	<msb:PropertyGroup>
-		<msb:NoContent>Reference;Import;Folder</msb:NoContent>
-		<msb:ProjectId>{e5d675e5-b739-4d96-bfa9-f416c314baf3}</msb:ProjectId>
-		<msb:CodeName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:CodeName>
-		<msb:Language>msBuild</msb:Language>
-		<msb:DisplayName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:DisplayName>
-	</msb:PropertyGroup>
-	<msb:ItemGroup>
-		<msb:File Include="AssemblyInfo.cs"/>
-		<msb:File Include="Properties\Resources.resx"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
-		<msb:File Include="Properties\Resources.Designer.cs"/>
-		<msb:File Include="ScriptMain.cs"/>
-		<msb:File Include="Properties\Settings.settings"/>
-		<msb:Project Include="ST_232fecafb70a4e8a904cc21f8870eed0.csproj"/>
-	</msb:ItemGroup>
-</c:Project>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope = "member", Target = "ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings.get_Default():ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings")]
-
-namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties
-{
-
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-
-        public static Settings Default
-        {
-            get
-            {
-                return defaultInstance;
-            }
-        }
-
-    }
-}]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="iso-8859-1"?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"  >
-    <Profiles>
-        <Profile Name="(Default)" />
-    </Profiles>
-    <Settings /></SettingsFile>]]></ProjectItem>
-              <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
 // <auto-generated>
@@ -670,6 +611,99 @@ namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties {
 
     }
 }]]></ProjectItem>
+              <ProjectItem
+                Name="Project"
+                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:NoContent>Reference;Import;Folder</msb:NoContent>
+		<msb:ProjectId>{e5d675e5-b739-4d96-bfa9-f416c314baf3}</msb:ProjectId>
+		<msb:CodeName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:DisplayName>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:File Include="AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="ScriptMain.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:Project Include="ST_232fecafb70a4e8a904cc21f8870eed0.csproj"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope = "member", Target = "ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings.get_Default():ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings")]
+
+namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties
+{
+
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
+    {
+
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+
+        public static Settings Default
+        {
+            get
+            {
+                return defaultInstance;
+            }
+        }
+
+    }
+}]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="iso-8859-1"?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"  >
+    <Profiles>
+        <Profile Name="(Default)" />
+    </Profiles>
+    <Settings /></SettingsFile>]]></ProjectItem>
+              <ProjectItem
+                Name="AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[
+                                    using System.Reflection;
+                                    using System.Runtime.CompilerServices;
+
+                                    //
+                                    // General Information about an assembly is controlled through the following
+                                    // set of attributes. Change these attribute values to modify the information
+                                    // associated with an assembly.
+                                    //
+                                    [assembly: AssemblyTitle("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
+                                    [assembly: AssemblyDescription("")]
+                                    [assembly: AssemblyConfiguration("")]
+                                    [assembly: AssemblyCompany("Varigence")]
+                                    [assembly: AssemblyProduct("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
+                                    [assembly: AssemblyCopyright("Copyright @ Varigence 2013")]
+                                    [assembly: AssemblyTrademark("")]
+                                    [assembly: AssemblyCulture("")]
+                                    //
+                                    // Version information for an assembly consists of the following four values:
+                                    //
+                                    //      Major Version
+                                    //      Minor Version
+                                    //      Build Number
+                                    //      Revision
+                                    //
+                                    // You can specify all the values or you can default the Revision and Build Numbers
+                                    // by using the '*' as shown below:
+
+                                    [assembly: AssemblyVersion("1.0.*")]
+                                ]]></ProjectItem>
               <BinaryItem
                 Name="ST_232fecafb70a4e8a904cc21f8870eed0.csproj.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
@@ -1087,99 +1121,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                                     }
                                 ]]></ProjectItem>
               <ProjectItem
-                Name="AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[
-                                    using System.Reflection;
-                                    using System.Runtime.CompilerServices;
-
-                                    //
-                                    // General Information about an assembly is controlled through the following
-                                    // set of attributes. Change these attribute values to modify the information
-                                    // associated with an assembly.
-                                    //
-                                    [assembly: AssemblyTitle("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
-                                    [assembly: AssemblyDescription("")]
-                                    [assembly: AssemblyConfiguration("")]
-                                    [assembly: AssemblyCompany("Varigence")]
-                                    [assembly: AssemblyProduct("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
-                                    [assembly: AssemblyCopyright("Copyright @ Varigence 2013")]
-                                    [assembly: AssemblyTrademark("")]
-                                    [assembly: AssemblyCulture("")]
-                                    //
-                                    // Version information for an assembly consists of the following four values:
-                                    //
-                                    //      Major Version
-                                    //      Minor Version
-                                    //      Build Number
-                                    //      Revision
-                                    //
-                                    // You can specify all the values or you can default the Revision and Build Numbers
-                                    // by using the '*' as shown below:
-
-                                    [assembly: AssemblyVersion("1.0.*")]
-                                ]]></ProjectItem>
-              <ProjectItem
-                Name="Project"
-                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-	<msb:PropertyGroup>
-		<msb:NoContent>Reference;Import;Folder</msb:NoContent>
-		<msb:ProjectId>{5900288c-779f-40b9-be2a-8e0a563c922a}</msb:ProjectId>
-		<msb:CodeName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:CodeName>
-		<msb:Language>msBuild</msb:Language>
-		<msb:DisplayName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:DisplayName>
-	</msb:PropertyGroup>
-	<msb:ItemGroup>
-		<msb:File Include="AssemblyInfo.cs"/>
-		<msb:File Include="Properties\Resources.resx"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
-		<msb:File Include="Properties\Resources.Designer.cs"/>
-		<msb:File Include="ScriptMain.cs"/>
-		<msb:File Include="Properties\Settings.settings"/>
-		<msb:Project Include="ST_232fecafb70a4e8a904cc21f8870eed0.csproj"/>
-	</msb:ItemGroup>
-</c:Project>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope = "member", Target = "ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings.get_Default():ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings")]
-
-namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties
-{
-
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-
-        public static Settings Default
-        {
-            get
-            {
-                return defaultInstance;
-            }
-        }
-
-    }
-}]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="iso-8859-1"?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"  >
-    <Profiles>
-        <Profile Name="(Default)" />
-    </Profiles>
-    <Settings /></SettingsFile>]]></ProjectItem>
-              <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
 // <auto-generated>
@@ -1252,6 +1193,99 @@ namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties {
 
     }
 }]]></ProjectItem>
+              <ProjectItem
+                Name="Project"
+                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:NoContent>Reference;Import;Folder</msb:NoContent>
+		<msb:ProjectId>{5900288c-779f-40b9-be2a-8e0a563c922a}</msb:ProjectId>
+		<msb:CodeName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:DisplayName>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:File Include="AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="ScriptMain.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:Project Include="ST_232fecafb70a4e8a904cc21f8870eed0.csproj"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope = "member", Target = "ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings.get_Default():ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings")]
+
+namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties
+{
+
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
+    {
+
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+
+        public static Settings Default
+        {
+            get
+            {
+                return defaultInstance;
+            }
+        }
+
+    }
+}]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="iso-8859-1"?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"  >
+    <Profiles>
+        <Profile Name="(Default)" />
+    </Profiles>
+    <Settings /></SettingsFile>]]></ProjectItem>
+              <ProjectItem
+                Name="AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[
+                                    using System.Reflection;
+                                    using System.Runtime.CompilerServices;
+
+                                    //
+                                    // General Information about an assembly is controlled through the following
+                                    // set of attributes. Change these attribute values to modify the information
+                                    // associated with an assembly.
+                                    //
+                                    [assembly: AssemblyTitle("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
+                                    [assembly: AssemblyDescription("")]
+                                    [assembly: AssemblyConfiguration("")]
+                                    [assembly: AssemblyCompany("Varigence")]
+                                    [assembly: AssemblyProduct("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
+                                    [assembly: AssemblyCopyright("Copyright @ Varigence 2013")]
+                                    [assembly: AssemblyTrademark("")]
+                                    [assembly: AssemblyCulture("")]
+                                    //
+                                    // Version information for an assembly consists of the following four values:
+                                    //
+                                    //      Major Version
+                                    //      Minor Version
+                                    //      Build Number
+                                    //      Revision
+                                    //
+                                    // You can specify all the values or you can default the Revision and Build Numbers
+                                    // by using the '*' as shown below:
+
+                                    [assembly: AssemblyVersion("1.0.*")]
+                                ]]></ProjectItem>
               <BinaryItem
                 Name="ST_232fecafb70a4e8a904cc21f8870eed0.csproj.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
@@ -1435,7 +1469,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Execute Sales_Currency"
+          TopLeft="236,257" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Execute Sales_Customer"
+          TopLeft="243,186" />
         <AnnotationLayout
           Text="PLEASE DO NOT CUSTOMIZE TEMPLATE TASK NAMES DURING DEVELOPMENT. &#xA;TASKS ADDED DURING DEVELOPMENT SHOULD BE NAMED BASED ON THEIR&#xA;FUNCTION WITHOUT ANY OBSCURE CODING REGIME."
           ParentId="Package"
@@ -1444,13 +1486,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           Id="c14b4fcf-cb91-4571-83fe-5c0f3e663610"
           TopLeft="218.5,33.25" />
         <NodeLayout
-          Size="196,42"
-          Id="Package\Execute Sales_Customer"
-          TopLeft="243,186" />
+          Size="229,42"
+          Id="Package\Execute Sales_SalesOrderDetail"
+          TopLeft="239.5,326" />
         <NodeLayout
-          Size="193,42"
-          Id="Package\Execute Sales_Currency"
-          TopLeft="236,257" />
+          Size="236,42"
+          Id="Package\Execute Sales_SalesOrderHeader"
+          TopLeft="240.5,398" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1506,7 +1548,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout

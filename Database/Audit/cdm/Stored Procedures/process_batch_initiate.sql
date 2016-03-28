@@ -14,6 +14,10 @@ PARAMETERS:
   @workflow_guid VARCHAR(100) = Unique identifier of the workflow (encapsulated code) that executes the process.
  
   @workflow_version VARCHAR(20) = Version of the workflow (encapsulated code) that executes the process.
+
+  @channel VARCHAR(100) = The channel through which this data came into the system. Typically not specified. May be
+    used when data comes in on file feeds (channel = file name) or when there are multiple source system instances
+    loaded through a single workflow.
  
   @internal_sequence_ind BIT Optional = Flag that indicates whether to use the last successfully Completed Batch Key as the End Sequence Key.
     This creates efficiency by looking up the Completed Batch Key in the control tables rather than requiring it to be provided

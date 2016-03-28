@@ -31,8 +31,12 @@
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="Sales_Customer.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Sales_Currency.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="Template_Truncate_Load.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="CONTROLLER_MASTER.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Sales_SalesOrderDetail.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="TEMPLATE Incremental Load.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="TEMPLATE Truncate Load.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Sales_SalesOrderHeader.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="TEMPLATE Full Process With Delete.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="Source AW.conmgr" />
@@ -296,16 +300,16 @@
               </SSIS:Properties>
               <SSIS:Parameters />
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="Template_Truncate_Load.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="CONTROLLER_MASTER.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{9B536950-2610-411D-A978-6B4667879513}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Template_Truncate_Load</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{9E31CD9E-2527-4BB2-A9EF-67F6692B6213}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">CONTROLLER_MASTER</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">202</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">209</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{AF113E1C-52AC-4338-B63E-BAABAC146DB6}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{8FFD840F-1FA9-43C9-82CE-4DFB93AD2805}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -313,16 +317,84 @@
               </SSIS:Properties>
               <SSIS:Parameters />
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="CONTROLLER_MASTER.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="Sales_SalesOrderDetail.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{9E31CD9E-2527-4BB2-A9EF-67F6692B6213}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">CONTROLLER_MASTER</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{85F27696-758D-47D0-8A5B-DFBE1FA40C42}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Sales_SalesOrderDetail</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">205</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">242</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{35AD4FF1-786D-4917-A980-A3CDEC8A7718}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{0D86BBC4-2CEB-49BB-961B-E7BE4204C2BC}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="TEMPLATE Incremental Load.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{67BCB5CD-D86C-40DE-9276-DB1C4143538D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">TEMPLATE Incremental Load</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">244</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{1E33C050-3DEC-449C-900C-DB2AA9641177}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="TEMPLATE Truncate Load.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{01D6B2B3-86A3-4B65-8B98-9E2357A077BA}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">TEMPLATE Truncate Load</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">203</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{25FDD829-C290-45BD-9F73-707570B47203}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Sales_SalesOrderHeader.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{9C250C65-C0E6-42B1-BAF4-4799116E6BAF}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Sales_SalesOrderHeader</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">250</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{523D433F-12E0-4371-B0CF-A5EE1D53EFAE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="TEMPLATE Full Process With Delete.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{39E08009-368A-4096-B5AB-FEC60F974555}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">TEMPLATE Full Process With Delete</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">252</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{31033EB6-DD7C-4AC8-AB20-5B0E5CBADC5B}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

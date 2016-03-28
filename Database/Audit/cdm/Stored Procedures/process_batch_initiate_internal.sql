@@ -15,6 +15,10 @@ PARAMETERS:
   @workflow_guid VARCHAR(100) = Unique identifier of the workflow (encapsulated code) that executes the process.
  
   @workflow_version VARCHAR(20) = Version of the workflow (encapsulated code) that executes the process.
+
+  @channel VARCHAR(100) = The channel through which this data came into the system. Typically not specified. May be
+    used when data comes in on file feeds (channel = file name) or when there are multiple source system instances
+    loaded through a single workflow.
   
   @limit_process_uid VARCHAR(50) Optional = Identifier of a Data Management Process whose End Sequence Key is used to limit the
     returned End Sequence Key of the primary process.  The lesser of the two End Sequence Keys is returned.
