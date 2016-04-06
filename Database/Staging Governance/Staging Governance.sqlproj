@@ -4,17 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>Warehouse</Name>
+    <Name>Staging Governance</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{f5e850e2-1e04-4c44-8f34-b6db2db37db1}</ProjectGuid>
+    <ProjectGuid>{e1cc4a8c-3af9-4ff2-b66b-bfca2648bb2e}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>warehouse</RootNamespace>
-    <AssemblyName>Warehouse</AssemblyName>
-    <ModelCollation>1033,CI</ModelCollation>
+    <RootNamespace>Misc_Staging</RootNamespace>
+    <AssemblyName>Misc_Staging</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -23,8 +23,7 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
-    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
-    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <DacApplicationName>staging_gov</DacApplicationName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -47,7 +46,6 @@
     <DefineTrace>true</DefineTrace>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <SqlTargetName>warehouse</SqlTargetName>
   </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
@@ -66,7 +64,6 @@
     <DefineTrace>true</DefineTrace>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <SqlTargetName>warehouse</SqlTargetName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'UAT|AnyCPU' ">
     <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
@@ -78,7 +75,6 @@
     <DefineTrace>true</DefineTrace>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <SqlTargetName>warehouse</SqlTargetName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Production|AnyCPU' ">
     <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
@@ -90,7 +86,6 @@
     <DefineTrace>true</DefineTrace>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <SqlTargetName>warehouse</SqlTargetName>
   </PropertyGroup>
   <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
@@ -98,55 +93,27 @@
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
-    <Folder Include="map\" />
-    <Folder Include="map\Tables\" />
     <Folder Include="Security\" />
-    <Folder Include="dbo\Stored Procedures\" />
     <Folder Include="Post Deployment" />
-    <Folder Include="ver" />
-    <Folder Include="ver\Tables" />
-    <Folder Include="dbo\Views" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\calendar.sql" />
-    <Build Include="map\Tables\source.sql" />
-    <Build Include="dbo\Tables\source.sql" />
-    <Build Include="Security\centric_reader.sql" />
-    <Build Include="dbo\Stored Procedures\calendar_rebuild.sql" />
-    <Build Include="Security\map.sql" />
-    <Build Include="Security\Permissions.sql" />
-    <None Include="Post Deployment\Seed.source.sql" />
-    <None Include="Post Deployment\Seed.calendar.sql" />
-    <Build Include="dbo\Stored Procedures\calendar_index_refresh.sql" />
-    <Build Include="dbo\Stored Procedures\source_key_lookup.sql" />
-    <Build Include="Security\ver.sql" />
-    <Build Include="Security\xref.sql" />
-    <Build Include="dbo\Tables\fiscal_period.sql" />
-    <Build Include="map\Tables\vendor.sql" />
-    <Build Include="map\Tables\product.sql" />
-    <Build Include="map\Tables\invoice_line.sql" />
-    <Build Include="map\Tables\invoice.sql" />
-    <Build Include="map\Tables\customer.sql" />
-    <Build Include="map\Tables\customer_type.sql" />
-    <Build Include="ver\Tables\customer.sql" />
-    <Build Include="dbo\Views\customer.sql" />
-    <Build Include="dbo\Tables\fiscal_calendar.sql" />
-    <Build Include="dbo\Stored Procedures\fiscal_calendar_rebuild.sql" />
-    <Build Include="dbo\Stored Procedures\fiscal_calendar_index_refresh.sql" />
-    <Build Include="dbo\Tables\calendar_holiday.sql" />
-    <None Include="Post Deployment\Seed.fiscal_calendar.sql" />
-    <None Include="Post Deployment\Seed.customer_type.sql" />
-    <Build Include="dbo\Tables\customer_type.sql" />
-    <Build Include="map\Tables\currency.sql" />
-    <Build Include="map\Tables\state_province.sql" />
-    <None Include="Post Deployment\Seed.currency.sql" />
-    <Build Include="dbo\Tables\currency.sql" />
+    <Build Include="dbo\Tables\Holiday.sql" />
+    <Build Include="dbo\Tables\FiscalPeriod.sql" />
+    <Build Include="dbo\Tables\CountryForecast.sql" />
+    <Build Include="dbo\Tables\CurrencyExchangeRate.sql" />
+    <None Include="Post Deployment\Seed.CurrencyExchangeRate.sql" />
+    <None Include="Post Deployment\Seed.CountryForecast.sql" />
+    <Build Include="dbo\Tables\Currency.sql" />
+    <Build Include="dbo\Tables\StateProvince.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Post Deployment\Seed.customer.sql" />
-    <None Include="Warehouse.publish.xml" />
+    <None Include="Staging Governance.publish.xml" />
+    <None Include="Post Deployment\Seed.Holiday.sql" />
+    <None Include="Post Deployment\Seed.FiscalPeriod.sql" />
+    <None Include="Post Deployment\Seed.Currency.sql" />
+    <None Include="Post Deployment\Seed.StateProvince.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Post Deployment\Controller.PostDeployment.sql" />
+    <PostDeploy Include="Post Deployment\Main.PostDeployment.sql" />
   </ItemGroup>
 </Project>

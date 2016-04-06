@@ -21,3 +21,7 @@ DECLARE
 :r .\Seed.CurrencyExchangeRate.sql
 
 :r .\Seed.CountryForecast.sql
+
+:r .\Seed.StateProvince.sql
+
+:r .\Seed.Currency.sql

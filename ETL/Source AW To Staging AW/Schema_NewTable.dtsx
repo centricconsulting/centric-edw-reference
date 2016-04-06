@@ -1,43 +1,44 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="2/5/2015 10:26:35 AM"
+  DTS:CreationDate="12/9/2014 2:25:58 PM"
   DTS:CreationName="Microsoft.Package"
-  DTS:CreatorComputerName="CHRISWORK"
-  DTS:CreatorName="Chris"
-  DTS:DTSID="{E80A8208-9C77-4FD9-9481-06F170EDC54D}"
+  DTS:CreatorComputerName="Centric Consulting"
+  DTS:CreatorName="Centric Consulting"
+  DTS:DelayValidation="True"
+  DTS:DTSID="{784D7BD6-00D4-49DF-8398-CA0362E914E5}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="12.0.2430.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="dbo_calendar_utility_hours"
+  DTS:ObjectName="Person_PersonPhone"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{38A6A2BF-D3A0-46DB-85F4-39625ED01777}"
+  DTS:VersionBuild="212"
+  DTS:VersionGUID="{2C47F706-011A-4219-A93E-D368630F865D}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{9EA83EEB-7910-4943-AFD1-4F46DBF48141}"
+      DTS:DTSID="{079F1041-CF8B-4AB1-9055-223EE619699D}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
-      DTS:ObjectName="batch_key">
+      DTS:ObjectName="begin_sequence_dtm">
+      <DTS:VariableValue
+        DTS:DataType="7">12:00:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{13A73B94-AE0E-44E4-B39C-12FEC7D5FAD6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="begin_sequence_key">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5C906967-AEE7-4E1B-9DEE-8D0D8E84802B}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="bool_package_error_flag">
-      <DTS:VariableValue
-        DTS:DataType="11">0</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{5A31330A-39E8-49AB-8A5B-A5C386587EAF}"
+      DTS:DTSID="{FD519767-9264-42B3-AC4F-696A6B8CEE39}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="completed_ind">
@@ -46,7 +47,25 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6FA08B1D-DC56-422B-A353-66ADCCC08B8D}"
+      DTS:DTSID="{3CF22459-3AA8-4C27-AE54-45FA64E2B160}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="deleted_record_ct">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{80CCA4D1-0B68-43A6-A2AC-B36C2D9E1EA0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="end_sequence_dtm">
+      <DTS:VariableValue
+        DTS:DataType="7">12:00:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D6D13AB6-B4EF-4B60-B3CD-32AB9A29922A}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="end_sequence_key">
@@ -55,7 +74,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{28597388-C6DE-4A0A-A6E8-224AF6A53B94}"
+      DTS:DTSID="{13609064-A1F9-40FC-A5E1-8FC6FC62BA64}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="initiate_dtm_text">
@@ -64,7 +83,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D6A49E10-0A35-45AD-AA41-79C3B8E59A72}"
+      DTS:DTSID="{132DACA7-0A70-4482-A823-6258D6847EA6}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="inserted_record_count">
@@ -73,47 +92,47 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F039FF0C-4E74-47C8-A246-C06C45F15B24}"
+      DTS:DTSID="{B0F0B85C-53AA-4456-9D79-A02461192373}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="package_error_flag">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AAFEB043-9366-4D1D-AA70-FFC46B5E1AA3}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="(DT_STR, 8, 1252) @[System::VersionMajor] + &quot;.&quot; + (DT_STR, 8, 1252) @[System::VersionMinor] + &quot;.&quot; + (DT_STR, 8, 1252) @[System::VersionBuild]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">0.0.50</DTS:VariableValue>
+        DTS:DataType="8">0.0.212</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F78B0D48-45FE-4700-BBF2-33484129C55A}"
+      DTS:DTSID="{0F71A1D6-957D-46E8-BC77-0CAFF9A7FF75}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="process_batch_key">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7FFCB8CA-3A43-404B-88B6-173201B27E5D}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Project::ProjectName] + &quot;.&quot; +  (DT_WSTR,50)@[System::PackageName]"
+      DTS:Expression="@[$Project::ProjectName]  + &quot;::&quot; +   @[System::PackageName]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="process_uid">
       <DTS:VariableValue
-        DTS:DataType="8">Misc Staging To Warehouse.dbo_calendar_utility_hours</DTS:VariableValue>
+        DTS:DataType="8">Source AW To Staging AW::Person_PersonPhone</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{58E9076B-2BB2-4842-BD5E-FEEDA3B442F2}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="revised_record_count">
-      <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{8C32F30A-6ED7-4EAB-A912-C7FD7D22C310}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="source_key">
-      <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{8E8E46E2-1674-4C87-BC7C-61B3FCC88C13}"
+      DTS:DTSID="{4B31E0AF-1BDF-4F08-A8E3-3592C244F187}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="source_record_count">
@@ -122,156 +141,109 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{80DB7C3E-3999-43CE-BD08-B1F1F6DF1907}"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="source_uid">
-      <DTS:VariableValue
-        DTS:DataType="8">QB</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{B390900C-28B6-41BF-800E-65F53EACFA9F}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="start_sequence_key">
-      <DTS:VariableValue
-        DTS:DataType="3">0</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{DC4039CD-C179-40DA-9CA5-C2BC46546601}"
+      DTS:DTSID="{A03D2617-1DF7-4A81-98A1-9B8D67306CB7}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="unprocessed_record_count">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D09A137F-5327-45D9-8069-2B338E466B94}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="updated_record_count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\DFT - calendar_utility_hrs_update"
+      DTS:refId="Package\Insert Source Records"
       DTS:CreationName="Microsoft.Pipeline"
-      DTS:DTSID="{B27A77BE-7B0C-42E0-8A0C-771926C7720E}"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F700F514-CD03-4F55-9E13-B0394E260699}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="DFT - calendar_utility_hrs_update"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      DTS:ObjectName="Insert Source Records"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
-          BLOBTempStoragePath=""
-          bufferTempStoragePath=""
-          defaultBufferMaxRows="37500"
           version="1">
           <components>
             <component
-              refId="Package\DFT - calendar_utility_hrs_update\OLE DB Command"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="OLE DB Command"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.calendar 
-SET utility_hours = ? 
-WHERE date_key = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\DFT - calendar_utility_hrs_update\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="{0AE08716-EC95-4E27-8E63-6EAF7B6FD0C1}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Warehouse]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
+              refId="Package\Insert Source Records\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\DFT - calendar_utility_hrs_update\OLE DB Command.Inputs[OLE DB Command Input]"
-                  errorOrTruncationOperation="Command Execution"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Command Input">
+                  refId="Package\Insert Source Records\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - calendar_utility_hrs_update\OLE DB Command.Inputs[OLE DB Command Input].Columns[utility_hours]"
-                      cachedDataType="i4"
-                      cachedName="utility_hours"
-                      externalMetadataColumnId="Package\DFT - calendar_utility_hrs_update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Output].Columns[utility_hours]" />
-                    <inputColumn
-                      refId="Package\DFT - calendar_utility_hrs_update\OLE DB Command.Inputs[OLE DB Command Input].Columns[date_key]"
-                      cachedDataType="i4"
-                      cachedName="date_key"
-                      externalMetadataColumnId="Package\DFT - calendar_utility_hrs_update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Output].Columns[date_key]" />
+                      refId="Package\Insert Source Records\Data Conversion.Inputs[Data Conversion Input].Columns[UNICODE.PhoneNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="UNICODE.PhoneNumber"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[UNICODE.PhoneNumber]" />
                   </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\DFT - calendar_utility_hrs_update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      dataType="i4"
-                      name="Param_0">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\DFT - calendar_utility_hrs_update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      dataType="i4"
-                      name="Param_1">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                  </externalMetadataColumns>
+                  <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - calendar_utility_hrs_update\OLE DB Command.Outputs[OLE DB Command Output]"
+                  refId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Output]"
                   exclusionGroup="1"
-                  name="OLE DB Command Output"
-                  synchronousInputId="Package\DFT - calendar_utility_hrs_update\OLE DB Command.Inputs[OLE DB Command Input]">
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Insert Source Records\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Output].Columns[PhoneNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Output].Columns[PhoneNumber]"
+                      name="PhoneNumber"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[UNICODE.PhoneNumber]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - calendar_utility_hrs_update\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  refId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
-                  name="OLE DB Command Error Output"
-                  synchronousInputId="Package\DFT - calendar_utility_hrs_update\OLE DB Command.Inputs[OLE DB Command Input]">
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Insert Source Records\Data Conversion.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - calendar_utility_hrs_update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      refId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - calendar_utility_hrs_update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - calendar_utility_hrs_update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      refId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - calendar_utility_hrs_update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -280,11 +252,113 @@ WHERE date_key = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\DFT - calendar_utility_hrs_update\OLE DB Source"
+              refId="Package\Insert Source Records\Inject Variables"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Inject Variables"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Insert Source Records\Inject Variables.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Insert Source Records\Inject Variables.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Output].Columns[process_batch_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Output].Columns[process_batch_key]"
+                      name="process_batch_key"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::process_batch_key]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::process_batch_key]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Insert Source Records\Inject Variables.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert Source Records\Inserted Record Counter"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Inserted Record Counter">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::inserted_record_count</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Insert Source Records\Inserted Record Counter.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Source Records\Inserted Record Counter.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Insert Source Records\Inserted Record Counter.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert Source Records\Source Query"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="OLE DB Source"
+              name="Source Query"
               usesDispositions="true"
               version="7">
               <properties>
@@ -295,7 +369,7 @@ WHERE date_key = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
+                  name="OpenRowset">[Person].[PersonPhone]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -304,9 +378,12 @@ WHERE date_key = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Hours AS utility_hours
-, CAST(CONVERT(CHAR(8), [FullDate], 112) AS INT) AS date_key
-FROM [dbo].[LUV_WorkDayInfo]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+  s.CurrencyCode
+, s.[Name] AS UnicodeName
+, s.ModifiedDate
+FROM
+Sales.Currency s</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -323,7 +400,7 @@ FROM [dbo].[LUV_WorkDayInfo]</property>
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">2</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
@@ -331,73 +408,112 @@ FROM [dbo].[LUV_WorkDayInfo]</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="{C9EB7D4F-6324-4959-A04D-23FBBD319871}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Apps Source]"
+                  refId="Package\Insert Source Records\Source Query.Connections[OleDbConnection]"
+                  connectionManagerID="{05F80DCE-F01C-4D58-A24D-269CD8645A7E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Source AW]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Output]"
+                  refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Output].Columns[utility_hours]"
-                      dataType="i4"
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[utility_hours]"
-                      lineageId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Output].Columns[utility_hours]"
-                      name="utility_hours"
+                      externalMetadataColumnId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      name="ModifiedDate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Output].Columns[date_key]"
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[BusinessEntityID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[date_key]"
-                      lineageId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Output].Columns[date_key]"
-                      name="date_key"
+                      externalMetadataColumnId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[BusinessEntityID]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[BusinessEntityID]"
+                      name="BusinessEntityID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[UNICODE.PhoneNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[PhoneNumber]"
+                      length="25"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[UNICODE.PhoneNumber]"
+                      name="UNICODE.PhoneNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[PhoneNumberTypeID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[PhoneNumberTypeID]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[PhoneNumberTypeID]"
+                      name="PhoneNumberTypeID"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[utility_hours]"
-                      dataType="i4"
-                      name="utility_hours" />
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[date_key]"
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[BusinessEntityID]"
                       dataType="i4"
-                      name="date_key" />
+                      name="BusinessEntityID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[PhoneNumber]"
+                      dataType="wstr"
+                      length="25"
+                      name="PhoneNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].ExternalColumns[PhoneNumberTypeID]"
+                      dataType="i4"
+                      name="PhoneNumberTypeID" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[utility_hours]"
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[BusinessEntityID]"
                       dataType="i4"
-                      lineageId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[utility_hours]"
-                      name="utility_hours" />
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[BusinessEntityID]"
+                      name="BusinessEntityID" />
                     <outputColumn
-                      refId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[date_key]"
-                      dataType="i4"
-                      lineageId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[date_key]"
-                      name="date_key" />
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[PhoneNumber]"
+                      dataType="wstr"
+                      length="25"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[PhoneNumber]"
+                      name="PhoneNumber" />
                     <outputColumn
-                      refId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[PhoneNumberTypeID]"
                       dataType="i4"
-                      lineageId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[PhoneNumberTypeID]"
+                      name="PhoneNumberTypeID" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      name="ModifiedDate" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -406,11 +522,11 @@ FROM [dbo].[LUV_WorkDayInfo]</property>
               </outputs>
             </component>
             <component
-              refId="Package\DFT - calendar_utility_hrs_update\Source Row Count"
+              refId="Package\Insert Source Records\Source Record Counter"
               componentClassID="Microsoft.RowCount"
               contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
-              name="Source Row Count">
+              name="Source Record Counter">
               <properties>
                 <property
                   dataType="System.String"
@@ -419,7 +535,7 @@ FROM [dbo].[LUV_WorkDayInfo]</property>
               </properties>
               <inputs>
                 <input
-                  refId="Package\DFT - calendar_utility_hrs_update\Source Row Count.Inputs[Row Count Input 1]"
+                  refId="Package\Insert Source Records\Source Record Counter.Inputs[Row Count Input 1]"
                   hasSideEffects="true"
                   name="Row Count Input 1">
                   <externalMetadataColumns />
@@ -427,9 +543,166 @@ FROM [dbo].[LUV_WorkDayInfo]</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - calendar_utility_hrs_update\Source Row Count.Outputs[Row Count Output 1]"
+                  refId="Package\Insert Source Records\Source Record Counter.Outputs[Row Count Output 1]"
                   name="Row Count Output 1"
-                  synchronousInputId="Package\DFT - calendar_utility_hrs_update\Source Row Count.Inputs[Row Count Input 1]">
+                  synchronousInputId="Package\Insert Source Records\Source Record Counter.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert Source Records\Target Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Target Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Person].[PersonPhone]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 10000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert Source Records\Target Table.Connections[OleDbConnection]"
+                  connectionManagerID="{640E18A5-95A3-4651-B9DD-FF37D7B7A46D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Staging AW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].Columns[ModifiedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ModifiedDate"
+                      externalMetadataColumnId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[ModifiedDate]" />
+                    <inputColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].Columns[process_batch_key]"
+                      cachedDataType="i4"
+                      cachedName="process_batch_key"
+                      externalMetadataColumnId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[process_batch_key]"
+                      lineageId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Output].Columns[process_batch_key]" />
+                    <inputColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].Columns[BusinessEntityID]"
+                      cachedDataType="i4"
+                      cachedName="BusinessEntityID"
+                      externalMetadataColumnId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[BusinessEntityID]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[BusinessEntityID]" />
+                    <inputColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].Columns[PhoneNumberTypeID]"
+                      cachedDataType="i4"
+                      cachedName="PhoneNumberTypeID"
+                      externalMetadataColumnId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[PhoneNumberTypeID]"
+                      lineageId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output].Columns[PhoneNumberTypeID]" />
+                    <inputColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].Columns[PhoneNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PhoneNumber"
+                      externalMetadataColumnId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[PhoneNumber]"
+                      lineageId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Output].Columns[PhoneNumber]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[process_batch_key]"
+                      dataType="i4"
+                      name="process_batch_key" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[BusinessEntityID]"
+                      dataType="i4"
+                      name="BusinessEntityID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[PhoneNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PhoneNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input].ExternalColumns[PhoneNumberTypeID]"
+                      dataType="i4"
+                      name="PhoneNumberTypeID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Source Records\Target Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Source Records\Target Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Source Records\Target Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Source Records\Target Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Source Records\Target Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
               </outputs>
@@ -437,25 +710,67 @@ FROM [dbo].[LUV_WorkDayInfo]</property>
           </components>
           <paths>
             <path
-              refId="Package\DFT - calendar_utility_hrs_update.Paths[OLE DB Source Output]"
-              endId="Package\DFT - calendar_utility_hrs_update\Source Row Count.Inputs[Row Count Input 1]"
-              name="OLE DB Source Output"
-              startId="Package\DFT - calendar_utility_hrs_update\OLE DB Source.Outputs[OLE DB Source Output]" />
+              refId="Package\Insert Source Records.Paths[Data Conversion Output]"
+              endId="Package\Insert Source Records\Inject Variables.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\Insert Source Records\Data Conversion.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\DFT - calendar_utility_hrs_update.Paths[Row Count Output 1]"
-              endId="Package\DFT - calendar_utility_hrs_update\OLE DB Command.Inputs[OLE DB Command Input]"
+              refId="Package\Insert Source Records.Paths[Derived Column Output]"
+              endId="Package\Insert Source Records\Inserted Record Counter.Inputs[Row Count Input 1]"
+              name="Derived Column Output"
+              startId="Package\Insert Source Records\Inject Variables.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Insert Source Records.Paths[OLE DB Source Output]"
+              endId="Package\Insert Source Records\Source Record Counter.Inputs[Row Count Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\Insert Source Records\Source Query.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Insert Source Records.Paths[Row Count Output 1]"
+              endId="Package\Insert Source Records\Data Conversion.Inputs[Data Conversion Input]"
               name="Row Count Output 1"
-              startId="Package\DFT - calendar_utility_hrs_update\Source Row Count.Outputs[Row Count Output 1]" />
+              startId="Package\Insert Source Records\Source Record Counter.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Insert Source Records.Paths[Row Count Output 11]"
+              endId="Package\Insert Source Records\Target Table.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\Insert Source Records\Inserted Record Counter.Outputs[Row Count Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Target Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6B3F5B86-7B4C-42AE-B66C-705874445BD6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Target Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{640E18A5-95A3-4651-B9DD-FF37D7B7A46D}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE Person.Person" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{A16C6B5C-2421-4156-A790-DAF3A184840D}"
+      DTS:From="Package\Truncate Target Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Insert Source Records" />
+  </DTS:PrecedenceConstraints>
   <DTS:EventHandlers>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{BC57C7D2-18C6-4B76-AA27-B705CB5FF280}"
+      DTS:DTSID="{B6CD3CDD-3395-4F1A-BEC5-4E347D51DAE4}"
       DTS:EventID="0"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -463,56 +778,31 @@ FROM [dbo].[LUV_WorkDayInfo]</property>
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{B36C6E5E-60FF-40D3-95BD-661EC3F3EFA2}"
+          DTS:DTSID="{CEEFD8FC-3910-46EE-9DEA-2B7B78149323}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
           <DTS:VariableValue
             DTS:DataType="11">-1</DTS:VariableValue>
         </DTS:Variable>
-        <DTS:Variable
-          DTS:CreationName=""
-          DTS:DTSID="{BF0B639B-BB1E-4811-8548-AA3C8B8BD29E}"
-          DTS:IncludeInDebugDump="2345"
-          DTS:Namespace="User"
-          DTS:ObjectName="str_error_message">
-          <DTS:VariableValue
-            DTS:DataType="8">"CriticalErrorItemStep:\t" + (DT_STR, 50, 1252)@[System.SourceName]  + "\n"
-																		+ "CriticalErrorItemSSISErrorCode:\t" +  (DT_STR, 50, 1252) @[System.ErrorCode] + "\n"
-																		+ "CriticalErrorItemSSISErrorDescription:\t" +  (DT_STR, 255, 1252) @[System.ErrorDescription]</DTS:VariableValue>
-        </DTS:Variable>
       </DTS:Variables>
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package.EventHandlers[OnError]\EXP - mark package error flag"
-          DTS:CreationName="Microsoft.ExpressionTask"
-          DTS:DTSID="{83FB5836-41D4-49B8-97AF-1906F4166911}"
-          DTS:ExecutableType="Microsoft.ExpressionTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="EXP - mark package error flag"
-          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <ExpressionTask
-              Expression="@[User::bool_package_error_flag]=TRUE" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package.EventHandlers[OnError]\SQL - log process batch error"
+          DTS:refId="Package.EventHandlers[OnError]\Log Process Batch Error"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:DTSID="{71C9BF07-BB3C-4931-A8AE-36D3A39A37D3}"
+          DTS:DTSID="{43650280-3E57-44B5-8BD7-EA1F1C013145}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="SQL - log process batch error"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          DTS:ObjectName="Log Process Batch Error"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; Â© 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{941B8089-DB87-4714-B6E1-9CF5A95AE58C}"
-              SQLTask:SqlStatementSource="EXEC cdm.batch_error_log &#xA;@batch_key = ?, &#xA;@error_scope = ?, &#xA;@error_number = ?, &#xA;@error_message = ?, &#xA;@error_type_cd = 'E'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:Connection="{880E6E59-FE7C-4FA9-8AF4-64008569D203}"
+              SQLTask:SqlStatementSource="EXEC cdm.process_batch_error_log &#xA;@process_batch_key = ?, &#xA;@error_scope = ?, &#xA;@error_number = ?, &#xA;@error_message = ?, @error_type_cd = 'E'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="User::batch_key"
+                SQLTask:DtsVariableName="User::process_batch_key"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="3"
                 SQLTask:ParameterSize="0" />
@@ -537,12 +827,26 @@ FROM [dbo].[LUV_WorkDayInfo]</property>
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Turn On Package Error Flag"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:DTSID="{9E26885C-71B7-4E52-A0E0-85C720298611}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Turn On Package Error Flag"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; Â© 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::package_error_flag]=TRUE" />
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
     </DTS:EventHandler>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnPostExecute]"
       DTS:CreationName="OnPostExecute"
-      DTS:DTSID="{C0246D31-4D3D-4A3B-9CA0-02519732E487}"
+      DTS:DTSID="{24822764-D859-494D-872B-5E619E1BBD6A}"
       DTS:EventID="0"
       DTS:EventName="OnPostExecute"
       DTS:LocaleID="-1">
@@ -550,7 +854,7 @@ FROM [dbo].[LUV_WorkDayInfo]</property>
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{3B44E3B4-D114-404D-B53F-F0D9339BA846}"
+          DTS:DTSID="{43947130-D188-4FA2-9C69-4C3667A6D19A}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -560,26 +864,84 @@ FROM [dbo].[LUV_WorkDayInfo]</property>
       </DTS:Variables>
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package.EventHandlers[OnPostExecute]\EXP - assign completed indicator"
+          DTS:refId="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
           DTS:CreationName="Microsoft.ExpressionTask"
-          DTS:DTSID="{1ED4F2CC-C9F3-4FFB-9372-A54E97236B86}"
+          DTS:DTSID="{0DC27B70-BBED-4D30-A301-C3CD5FE3CC5D}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="EXP - assign completed indicator"
-          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          DTS:ObjectName="Assign Completed Indicator"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; Â© 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExpressionTask
-              Expression="@[User::completed_ind] =  @[User::bool_package_error_flag] ? 0 : 1" />
+              Expression="@[User::completed_ind] =  @[User::package_error_flag] ? 0 : 1" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package.EventHandlers[OnPostExecute]\SCR - Branch Control Logic"
+          DTS:refId="Package.EventHandlers[OnPostExecute]\Conclude Process Batch"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{4D15478F-8B9C-481F-A873-9F93D971C9D9}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conclude Process Batch"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; Â© 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{880E6E59-FE7C-4FA9-8AF4-64008569D203}"
+              SQLTask:SqlStatementSource="EXEC cdm.process_batch_conclude&#xA;        @completed_ind = ?&#xA;      , @process_batch_key = ?&#xA;      , @source_record_ct = ?&#xA;      , @inserted_record_ct = ?&#xA;      , @unprocessed_record_ct = ?&#xA;      , @deleted_record_ct = ?&#xA;      , @updated_record_ct = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::completed_ind"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::process_batch_key"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::source_record_count"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::inserted_record_count"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::unprocessed_record_count"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::deleted_record_ct"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::updated_record_count"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\Entry Point"
           DTS:CreationName="Microsoft.ScriptTask"
-          DTS:DTSID="{8E024B0F-2896-40A3-BD7C-88C3DA1ECCA4}"
+          DTS:DTSID="{62AA9C87-EFBD-400C-8DFE-9E903D2E0515}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="SCR - Branch Control Logic">
+          DTS:ObjectName="Entry Point">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -913,7 +1275,7 @@ namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties {
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
 	<msb:PropertyGroup>
 		<msb:NoContent>Reference;Import;Folder</msb:NoContent>
-		<msb:ProjectId>{b5d1e76a-502b-4eb2-960b-67b66914d0c7}</msb:ProjectId>
+		<msb:ProjectId>{e5d675e5-b739-4d96-bfa9-f416c314baf3}</msb:ProjectId>
 		<msb:CodeName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:CodeName>
 		<msb:Language>msBuild</msb:Language>
 		<msb:DisplayName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:DisplayName>
@@ -1003,7 +1365,7 @@ namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties
               <BinaryItem
                 Name="ST_232fecafb70a4e8a904cc21f8870eed0.csproj.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAJzTaFUAAAAAAAAAAOAAAiELAQsAAA4AAAAIAAAAAAAAri0A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAAqsbFUAAAAAAAAAAOAAAiELAQsAAA4AAAAIAAAAAAAAri0A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAFgtAABTAAAAAEAAAJAEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1033,7 +1395,7 @@ pgEbAJkApgFiAKEApgEbAKkApgEbAAkApgEbALEAcwSpALEAjgSwACkApgG1AMkApgHBABEApgEb
 ANkApgEbABkAGgXUAOEAIgVdABkApgEbAAgAFABOAAgAGABTACkAowDHAC4AEwAhAS4AGwBRAS4A
 YwCPAS4ACwDZAC4AIwBRAS4AKwBXAS4AMwAhAS4AOwBmAS4AQwBRAS4AWwCGAUMAcwBTAEMAewBT
 AEMAawBoAEkAowDHAGEAewBTAIMAswBTALwAAgABAAMAAwAAAFkBLwAAANgBNAAAAPwBQgACAAIA
-AwACAAMABQABAAQABQACAAUABwAEgAAAAQAAAPsVpnAAAAAAAAC3AwAABAAAAAAAAAAAAAAAAQCb
+AwACAAMABQABAAQABQACAAUABwAEgAAAAQAAAP4VnWIAAAAAAAC3AwAABAAAAAAAAAAAAAAAAQCb
 AAAAAAAEAAAAAAAAAAAAAAABAKQAAAAAAAwAAAAAAAAAAAAAAAoA3wAAAAAAAAAAAAEAAAAxBQAA
 BQAEAAAAADxNb2R1bGU+AFNUXzIzMmZlY2FmYjcwYTRlOGE5MDRjYzIxZjg4NzBlZWQwLmNzcHJv
 ai5kbGwAUmVzb3VyY2VzAFNUXzIzMmZlY2FmYjcwYTRlOGE5MDRjYzIxZjg4NzBlZWQwLmNzcHJv
@@ -1062,7 +1424,7 @@ AGdldF9EdHMAc2V0X1Rhc2tSZXN1bHQAU1RfMjMyZmVjYWZiNzBhNGU4YTkwNGNjMjFmODg3MGVl
 ZDAuY3Nwcm9qLlByb3BlcnRpZXMuUmVzb3VyY2VzLnJlc291cmNlcwAAAH9TAFQAXwAyADMAMgBm
 AGUAYwBhAGYAYgA3ADAAYQA0AGUAOABhADkAMAA0AGMAYwAyADEAZgA4ADgANwAwAGUAZQBkADAA
 LgBjAHMAcAByAG8AagAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAA
-AAAA35S1Mpttx0GDzuBwR8n4FAAIt3pcVhk04IkIiYRdzYCAzJEDBhIVAwYSGQMgAAEEAAASFQQA
+AAAAtw7Vh+hX2EOE0u2X+3USYwAIt3pcVhk04IkIiYRdzYCAzJEDBhIVAwYSGQMgAAEEAAASFQQA
 ABIZBQABARIZBAgAEhUECAASGQMGEgwEAAASDAQIABIMAgYIAwYRFAQAAAAABAEAAAAEIAEBDgQg
 AQEIBSACAQ4OQAEAM1N5c3RlbS5SZXNvdXJjZXMuVG9vbHMuU3Ryb25nbHlUeXBlZFJlc291cmNl
 QnVpbGRlcgcyLjAuMC4wAAAGAAESWRFdBCAAEmEGIAIBDhJhBAcBEhUFIAEBEWkIAQACAAAAAAAD
@@ -1075,14 +1437,14 @@ RGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAA
 AAAASAAAAFhAAAA4BAAAAAAAAAAAAAA4BDQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYA
-TwAAAAAAvQTv/gAAAQAAAAEApnD7FQAAAQCmcPsVPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAA
+TwAAAAAAvQTv/gAAAQAAAAEAnWL+FQAAAQCdYv4VPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAA
 AEQAAAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkA
 bwBuAAAAAAAAALAEmAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAdAMAAAEAMAAw
 ADAAMAAwADQAYgAwAAAANAAKAAEAQwBvAG0AcABhAG4AeQBOAGEAbQBlAAAAAABWAGEAcgBpAGcA
 ZQBuAGMAZQAAAIAAKwABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABTAFQAXwBj
 ADQAMQBhAGQANABiAGYANAA3ADUANAA0AGMANAA5AGEAZAA0ADYAZgA0ADQANAAwADEANgAzAGYA
 ZQBhAGUALgBjAHMAcAByAG8AagAAAAAAQAAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAx
-AC4AMAAuADUANgAyADcALgAyADgAOAAzADgAAAAAAIAALwABAEkAbgB0AGUAcgBuAGEAbABOAGEA
+AC4AMAAuADUANgAzADAALgAyADUAMgA0ADUAAAAAAIAALwABAEkAbgB0AGUAcgBuAGEAbABOAGEA
 bQBlAAAAUwBUAF8AMgAzADIAZgBlAGMAYQBmAGIANwAwAGEANABlADgAYQA5ADAANABjAGMAMgAx
 AGYAOAA4ADcAMABlAGUAZAAwAC4AYwBzAHAAcgBvAGoALgBkAGwAbAAAAAAAXAAbAAEATABlAGcA
 YQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAVgBhAHIAaQBn
@@ -1091,9 +1453,9 @@ bQBlAAAAUwBUAF8AMgAzADIAZgBlAGMAYQBmAGIANwAwAGEANABlADgAYQA5ADAANABjAGMAMgAx
 AGYAOAA4ADcAMABlAGUAZAAwAC4AYwBzAHAAcgBvAGoALgBkAGwAbAAAAAAAeAArAAEAUAByAG8A
 ZAB1AGMAdABOAGEAbQBlAAAAAABTAFQAXwBjADQAMQBhAGQANABiAGYANAA3ADUANAA0AGMANAA5
 AGEAZAA0ADYAZgA0ADQANAAwADEANgAzAGYAZQBhAGUALgBjAHMAcAByAG8AagAAAAAARAAPAAEA
-UAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA1ADYAMgA3AC4AMgA4ADgAMwA4
+UAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA1ADYAMwAwAC4AMgA1ADIANAA1
 AAAAAABIAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA1ADYA
-MgA3AC4AMgA4ADgAMwA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+MwAwAC4AMgA1ADIANAA1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1112,79 +1474,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             </ScriptProject>
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package.EventHandlers[OnPostExecute]\SQL - conclude process batch"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:DTSID="{84C60A39-C210-40CF-A6C1-A466B986A082}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="SQL - conclude process batch"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{941B8089-DB87-4714-B6E1-9CF5A95AE58C}"
-              SQLTask:SqlStatementSource="EXEC cdm.batch_conclude&#xA;        @completed_ind = ?&#xA;      , @batch_key = ?&#xA;      , @source_record_ct = ?&#xA;      , @updated_record_ct = ?&#xA;      , @unprocessed_record_ct = ?&#xA;     " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="User::completed_ind"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="0" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="User::batch_key"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="0" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="2"
-                SQLTask:DtsVariableName="User::source_record_count"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="0" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="3"
-                SQLTask:DtsVariableName="User::revised_record_count"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="0" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="4"
-                SQLTask:DtsVariableName="User::unprocessed_record_count"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="0" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
           DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint_EXP - assign completed indicator_To_SQL - conclude process batch]"
           DTS:CreationName=""
-          DTS:DTSID="{575EA057-7D3B-429F-9F0E-B0A6F9F7DB7A}"
-          DTS:From="Package.EventHandlers[OnPostExecute]\EXP - assign completed indicator"
+          DTS:DTSID="{086D10AC-38D3-4B2E-8236-3C8BF66850C6}"
+          DTS:From="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint_EXP - assign completed indicator_To_SQL - conclude process batch"
-          DTS:To="Package.EventHandlers[OnPostExecute]\SQL - conclude process batch" />
+          DTS:To="Package.EventHandlers[OnPostExecute]\Conclude Process Batch" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint_SCR - Branch Control Logic_To_EXP - assign completed indicator]"
           DTS:CreationName=""
-          DTS:DTSID="{CFD1DE5C-978B-4ADB-BDEB-BA87660DE0BA}"
+          DTS:DTSID="{D85751DA-3657-4321-BF0E-95451A363BA0}"
           DTS:EvalOp="1"
           DTS:Expression="@[System::SourceID] ==  @[System::PackageID]"
-          DTS:From="Package.EventHandlers[OnPostExecute]\SCR - Branch Control Logic"
+          DTS:From="Package.EventHandlers[OnPostExecute]\Entry Point"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint_SCR - Branch Control Logic_To_EXP - assign completed indicator"
-          DTS:To="Package.EventHandlers[OnPostExecute]\EXP - assign completed indicator"
+          DTS:To="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
           DTS:Value="2" />
       </DTS:PrecedenceConstraints>
     </DTS:EventHandler>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnPreExecute]"
       DTS:CreationName="OnPreExecute"
-      DTS:DTSID="{6D120E9C-ADE5-423E-8B77-DE992373AEFE}"
+      DTS:DTSID="{C371537C-D25C-41A2-BFB6-30FE69F36DDD}"
       DTS:EventID="0"
       DTS:EventName="OnPreExecute"
       DTS:LocaleID="-1">
@@ -1192,7 +1508,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{3B62BA20-FBA5-4E1F-BE45-8BC66DB33521}"
+          DTS:DTSID="{37A9F4AE-02C3-4A00-94AE-9387709EB1C5}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -1204,7 +1520,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPreExecute]\Branch Control Logic"
           DTS:CreationName="Microsoft.ScriptTask"
-          DTS:DTSID="{0E3AB01A-181F-4D96-8A28-E4832CE687C7}"
+          DTS:DTSID="{219B2A74-F3B8-407D-B4BD-0010BB680117}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Branch Control Logic">
@@ -1541,7 +1857,7 @@ namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties {
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
 	<msb:PropertyGroup>
 		<msb:NoContent>Reference;Import;Folder</msb:NoContent>
-		<msb:ProjectId>{1a79e942-40d1-4e1b-9b9d-9b174245829a}</msb:ProjectId>
+		<msb:ProjectId>{5900288c-779f-40b9-be2a-8e0a563c922a}</msb:ProjectId>
 		<msb:CodeName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:CodeName>
 		<msb:Language>msBuild</msb:Language>
 		<msb:DisplayName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:DisplayName>
@@ -1631,7 +1947,7 @@ namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties
               <BinaryItem
                 Name="ST_232fecafb70a4e8a904cc21f8870eed0.csproj.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAJ3TaFUAAAAAAAAAAOAAAiELAQsAAA4AAAAIAAAAAAAAri0A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAAqsbFUAAAAAAAAAAOAAAiELAQsAAA4AAAAIAAAAAAAAri0A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAFgtAABTAAAAAEAAAJAEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1661,7 +1977,7 @@ pgEbAJkApgFiAKEApgEbAKkApgEbAAkApgEbALEAcwSpALEAjgSwACkApgG1AMkApgHBABEApgEb
 ANkApgEbABkAGgXUAOEAIgVdABkApgEbAAgAFABOAAgAGABTACkAowDHAC4AEwAhAS4AGwBRAS4A
 YwCPAS4ACwDZAC4AIwBRAS4AKwBXAS4AMwAhAS4AOwBmAS4AQwBRAS4AWwCGAUMAcwBTAEMAewBT
 AEMAawBoAEkAowDHAGEAewBTAIMAswBTALwAAgABAAMAAwAAAFkBLwAAANgBNAAAAPwBQgACAAIA
-AwACAAMABQABAAQABQACAAUABwAEgAAAAQAAAPsVpnAAAAAAAAC3AwAABAAAAAAAAAAAAAAAAQCb
+AwACAAMABQABAAQABQACAAUABwAEgAAAAQAAAP4VnWIAAAAAAAC3AwAABAAAAAAAAAAAAAAAAQCb
 AAAAAAAEAAAAAAAAAAAAAAABAKQAAAAAAAwAAAAAAAAAAAAAAAoA3wAAAAAAAAAAAAEAAAAxBQAA
 BQAEAAAAADxNb2R1bGU+AFNUXzIzMmZlY2FmYjcwYTRlOGE5MDRjYzIxZjg4NzBlZWQwLmNzcHJv
 ai5kbGwAUmVzb3VyY2VzAFNUXzIzMmZlY2FmYjcwYTRlOGE5MDRjYzIxZjg4NzBlZWQwLmNzcHJv
@@ -1690,7 +2006,7 @@ AGdldF9EdHMAc2V0X1Rhc2tSZXN1bHQAU1RfMjMyZmVjYWZiNzBhNGU4YTkwNGNjMjFmODg3MGVl
 ZDAuY3Nwcm9qLlByb3BlcnRpZXMuUmVzb3VyY2VzLnJlc291cmNlcwAAAH9TAFQAXwAyADMAMgBm
 AGUAYwBhAGYAYgA3ADAAYQA0AGUAOABhADkAMAA0AGMAYwAyADEAZgA4ADgANwAwAGUAZQBkADAA
 LgBjAHMAcAByAG8AagAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAA
-AAAAx3LgN4rMK06RSYBUHTa9IQAIt3pcVhk04IkIiYRdzYCAzJEDBhIVAwYSGQMgAAEEAAASFQQA
+AAAAl3+fP+BCRkenfE4Wb+u53wAIt3pcVhk04IkIiYRdzYCAzJEDBhIVAwYSGQMgAAEEAAASFQQA
 ABIZBQABARIZBAgAEhUECAASGQMGEgwEAAASDAQIABIMAgYIAwYRFAQAAAAABAEAAAAEIAEBDgQg
 AQEIBSACAQ4OQAEAM1N5c3RlbS5SZXNvdXJjZXMuVG9vbHMuU3Ryb25nbHlUeXBlZFJlc291cmNl
 QnVpbGRlcgcyLjAuMC4wAAAGAAESWRFdBCAAEmEGIAIBDhJhBAcBEhUFIAEBEWkIAQACAAAAAAAD
@@ -1703,14 +2019,14 @@ RGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAA
 AAAASAAAAFhAAAA4BAAAAAAAAAAAAAA4BDQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYA
-TwAAAAAAvQTv/gAAAQAAAAEApnD7FQAAAQCmcPsVPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAA
+TwAAAAAAvQTv/gAAAQAAAAEAnWL+FQAAAQCdYv4VPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAA
 AEQAAAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkA
 bwBuAAAAAAAAALAEmAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAdAMAAAEAMAAw
 ADAAMAAwADQAYgAwAAAANAAKAAEAQwBvAG0AcABhAG4AeQBOAGEAbQBlAAAAAABWAGEAcgBpAGcA
 ZQBuAGMAZQAAAIAAKwABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABTAFQAXwBj
 ADQAMQBhAGQANABiAGYANAA3ADUANAA0AGMANAA5AGEAZAA0ADYAZgA0ADQANAAwADEANgAzAGYA
 ZQBhAGUALgBjAHMAcAByAG8AagAAAAAAQAAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAx
-AC4AMAAuADUANgAyADcALgAyADgAOAAzADgAAAAAAIAALwABAEkAbgB0AGUAcgBuAGEAbABOAGEA
+AC4AMAAuADUANgAzADAALgAyADUAMgA0ADUAAAAAAIAALwABAEkAbgB0AGUAcgBuAGEAbABOAGEA
 bQBlAAAAUwBUAF8AMgAzADIAZgBlAGMAYQBmAGIANwAwAGEANABlADgAYQA5ADAANABjAGMAMgAx
 AGYAOAA4ADcAMABlAGUAZAAwAC4AYwBzAHAAcgBvAGoALgBkAGwAbAAAAAAAXAAbAAEATABlAGcA
 YQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAVgBhAHIAaQBn
@@ -1719,9 +2035,9 @@ bQBlAAAAUwBUAF8AMgAzADIAZgBlAGMAYQBmAGIANwAwAGEANABlADgAYQA5ADAANABjAGMAMgAx
 AGYAOAA4ADcAMABlAGUAZAAwAC4AYwBzAHAAcgBvAGoALgBkAGwAbAAAAAAAeAArAAEAUAByAG8A
 ZAB1AGMAdABOAGEAbQBlAAAAAABTAFQAXwBjADQAMQBhAGQANABiAGYANAA3ADUANAA0AGMANAA5
 AGEAZAA0ADYAZgA0ADQANAAwADEANgAzAGYAZQBhAGUALgBjAHMAcAByAG8AagAAAAAARAAPAAEA
-UAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA1ADYAMgA3AC4AMgA4ADgAMwA4
+UAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA1ADYAMwAwAC4AMgA1ADIANAA1
 AAAAAABIAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA1ADYA
-MgA3AC4AMgA4ADgAMwA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+MwAwAC4AMgA1ADIANAA1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1741,25 +2057,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package.EventHandlers[OnPreExecute]\SQL - initiate process batch"
+          DTS:refId="Package.EventHandlers[OnPreExecute]\Initiate Process Batch"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:DTSID="{D2461C66-CA45-4224-B57D-96A2EA537CC4}"
+          DTS:DTSID="{055EB87F-0D3F-40FC-9B49-9D5E03E37413}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="SQL - initiate process batch"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          DTS:ObjectName="Initiate Process Batch"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; Â© 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{941B8089-DB87-4714-B6E1-9CF5A95AE58C}"
-              SQLTask:SqlStatementSource="EXEC cdm.batch_initiate_internal &#xA;@process_uid = ?, &#xA;@workflow_name = ?, &#xA;@workflow_guid = ?, &#xA;@workflow_version= ?"
+              SQLTask:Connection="{880E6E59-FE7C-4FA9-8AF4-64008569D203}"
+              SQLTask:SqlStatementSource="EXEC cdm.process_batch_initiate_internal &#xA;@process_uid = ?, &#xA;@workflow_name = ?, &#xA;@workflow_guid = ?,&#xA;@workflow_version= ?"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
-                SQLTask:ResultName="batch_key"
-                SQLTask:DtsVariableName="User::batch_key" />
+                SQLTask:ResultName="process_batch_key"
+                SQLTask:DtsVariableName="User::process_batch_key" />
               <SQLTask:ResultBinding
-                SQLTask:ResultName="start_sequence_key"
-                SQLTask:DtsVariableName="User::start_sequence_key" />
+                SQLTask:ResultName="begin_sequence_key"
+                SQLTask:DtsVariableName="User::begin_sequence_key" />
               <SQLTask:ResultBinding
                 SQLTask:ResultName="end_sequence_key"
                 SQLTask:DtsVariableName="User::end_sequence_key" />
@@ -1774,7 +2090,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                 SQLTask:ParameterSize="-1" />
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="User::process_uid"
+                SQLTask:DtsVariableName="System::PackageName"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="129"
                 SQLTask:ParameterSize="-1" />
@@ -1798,77 +2114,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package.EventHandlers[OnPreExecute].PrecedenceConstraints[Constraint_Branch Control Logic_To_SQL - initiate process batch]"
           DTS:CreationName=""
-          DTS:DTSID="{A1813E7E-A942-4F57-923B-E14CF39E867D}"
+          DTS:DTSID="{7D1B38D6-A597-4A0A-9CCC-209B6F7172F4}"
           DTS:EvalOp="1"
           DTS:Expression="@[System::SourceID] ==  @[System::PackageID]"
           DTS:From="Package.EventHandlers[OnPreExecute]\Branch Control Logic"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint_Branch Control Logic_To_SQL - initiate process batch"
-          DTS:To="Package.EventHandlers[OnPreExecute]\SQL - initiate process batch"
+          DTS:To="Package.EventHandlers[OnPreExecute]\Initiate Process Batch"
           DTS:Value="2" />
       </DTS:PrecedenceConstraints>
-    </DTS:EventHandler>
-    <DTS:EventHandler
-      DTS:refId="Package.EventHandlers[OnWarning]"
-      DTS:CreationName="OnWarning"
-      DTS:DTSID="{C7525EFF-503F-4459-B87B-D7876A9B1FF4}"
-      DTS:EventID="0"
-      DTS:EventName="OnWarning"
-      DTS:LocaleID="-1">
-      <DTS:Variables>
-        <DTS:Variable
-          DTS:CreationName=""
-          DTS:Description="The propagate property of the event"
-          DTS:DTSID="{BCB7A069-170B-4B03-B58C-E9D0E125D453}"
-          DTS:IncludeInDebugDump="6789"
-          DTS:Namespace="System"
-          DTS:ObjectName="Propagate">
-          <DTS:VariableValue
-            DTS:DataType="11">-1</DTS:VariableValue>
-        </DTS:Variable>
-      </DTS:Variables>
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package.EventHandlers[OnWarning]\SQL - log process batch warning"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:DTSID="{111D3734-E77B-47B3-A9A9-981D79CF1482}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="SQL - log process batch warning"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{941B8089-DB87-4714-B6E1-9CF5A95AE58C}"
-              SQLTask:SqlStatementSource="EXEC cdm.batch_error_log &#xA;@batch_key = ?, &#xA;@error_scope = ?, &#xA;@error_number = ?, &#xA;@error_message = ?, &#xA;@error_type_cd = 'E'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="User::batch_key"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="0" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="System::SourceName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="0" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="2"
-                SQLTask:DtsVariableName="System::ErrorCode"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="0" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="3"
-                SQLTask:DtsVariableName="System::ErrorDescription"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="0" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
     </DTS:EventHandler>
   </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -1882,11 +2136,44 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="240,42"
-          Id="Package\DFT - calendar_utility_hrs_update"
-          TopLeft="200.928574756701,117.500000145856" />
+          Size="185,42"
+          Id="Package\Insert Source Records"
+          TopLeft="329,226" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Truncate Target Table"
+          TopLeft="322,130" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="418.25,172">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="PLEASE DO NOT CUSTOMIZE TEMPLATE TASK NAMES DURING DEVELOPMENT. &#xA;TASKS ADDED DURING DEVELOPMENT SHOULD BE NAMED BASED ON THEIR&#xA;FUNCTION WITHOUT ANY OBSCURE CODING REGIME."
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="457,74"
+          Id="c14b4fcf-cb91-4571-83fe-5c0f3e663610"
+          TopLeft="218.5,33.25" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1896,13 +2183,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="222.4,41.6"
-          Id="Package.EventHandlers[OnError]\EXP - mark package error flag"
-          TopLeft="5.50000000000004,5.50000000000007" />
+          Size="193,42"
+          Id="Package.EventHandlers[OnError]\Log Process Batch Error"
+          TopLeft="5.89999999999998,61.5000000000001" />
         <NodeLayout
-          Size="217.6,41.6"
-          Id="Package.EventHandlers[OnError]\SQL - log process batch error"
-          TopLeft="23.4714198618518,117.452942746568" />
+          Size="211,42"
+          Id="Package.EventHandlers[OnError]\Turn On Package Error Flag"
+          TopLeft="5.49999999999999,5.50000000000007" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
@@ -1912,31 +2199,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="233.6,41.6"
-          Id="Package.EventHandlers[OnPostExecute]\EXP - assign completed indicator"
-          TopLeft="5.50000000000003,107.1" />
+          Size="210,42"
+          Id="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
+          TopLeft="12.1666666666667,107.1" />
         <NodeLayout
-          Size="208,41.6"
-          Id="Package.EventHandlers[OnPostExecute]\SCR - Branch Control Logic"
-          TopLeft="18.3,5.50000000000007" />
+          Size="210,42"
+          Id="Package.EventHandlers[OnPostExecute]\Conclude Process Batch"
+          TopLeft="12.1666666666667,208.7" />
         <NodeLayout
-          Size="219.2,41.6"
-          Id="Package.EventHandlers[OnPostExecute]\SQL - conclude process batch"
-          TopLeft="12.7,208.7" />
+          Size="210,42"
+          Id="Package.EventHandlers[OnPostExecute]\Entry Point"
+          TopLeft="12.1666666666667,5.50000000000007" />
         <EdgeLayout
           Id="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint_EXP - assign completed indicator_To_SQL - conclude process batch]"
-          TopLeft="122.3,148.7">
+          TopLeft="117.166666666667,149.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="0,59.6"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="0,52.1">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,52.1" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1949,25 +2236,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint_SCR - Branch Control Logic_To_EXP - assign completed indicator]"
-          TopLeft="122.3,47.1000000000001">
+          TopLeft="117.166666666667,47.5000000000001">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="0,59.5999999999999"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="0,52.0999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,52.0999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-33.9655859375,18.2500000000001,67.931171875,16"
+              BoundingBox="-33.9655859375,18.05,67.931171875,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1980,125 +2267,219 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="177.6,41.6"
+          Size="178,42"
           Id="Package.EventHandlers[OnPreExecute]\Branch Control Logic"
           TopLeft="21.5,5.49999999999995" />
         <NodeLayout
-          Size="209.6,41.6"
-          Id="Package.EventHandlers[OnPreExecute]\SQL - initiate process batch"
-          TopLeft="5.50000000000001,107.1" />
+          Size="183,42"
+          Id="Package.EventHandlers[OnPreExecute]\Initiate Process Batch"
+          TopLeft="14.5,107.1" />
         <EdgeLayout
           Id="Package.EventHandlers[OnPreExecute].PrecedenceConstraints[Constraint_Branch Control Logic_To_SQL - initiate process batch]"
-          TopLeft="110.3,47.1">
+          TopLeft="108.25,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,59.6"
               Start="0,0"
-              End="0,52.5">
+              End="0,52.1">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,52.1" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-33.9655859375,18.25,67.931171875,16"
+              BoundingBox="-33.9655859375,18.05,67.931171875,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
-  <DtsEventHandler
-    design-time-name="Package.EventHandlers[OnWarning]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="234,42"
-          Id="Package.EventHandlers[OnWarning]\SQL - log process batch warning"
-          TopLeft="5.5,5.50000000000007" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
   <TaskHost
-    design-time-name="Package\DFT - calendar_utility_hrs_update">
+    design-time-name="Package\Insert Source Records">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="152,42"
-          Id="Package\DFT - calendar_utility_hrs_update\OLE DB Source"
-          TopLeft="393.33334003176,91.7647071693183" />
+          Size="190,42"
+          Id="Package\Insert Source Records\Source Record Counter"
+          TopLeft="300,185.6" />
         <NodeLayout
-          Size="166,42"
-          Id="Package\DFT - calendar_utility_hrs_update\OLE DB Command"
-          TopLeft="382.857149377161,252.862748644344" />
+          Size="154,42"
+          Id="Package\Insert Source Records\Inject Variables"
+          TopLeft="318,354.8" />
         <NodeLayout
-          Size="166,42"
-          Id="Package\DFT - calendar_utility_hrs_update\Source Row Count"
-          TopLeft="384.761911314361,173.333335764268" />
+          Size="145,42"
+          Id="Package\Insert Source Records\Source Query"
+          TopLeft="319,101" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Insert Source Records\Target Table"
+          TopLeft="326,524" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Insert Source Records\Inserted Record Counter"
+          TopLeft="301,439.4" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Insert Source Records\Data Conversion"
+          TopLeft="322,270.2" />
         <EdgeLayout
-          Id="Package\DFT - calendar_utility_hrs_update.Paths[Row Count Output 1]"
-          TopLeft="467.009530345761,214.933335764268">
+          Id="Package\Insert Source Records.Paths[Row Count Output 11]"
+          TopLeft="398,481.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.9294128800759"
+              EndConnector="0,42.6"
               Start="0,0"
-              End="0,30.4294128800759">
+              End="0,35.1">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.4294128800759" />
+                    End="0,35.1" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.45359375,10.430526752538,30.9071875,9.568359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT - calendar_utility_hrs_update.Paths[OLE DB Source Output]"
-          TopLeft="468.647625673061,133.364707169318">
+          Id="Package\Insert Source Records.Paths[Row Count Output 1]"
+          TopLeft="398,227.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.9686285949496"
+              EndConnector="0,42.6"
               Start="0,0"
-              End="0,32.4686285949496">
+              End="0,35.1">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.4686285949496" />
+                    End="0,35.1" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.45359375,11.4501346099748,30.9071875,9.568359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Source Records.Paths[OLE DB Source Output]"
+          TopLeft="393.25,143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.6"
+              Start="0,0"
+              End="0,35.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Source Records.Paths[Derived Column Output]"
+          TopLeft="397.25,396.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.6"
+              Start="0,0"
+              End="0,35.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Source Records.Paths[Data Conversion Output]"
+          TopLeft="398,312.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.6"
+              Start="0,0"
+              End="0,35.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="PLEASE DO NOT CUSTOMIZE TEMPLATE COMPONENT NAMES DURING DEVELOPMENT. &#xA;COMPONENTS ADDED DURING DEVELOPMENT SHOULD BE NAMED BASED ON THEIR&#xA;FUNCTION WITHOUT ANY OBSCURE CODING REGIME.  "
+          ParentId="Package\Insert Source Records"
+          FontInfo="{assembly:Null}"
+          Size="502,74"
+          Id="264989cc-23a3-4ca3-81c2-f727ba7fdabe"
+          TopLeft="176,8" />
+        <AnnotationLayout
+          Text="FOR THE DATA FLOW ENTERING THE DESTINATION COMPONENT, PLEASE ENSURE THAT&#xA;BOTH *COLUMN NAMES* AND DATA TYPES IN THE DATA FLOW EXACTLY MATCH THOSE&#xA;IN THE TARGET TABLE."
+          ParentId="Package\Insert Source Records"
+          FontInfo="{assembly:Null}"
+          Size="508,74"
+          Id="3bfa663a-d1ad-4d88-9d7a-06cf99449578"
+          TopLeft="163,593" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - calendar_utility_hrs_update\OLE DB Source">
+    design-time-name="Package\Insert Source Records\Source Query">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert Source Records\Target Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="CHRISWORK"
   DTS:CreatorName="Chris"
-  DTS:DTSID="{388C2A56-249B-4994-9B42-33EA62AE2A4B}"
+  DTS:DTSID="{4CA7C4C6-DC47-4C80-B331-06CA41700FAE}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="12.0.2430.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="dbo_calendar_index"
+  DTS:ObjectName="map_currency"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="55"
-  DTS:VersionGUID="{D50BE08D-987C-4B5E-8A14-62BCFC02F9AB}"
+  DTS:VersionBuild="57"
+  DTS:VersionGUID="{C6EA85C9-DEA5-4B21-A1FA-5F9FE13171FA}"
   DTS:VersionMajor="0">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{848D45F6-4412-43CB-B50F-60EB088D69CF}"
+      DTS:DTSID="{20F39B80-B1D5-437A-BBC7-A2C717BE486F}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="batch_key">
@@ -28,7 +28,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{9D573989-598F-4937-B3FD-A887EB2987BA}"
+      DTS:DTSID="{EE2FD574-6597-459C-931A-2B5E03EA974D}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="bool_package_error_flag">
@@ -37,16 +37,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4E16AA5D-F0D0-4288-B03B-312931D04962}"
-      DTS:IncludeInDebugDump="6789"
-      DTS:Namespace="User"
-      DTS:ObjectName="closed_dt">
-      <DTS:VariableValue
-        DTS:DataType="7">7/28/2015 3:27:32 PM</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{E38E63B2-562B-4626-84AC-1187A96DFDE6}"
+      DTS:DTSID="{870BB120-BFDC-4B19-9578-AA7F948B2F92}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="completed_ind">
@@ -55,7 +46,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{2F455FFC-125C-4BED-B708-008B29585D50}"
+      DTS:DTSID="{7541E26A-8BF3-4342-B82A-3D26AD136BE9}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="end_sequence_key">
@@ -64,7 +55,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{234022C1-A2F8-412E-82A6-E17C72E7EB82}"
+      DTS:DTSID="{AF55C383-9C9F-4F9E-860F-BB85BE22F55D}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="initiate_dtm_text">
@@ -73,7 +64,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{DC66B9FD-59D0-47EF-8CF2-2D34105296FB}"
+      DTS:DTSID="{FCBA227E-7621-4CB2-98AE-5A2D08216502}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="inserted_record_count">
@@ -82,29 +73,29 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{ED053C1D-A81F-4D0C-98C1-C25C0AA18EE9}"
+      DTS:DTSID="{4280814A-4E3A-4F58-A11A-2D7C75871040}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="(DT_STR, 8, 1252) @[System::VersionMajor] + &quot;.&quot; + (DT_STR, 8, 1252) @[System::VersionMinor] + &quot;.&quot; + (DT_STR, 8, 1252) @[System::VersionBuild]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">0.0.55</DTS:VariableValue>
+        DTS:DataType="8">0.0.57</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{74A9D08A-E521-4B2A-9EAC-69A0AB903DD7}"
+      DTS:DTSID="{AE45E50F-633E-48C3-9486-29AF8CBE04BE}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[$Project::ProjectName] + &quot;.&quot; +  (DT_WSTR,50)@[System::PackageName]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="process_uid">
       <DTS:VariableValue
-        DTS:DataType="8">Misc Staging To Warehouse.dbo_calendar_index</DTS:VariableValue>
+        DTS:DataType="8">Staging Governance To Warehouse.map_currency</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{323960CF-921A-4E7B-9D88-370E720FDD5F}"
+      DTS:DTSID="{00C7B0DB-1524-42B9-8686-1DCCCBED94F9}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="revised_record_count">
@@ -113,7 +104,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F6E3FFD3-355F-4D54-A903-21144089DB84}"
+      DTS:DTSID="{E6DCF235-7C9F-45EF-9991-BF581139036E}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="source_key">
@@ -122,7 +113,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D20A3082-AD1F-44D1-8412-956C9A9A4C80}"
+      DTS:DTSID="{D1441005-FC58-40DA-8C19-87E596006C31}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="source_record_count">
@@ -131,7 +122,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8279D4F7-4325-40EE-87ED-460F08D146F8}"
+      DTS:DTSID="{6A2101B0-4DE7-4760-B2BD-0C4BAD8F320D}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="source_uid">
@@ -140,7 +131,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D597C0F3-2AFB-412C-94AC-87DE19F5992C}"
+      DTS:DTSID="{93901F76-4960-4AEE-8BBF-2476C112415B}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="start_sequence_key">
@@ -149,7 +140,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{EE451592-6A08-482D-B164-D7015BBC3280}"
+      DTS:DTSID="{D50F6BCF-50F5-4EFF-83E4-A38534007247}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="unprocessed_record_count">
@@ -159,92 +150,846 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\SQL - calendar_closed_index_refresh"
+      DTS:refId="Package\Load Map Table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{7EEC9CBB-F4AB-43A4-8FA3-634FD047180A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Map Table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          defaultBufferMaxRows="37500"
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Map Table\Determine Action"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              name="Determine Action"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Map Table\Determine Action.Inputs[MRGJ - map_referral_map_Output_CSP - map_referral_map]"
+                  name="MRGJ - map_referral_map_Output_CSP - map_referral_map">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Map Table\Determine Action.Inputs[MRGJ - map_referral_map_Output_CSP - map_referral_map].Columns[TARGET.currency_uid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="TARGET.currency_uid"
+                      lineageId="Package\Load Map Table\Merge Join.Outputs[Merge Join Output].Columns[TARGET.currency_uid]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Map Table\Determine Action.Outputs[New]"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="New"
+                  synchronousInputId="Package\Load Map Table\Determine Action.Inputs[MRGJ - map_referral_map_Output_CSP - map_referral_map]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      name="Expression">[ISNULL](#{Package\Load Map Table\Merge Join.Outputs[Merge Join Output].Columns[TARGET.currency_uid]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL([TARGET.currency_uid])</property>
+                    <property
+                      dataType="System.Int32"
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Map Table\Determine Action.Outputs[Existing]"
+                  exclusionGroup="1"
+                  name="Existing"
+                  synchronousInputId="Package\Load Map Table\Determine Action.Inputs[MRGJ - map_referral_map_Output_CSP - map_referral_map]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Map Table\Determine Action.Outputs[Error]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Error"
+                  synchronousInputId="Package\Load Map Table\Determine Action.Inputs[MRGJ - map_referral_map_Output_CSP - map_referral_map]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Map Table\Determine Action.Outputs[Error].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Map Table\Determine Action.Outputs[Error].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Map Table\Determine Action.Outputs[Error].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Map Table\Determine Action.Outputs[Error].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Map Table\Inject Variables"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              name="Inject Variables"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Map Table\Inject Variables.Inputs[CSP - map_referral_map_New_DER - Inject Variables]"
+                  name="CSP - map_referral_map_New_DER - Inject Variables">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Map Table\Inject Variables.Outputs[Output]"
+                  exclusionGroup="1"
+                  name="Output"
+                  synchronousInputId="Package\Load Map Table\Inject Variables.Inputs[CSP - map_referral_map_New_DER - Inject Variables]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Map Table\Inject Variables.Outputs[Output].Columns[process_batch_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Map Table\Inject Variables.Outputs[Output].Columns[process_batch_key]"
+                      name="process_batch_key"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[batch_key]</property>
+                        <property
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@batch_key</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Map Table\Inject Variables.Outputs[Output].Columns[source_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Map Table\Inject Variables.Outputs[Output].Columns[source_key]"
+                      name="source_key"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[source_key]</property>
+                        <property
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@source_key</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Map Table\Inject Variables.Outputs[Error]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Error"
+                  synchronousInputId="Package\Load Map Table\Inject Variables.Inputs[CSP - map_referral_map_New_DER - Inject Variables]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Map Table\Inject Variables.Outputs[Error].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Map Table\Inject Variables.Outputs[Error].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Map Table\Inject Variables.Outputs[Error].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Map Table\Inject Variables.Outputs[Error].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Map Table\Inserted Record Counter"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              name="Inserted Record Counter">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::inserted_record_count</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Map Table\Inserted Record Counter.Inputs[DER - Inject Variables_Output_CNT - inserted Record Count]"
+                  hasSideEffects="true"
+                  name="DER - Inject Variables_Output_CNT - inserted Record Count">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Map Table\Inserted Record Counter.Outputs[Output]"
+                  name="Output"
+                  synchronousInputId="Package\Load Map Table\Inserted Record Counter.Inputs[DER - Inject Variables_Output_CNT - inserted Record Count]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Map Table\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Map Table\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Map Table\Merge Join.Inputs[Merge Join Left Input].Columns[currency_uid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="currency_uid"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Load Map Table\Source Query.Outputs[OLE DB Source Output].Columns[currency_uid]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load Map Table\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Map Table\Merge Join.Inputs[Merge Join Right Input].Columns[currency_uid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="currency_uid"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Load Map Table\Target Query.Outputs[OLE DB Source Output].Columns[currency_uid]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Map Table\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Map Table\Merge Join.Outputs[Merge Join Output].Columns[currency_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Load Map Table\Merge Join.Outputs[Merge Join Output].Columns[currency_uid]"
+                      name="currency_uid"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Map Table\Merge Join.Inputs[Merge Join Left Input].Columns[currency_uid]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Map Table\Merge Join.Outputs[Merge Join Output].Columns[TARGET.currency_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Load Map Table\Merge Join.Outputs[Merge Join Output].Columns[TARGET.currency_uid]"
+                      name="TARGET.currency_uid">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Map Table\Merge Join.Inputs[Merge Join Right Input].Columns[currency_uid]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Map Table\Source Query"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source Query"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+c.CurrencyCode AS currency_uid
+FROM
+dbo.Currency c
+ORDER BY
+c.CurrencyCode</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Map Table\Source Query.Connections[OleDbConnection]"
+                  connectionManagerID="{3C4DDC23-7D1F-4BE7-B35D-6DB0AACADAFF}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Staging Governance]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Map Table\Source Query.Outputs[OLE DB Source Output]"
+                  isSorted="true"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Map Table\Source Query.Outputs[OLE DB Source Output].Columns[currency_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Map Table\Source Query.Outputs[OLE DB Source Output].ExternalColumns[currency_uid]"
+                      length="20"
+                      lineageId="Package\Load Map Table\Source Query.Outputs[OLE DB Source Output].Columns[currency_uid]"
+                      name="currency_uid"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Map Table\Source Query.Outputs[OLE DB Source Output].ExternalColumns[currency_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="currency_uid" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Map Table\Source Query.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Map Table\Source Query.Outputs[OLE DB Source Error Output].Columns[currency_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Load Map Table\Source Query.Outputs[OLE DB Source Error Output].Columns[currency_uid]"
+                      name="currency_uid" />
+                    <outputColumn
+                      refId="Package\Load Map Table\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Map Table\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Map Table\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Map Table\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Map Table\Source Record Counter"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              name="Source Record Counter">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::source_record_count</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Map Table\Source Record Counter.Inputs[OLE_SRC map_referral_map_Output_CNT - Source Record Count]"
+                  hasSideEffects="true"
+                  name="OLE_SRC map_referral_map_Output_CNT - Source Record Count">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Map Table\Source Record Counter.Outputs[Output]"
+                  name="Output"
+                  synchronousInputId="Package\Load Map Table\Source Record Counter.Inputs[OLE_SRC map_referral_map_Output_CNT - Source Record Count]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Map Table\Target Query"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Target Query"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+m.currency_uid
+FROM
+map.currency m
+WHERE
+m.source_key = ?
+ORDER BY
+m.currency_uid</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{E6DCF235-7C9F-45EF-9991-BF581139036E};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Map Table\Target Query.Connections[OleDbConnection]"
+                  connectionManagerID="{0AE08716-EC95-4E27-8E63-6EAF7B6FD0C1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Warehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Map Table\Target Query.Outputs[OLE DB Source Output]"
+                  isSorted="true"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Map Table\Target Query.Outputs[OLE DB Source Output].Columns[currency_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Map Table\Target Query.Outputs[OLE DB Source Output].ExternalColumns[currency_uid]"
+                      length="200"
+                      lineageId="Package\Load Map Table\Target Query.Outputs[OLE DB Source Output].Columns[currency_uid]"
+                      name="currency_uid"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Map Table\Target Query.Outputs[OLE DB Source Output].ExternalColumns[currency_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="currency_uid" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Map Table\Target Query.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Map Table\Target Query.Outputs[OLE DB Source Error Output].Columns[currency_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Load Map Table\Target Query.Outputs[OLE DB Source Error Output].Columns[currency_uid]"
+                      name="currency_uid" />
+                    <outputColumn
+                      refId="Package\Load Map Table\Target Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Map Table\Target Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Map Table\Target Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Map Table\Target Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Map Table\Target Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              name="Target Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[map].[currency]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable">User::str_qualified_table_schema</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">ROWS_PER_BATCH = 50000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">100000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Map Table\Target Table.Connections[OleDbConnection]"
+                  connectionManagerID="{0AE08716-EC95-4E27-8E63-6EAF7B6FD0C1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Warehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Map Table\Target Table.Inputs[CNT - inserted Record Count_Output_OLE_DST map_referral_map]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="CNT - inserted Record Count_Output_OLE_DST map_referral_map">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Map Table\Target Table.Inputs[CNT - inserted Record Count_Output_OLE_DST map_referral_map].Columns[source_key]"
+                      cachedDataType="i4"
+                      cachedName="source_key"
+                      externalMetadataColumnId="Package\Load Map Table\Target Table.Inputs[CNT - inserted Record Count_Output_OLE_DST map_referral_map].ExternalColumns[source_key]"
+                      lineageId="Package\Load Map Table\Inject Variables.Outputs[Output].Columns[source_key]" />
+                    <inputColumn
+                      refId="Package\Load Map Table\Target Table.Inputs[CNT - inserted Record Count_Output_OLE_DST map_referral_map].Columns[process_batch_key]"
+                      cachedDataType="i4"
+                      cachedName="process_batch_key"
+                      externalMetadataColumnId="Package\Load Map Table\Target Table.Inputs[CNT - inserted Record Count_Output_OLE_DST map_referral_map].ExternalColumns[process_batch_key]"
+                      lineageId="Package\Load Map Table\Inject Variables.Outputs[Output].Columns[process_batch_key]" />
+                    <inputColumn
+                      refId="Package\Load Map Table\Target Table.Inputs[CNT - inserted Record Count_Output_OLE_DST map_referral_map].Columns[currency_uid]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="currency_uid"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Load Map Table\Target Table.Inputs[CNT - inserted Record Count_Output_OLE_DST map_referral_map].ExternalColumns[currency_uid]"
+                      lineageId="Package\Load Map Table\Merge Join.Outputs[Merge Join Output].Columns[currency_uid]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Map Table\Target Table.Inputs[CNT - inserted Record Count_Output_OLE_DST map_referral_map].ExternalColumns[source_key]"
+                      dataType="i4"
+                      name="source_key" />
+                    <externalMetadataColumn
+                      refId="Package\Load Map Table\Target Table.Inputs[CNT - inserted Record Count_Output_OLE_DST map_referral_map].ExternalColumns[process_batch_key]"
+                      dataType="i4"
+                      name="process_batch_key" />
+                    <externalMetadataColumn
+                      refId="Package\Load Map Table\Target Table.Inputs[CNT - inserted Record Count_Output_OLE_DST map_referral_map].ExternalColumns[currency_key]"
+                      dataType="i4"
+                      name="currency_key" />
+                    <externalMetadataColumn
+                      refId="Package\Load Map Table\Target Table.Inputs[CNT - inserted Record Count_Output_OLE_DST map_referral_map].ExternalColumns[currency_uid]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="currency_uid" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Map Table\Target Table.Outputs[Error]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Error"
+                  synchronousInputId="Package\Load Map Table\Target Table.Inputs[CNT - inserted Record Count_Output_OLE_DST map_referral_map]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Map Table\Target Table.Outputs[Error].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Map Table\Target Table.Outputs[Error].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Map Table\Target Table.Outputs[Error].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Map Table\Target Table.Outputs[Error].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Map Table\Unprocessed Record Counter"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              name="Unprocessed Record Counter">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::unprocessed_record_count</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Map Table\Unprocessed Record Counter.Inputs[CSP - map_referral_map_Default_CNT - Unprocessed Record Count]"
+                  hasSideEffects="true"
+                  name="CSP - map_referral_map_Default_CNT - Unprocessed Record Count">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Map Table\Unprocessed Record Counter.Outputs[Output]"
+                  name="Output"
+                  synchronousInputId="Package\Load Map Table\Unprocessed Record Counter.Inputs[CSP - map_referral_map_Default_CNT - Unprocessed Record Count]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Map Table.Paths[CNT - inserted Record Count_Output_OLE_DST map_referral_map]"
+              endId="Package\Load Map Table\Target Table.Inputs[CNT - inserted Record Count_Output_OLE_DST map_referral_map]"
+              name="CNT - inserted Record Count_Output_OLE_DST map_referral_map"
+              startId="Package\Load Map Table\Inserted Record Counter.Outputs[Output]" />
+            <path
+              refId="Package\Load Map Table.Paths[CSP - map_referral_map_Default_CNT - Unprocessed Record Count]"
+              endId="Package\Load Map Table\Unprocessed Record Counter.Inputs[CSP - map_referral_map_Default_CNT - Unprocessed Record Count]"
+              name="CSP - map_referral_map_Default_CNT - Unprocessed Record Count"
+              startId="Package\Load Map Table\Determine Action.Outputs[Existing]" />
+            <path
+              refId="Package\Load Map Table.Paths[CSP - map_referral_map_New_DER - Inject Variables]"
+              endId="Package\Load Map Table\Inject Variables.Inputs[CSP - map_referral_map_New_DER - Inject Variables]"
+              name="CSP - map_referral_map_New_DER - Inject Variables"
+              startId="Package\Load Map Table\Determine Action.Outputs[New]" />
+            <path
+              refId="Package\Load Map Table.Paths[DER - Inject Variables_Output_CNT - inserted Record Count]"
+              endId="Package\Load Map Table\Inserted Record Counter.Inputs[DER - Inject Variables_Output_CNT - inserted Record Count]"
+              name="DER - Inject Variables_Output_CNT - inserted Record Count"
+              startId="Package\Load Map Table\Inject Variables.Outputs[Output]" />
+            <path
+              refId="Package\Load Map Table.Paths[Merge Join Output]"
+              endId="Package\Load Map Table\Determine Action.Inputs[MRGJ - map_referral_map_Output_CSP - map_referral_map]"
+              name="Merge Join Output"
+              startId="Package\Load Map Table\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Load Map Table.Paths[OLE DB Source Output]"
+              endId="Package\Load Map Table\Source Record Counter.Inputs[OLE_SRC map_referral_map_Output_CNT - Source Record Count]"
+              name="OLE DB Source Output"
+              startId="Package\Load Map Table\Source Query.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load Map Table.Paths[OLE DB Source Output1]"
+              endId="Package\Load Map Table\Merge Join.Inputs[Merge Join Right Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Map Table\Target Query.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load Map Table.Paths[Output]"
+              endId="Package\Load Map Table\Merge Join.Inputs[Merge Join Left Input]"
+              name="Output"
+              startId="Package\Load Map Table\Source Record Counter.Outputs[Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Lookup Source Key"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{7416C237-1A21-40AA-9BBF-64141A38BB3C}"
+      DTS:DTSID="{B457F1B3-EB95-4262-BA0D-EEAECA07A266}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="SQL - calendar_closed_index_refresh"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ObjectName="Lookup Source Key"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{0AE08716-EC95-4E27-8E63-6EAF7B6FD0C1}"
-          SQLTask:SqlStatementSource="EXEC dbo.calendar_closed_index_refresh ? " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::closed_dt"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="7"
-            SQLTask:ParameterSize="-1" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\SQL - calendar_index_refresh"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{DC5EB280-C4CE-42F9-ACD2-7B61572DD1CA}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="SQL - calendar_index_refresh"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{0AE08716-EC95-4E27-8E63-6EAF7B6FD0C1}"
-          SQLTask:SqlStatementSource="EXEC dbo.calendar_index_refresh" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\SQL - Get Closed Date"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{B4611667-1230-4A5D-B5CD-A99FAFF5AD5A}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="SQL - Get Closed Date"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{C9EB7D4F-6324-4959-A04D-23FBBD319871}"
-          SQLTask:SqlStatementSource="SELECT Value AS closed_dt &#xA;FROM dbo.[Configuration]&#xA;WHERE Name = 'FinancialsClosed_YearMonth'"
+          SQLTask:SqlStatementSource="EXEC source_key_lookup @source_uid = ? "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
-            SQLTask:ResultName="closed_dt"
-            SQLTask:DtsVariableName="User::closed_dt" />
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::source_key" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="$Project::DefaultSourceUID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:refId="Package.PrecedenceConstraints[Constraint_SQL - get source key_To_DFT - map_referral_map]"
       DTS:CreationName=""
-      DTS:DTSID="{1B26CFE2-DC60-4652-85E4-5B44C324B911}"
-      DTS:From="Package\SQL - calendar_index_refresh"
+      DTS:DTSID="{EA8E31FF-D8F0-4A33-9281-AE31AD78D02A}"
+      DTS:From="Package\Lookup Source Key"
       DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint"
-      DTS:To="Package\SQL - calendar_closed_index_refresh" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{135049B7-5F77-4D48-A682-73A1A2944B9B}"
-      DTS:From="Package\SQL - Get Closed Date"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1"
-      DTS:To="Package\SQL - calendar_closed_index_refresh" />
+      DTS:ObjectName="Constraint_SQL - get source key_To_DFT - map_referral_map"
+      DTS:To="Package\Load Map Table" />
   </DTS:PrecedenceConstraints>
   <DTS:EventHandlers>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{C569E44F-333A-4580-83D0-8776ED276508}"
+      DTS:DTSID="{D34F5A2D-6387-4F05-80FF-E246A6541631}"
       DTS:EventID="0"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -252,7 +997,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{924047A9-104B-471D-AB5D-420F0CF51081}"
+          DTS:DTSID="{1F37046E-DFBE-4DE1-93FA-875D96CFF457}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -261,7 +1006,7 @@
         </DTS:Variable>
         <DTS:Variable
           DTS:CreationName=""
-          DTS:DTSID="{BE58DC42-5E1B-41A8-8E0C-7F630085A940}"
+          DTS:DTSID="{8E57AD83-59F4-4DDD-814F-5EF73FD95D9F}"
           DTS:IncludeInDebugDump="2345"
           DTS:Namespace="User"
           DTS:ObjectName="str_error_message">
@@ -275,7 +1020,7 @@
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\EXP - mark package error flag"
           DTS:CreationName="Microsoft.ExpressionTask"
-          DTS:DTSID="{9483A12B-68E4-4A7A-888B-F6978950F1E2}"
+          DTS:DTSID="{95FD3E15-4571-40F3-9E2F-E1B08E220C0E}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="EXP - mark package error flag"
@@ -289,7 +1034,7 @@
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\SQL - log process batch error"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:DTSID="{D921472A-620B-4F23-8399-767F5B339E4F}"
+          DTS:DTSID="{F3E6E085-6F04-4041-9A55-C70298572A4E}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL - log process batch error"
@@ -331,7 +1076,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnPostExecute]"
       DTS:CreationName="OnPostExecute"
-      DTS:DTSID="{7B868865-5C54-42E4-81CA-BC68671EE9D4}"
+      DTS:DTSID="{F861C25D-B59A-4005-A2A7-EBFB10C7F8F0}"
       DTS:EventID="0"
       DTS:EventName="OnPostExecute"
       DTS:LocaleID="-1">
@@ -339,7 +1084,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{FFDE698C-C0E4-48A0-8A57-FCCAEE789EFC}"
+          DTS:DTSID="{884A1995-773B-4AA9-85FF-AAA588D64690}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -351,7 +1096,7 @@
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPostExecute]\EXP - assign completed indicator"
           DTS:CreationName="Microsoft.ExpressionTask"
-          DTS:DTSID="{B9F86E23-64F3-47DA-855F-7554F9D0A26D}"
+          DTS:DTSID="{73D09127-772E-4C59-9D90-6983A6E4F658}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="EXP - assign completed indicator"
@@ -365,7 +1110,7 @@
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPostExecute]\SCR - Branch Control Logic"
           DTS:CreationName="Microsoft.ScriptTask"
-          DTS:DTSID="{D4254F85-ADD7-4C04-9E96-93C63523BCAB}"
+          DTS:DTSID="{7A59D5B4-1D77-4F67-B7E9-06B457612F91}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SCR - Branch Control Logic">
@@ -624,99 +1369,6 @@
                                     }
                                 ]]></ProjectItem>
               <ProjectItem
-                Name="AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[
-                                    using System.Reflection;
-                                    using System.Runtime.CompilerServices;
-
-                                    //
-                                    // General Information about an assembly is controlled through the following
-                                    // set of attributes. Change these attribute values to modify the information
-                                    // associated with an assembly.
-                                    //
-                                    [assembly: AssemblyTitle("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
-                                    [assembly: AssemblyDescription("")]
-                                    [assembly: AssemblyConfiguration("")]
-                                    [assembly: AssemblyCompany("Varigence")]
-                                    [assembly: AssemblyProduct("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
-                                    [assembly: AssemblyCopyright("Copyright @ Varigence 2013")]
-                                    [assembly: AssemblyTrademark("")]
-                                    [assembly: AssemblyCulture("")]
-                                    //
-                                    // Version information for an assembly consists of the following four values:
-                                    //
-                                    //      Major Version
-                                    //      Minor Version
-                                    //      Build Number
-                                    //      Revision
-                                    //
-                                    // You can specify all the values or you can default the Revision and Build Numbers
-                                    // by using the '*' as shown below:
-
-                                    [assembly: AssemblyVersion("1.0.*")]
-                                ]]></ProjectItem>
-              <ProjectItem
-                Name="Project"
-                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-	<msb:PropertyGroup>
-		<msb:NoContent>Reference;Import;Folder</msb:NoContent>
-		<msb:ProjectId>{b5d1e76a-502b-4eb2-960b-67b66914d0c7}</msb:ProjectId>
-		<msb:CodeName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:CodeName>
-		<msb:Language>msBuild</msb:Language>
-		<msb:DisplayName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:DisplayName>
-	</msb:PropertyGroup>
-	<msb:ItemGroup>
-		<msb:File Include="AssemblyInfo.cs"/>
-		<msb:File Include="Properties\Resources.resx"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
-		<msb:File Include="Properties\Resources.Designer.cs"/>
-		<msb:File Include="ScriptMain.cs"/>
-		<msb:File Include="Properties\Settings.settings"/>
-		<msb:Project Include="ST_232fecafb70a4e8a904cc21f8870eed0.csproj"/>
-	</msb:ItemGroup>
-</c:Project>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope = "member", Target = "ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings.get_Default():ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings")]
-
-namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties
-{
-
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-
-        public static Settings Default
-        {
-            get
-            {
-                return defaultInstance;
-            }
-        }
-
-    }
-}]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="iso-8859-1"?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"  >
-    <Profiles>
-        <Profile Name="(Default)" />
-    </Profiles>
-    <Settings /></SettingsFile>]]></ProjectItem>
-              <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
 // <auto-generated>
@@ -789,6 +1441,99 @@ namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties {
 
     }
 }]]></ProjectItem>
+              <ProjectItem
+                Name="Project"
+                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:NoContent>Reference;Import;Folder</msb:NoContent>
+		<msb:ProjectId>{b5d1e76a-502b-4eb2-960b-67b66914d0c7}</msb:ProjectId>
+		<msb:CodeName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:DisplayName>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:File Include="AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="ScriptMain.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:Project Include="ST_232fecafb70a4e8a904cc21f8870eed0.csproj"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope = "member", Target = "ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings.get_Default():ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings")]
+
+namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties
+{
+
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
+    {
+
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+
+        public static Settings Default
+        {
+            get
+            {
+                return defaultInstance;
+            }
+        }
+
+    }
+}]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="iso-8859-1"?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"  >
+    <Profiles>
+        <Profile Name="(Default)" />
+    </Profiles>
+    <Settings /></SettingsFile>]]></ProjectItem>
+              <ProjectItem
+                Name="AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[
+                                    using System.Reflection;
+                                    using System.Runtime.CompilerServices;
+
+                                    //
+                                    // General Information about an assembly is controlled through the following
+                                    // set of attributes. Change these attribute values to modify the information
+                                    // associated with an assembly.
+                                    //
+                                    [assembly: AssemblyTitle("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
+                                    [assembly: AssemblyDescription("")]
+                                    [assembly: AssemblyConfiguration("")]
+                                    [assembly: AssemblyCompany("Varigence")]
+                                    [assembly: AssemblyProduct("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
+                                    [assembly: AssemblyCopyright("Copyright @ Varigence 2013")]
+                                    [assembly: AssemblyTrademark("")]
+                                    [assembly: AssemblyCulture("")]
+                                    //
+                                    // Version information for an assembly consists of the following four values:
+                                    //
+                                    //      Major Version
+                                    //      Minor Version
+                                    //      Build Number
+                                    //      Revision
+                                    //
+                                    // You can specify all the values or you can default the Revision and Build Numbers
+                                    // by using the '*' as shown below:
+
+                                    [assembly: AssemblyVersion("1.0.*")]
+                                ]]></ProjectItem>
               <BinaryItem
                 Name="ST_232fecafb70a4e8a904cc21f8870eed0.csproj.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
@@ -904,7 +1649,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPostExecute]\SQL - conclude process batch"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:DTSID="{70A0ED60-3A38-4C28-8964-A770E2FA413A}"
+          DTS:DTSID="{634D1866-8C60-4958-8DB8-3EC1EDF67350}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL - conclude process batch"
@@ -913,7 +1658,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{941B8089-DB87-4714-B6E1-9CF5A95AE58C}"
-              SQLTask:SqlStatementSource="EXEC cdm.batch_conclude&#xA;        @completed_ind = ?&#xA;      , @batch_key = ?     " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="EXEC cdm.batch_conclude&#xA;        @completed_ind = ?&#xA;      , @batch_key = ?&#xA;      , @source_record_ct = ?&#xA;      , @inserted_record_ct = ?&#xA;      , @unprocessed_record_ct = ?&#xA;     " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::completed_ind"
@@ -926,6 +1671,24 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="3"
                 SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::source_record_count"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::inserted_record_count"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::unprocessed_record_count"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="0" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -934,7 +1697,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint_EXP - assign completed indicator_To_SQL - conclude process batch]"
           DTS:CreationName=""
-          DTS:DTSID="{EB28835F-37BA-47B6-81A2-107BEDDB3775}"
+          DTS:DTSID="{A037144E-85F4-47E2-8A46-24323E19221C}"
           DTS:From="Package.EventHandlers[OnPostExecute]\EXP - assign completed indicator"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint_EXP - assign completed indicator_To_SQL - conclude process batch"
@@ -942,7 +1705,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint_SCR - Branch Control Logic_To_EXP - assign completed indicator]"
           DTS:CreationName=""
-          DTS:DTSID="{6B33B737-887F-42B0-B122-8CF5E3422751}"
+          DTS:DTSID="{93917A46-05C0-4344-BF2F-9890E581D2FD}"
           DTS:EvalOp="1"
           DTS:Expression="@[System::SourceID] ==  @[System::PackageID]"
           DTS:From="Package.EventHandlers[OnPostExecute]\SCR - Branch Control Logic"
@@ -955,7 +1718,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnPreExecute]"
       DTS:CreationName="OnPreExecute"
-      DTS:DTSID="{103334E1-A504-4CC2-A681-4D1EE35FC19F}"
+      DTS:DTSID="{9638F479-2CBE-4627-B8F4-16757020BECB}"
       DTS:EventID="0"
       DTS:EventName="OnPreExecute"
       DTS:LocaleID="-1">
@@ -963,7 +1726,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{3961CC87-3215-40A5-81AF-B2E6B9AFC81F}"
+          DTS:DTSID="{3668583E-B622-4F02-90B1-27B68B272B76}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -975,7 +1738,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPreExecute]\Branch Control Logic"
           DTS:CreationName="Microsoft.ScriptTask"
-          DTS:DTSID="{D9DDE41D-C080-4966-AA46-879B50FE97E8}"
+          DTS:DTSID="{9A29E290-CB7B-43F1-9E6C-2B031B42964D}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Branch Control Logic">
@@ -1234,99 +1997,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                                     }
                                 ]]></ProjectItem>
               <ProjectItem
-                Name="AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[
-                                    using System.Reflection;
-                                    using System.Runtime.CompilerServices;
-
-                                    //
-                                    // General Information about an assembly is controlled through the following
-                                    // set of attributes. Change these attribute values to modify the information
-                                    // associated with an assembly.
-                                    //
-                                    [assembly: AssemblyTitle("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
-                                    [assembly: AssemblyDescription("")]
-                                    [assembly: AssemblyConfiguration("")]
-                                    [assembly: AssemblyCompany("Varigence")]
-                                    [assembly: AssemblyProduct("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
-                                    [assembly: AssemblyCopyright("Copyright @ Varigence 2013")]
-                                    [assembly: AssemblyTrademark("")]
-                                    [assembly: AssemblyCulture("")]
-                                    //
-                                    // Version information for an assembly consists of the following four values:
-                                    //
-                                    //      Major Version
-                                    //      Minor Version
-                                    //      Build Number
-                                    //      Revision
-                                    //
-                                    // You can specify all the values or you can default the Revision and Build Numbers
-                                    // by using the '*' as shown below:
-
-                                    [assembly: AssemblyVersion("1.0.*")]
-                                ]]></ProjectItem>
-              <ProjectItem
-                Name="Project"
-                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
-	<msb:PropertyGroup>
-		<msb:NoContent>Reference;Import;Folder</msb:NoContent>
-		<msb:ProjectId>{1a79e942-40d1-4e1b-9b9d-9b174245829a}</msb:ProjectId>
-		<msb:CodeName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:CodeName>
-		<msb:Language>msBuild</msb:Language>
-		<msb:DisplayName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:DisplayName>
-	</msb:PropertyGroup>
-	<msb:ItemGroup>
-		<msb:File Include="AssemblyInfo.cs"/>
-		<msb:File Include="Properties\Resources.resx"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
-		<msb:File Include="Properties\Resources.Designer.cs"/>
-		<msb:File Include="ScriptMain.cs"/>
-		<msb:File Include="Properties\Settings.settings"/>
-		<msb:Project Include="ST_232fecafb70a4e8a904cc21f8870eed0.csproj"/>
-	</msb:ItemGroup>
-</c:Project>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope = "member", Target = "ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings.get_Default():ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings")]
-
-namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties
-{
-
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-
-        public static Settings Default
-        {
-            get
-            {
-                return defaultInstance;
-            }
-        }
-
-    }
-}]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="iso-8859-1"?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"  >
-    <Profiles>
-        <Profile Name="(Default)" />
-    </Profiles>
-    <Settings /></SettingsFile>]]></ProjectItem>
-              <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
 // <auto-generated>
@@ -1399,6 +2069,99 @@ namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties {
 
     }
 }]]></ProjectItem>
+              <ProjectItem
+                Name="Project"
+                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:NoContent>Reference;Import;Folder</msb:NoContent>
+		<msb:ProjectId>{1a79e942-40d1-4e1b-9b9d-9b174245829a}</msb:ProjectId>
+		<msb:CodeName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>ST_232fecafb70a4e8a904cc21f8870eed0</msb:DisplayName>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:File Include="AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="ScriptMain.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:Project Include="ST_232fecafb70a4e8a904cc21f8870eed0.csproj"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope = "member", Target = "ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings.get_Default():ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties.Settings")]
+
+namespace ST_232fecafb70a4e8a904cc21f8870eed0.csproj.Properties
+{
+
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
+    {
+
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+
+        public static Settings Default
+        {
+            get
+            {
+                return defaultInstance;
+            }
+        }
+
+    }
+}]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="iso-8859-1"?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)"  >
+    <Profiles>
+        <Profile Name="(Default)" />
+    </Profiles>
+    <Settings /></SettingsFile>]]></ProjectItem>
+              <ProjectItem
+                Name="AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[
+                                    using System.Reflection;
+                                    using System.Runtime.CompilerServices;
+
+                                    //
+                                    // General Information about an assembly is controlled through the following
+                                    // set of attributes. Change these attribute values to modify the information
+                                    // associated with an assembly.
+                                    //
+                                    [assembly: AssemblyTitle("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
+                                    [assembly: AssemblyDescription("")]
+                                    [assembly: AssemblyConfiguration("")]
+                                    [assembly: AssemblyCompany("Varigence")]
+                                    [assembly: AssemblyProduct("ST_c41ad4bf47544c49ad46f4440163feae.csproj")]
+                                    [assembly: AssemblyCopyright("Copyright @ Varigence 2013")]
+                                    [assembly: AssemblyTrademark("")]
+                                    [assembly: AssemblyCulture("")]
+                                    //
+                                    // Version information for an assembly consists of the following four values:
+                                    //
+                                    //      Major Version
+                                    //      Minor Version
+                                    //      Build Number
+                                    //      Revision
+                                    //
+                                    // You can specify all the values or you can default the Revision and Build Numbers
+                                    // by using the '*' as shown below:
+
+                                    [assembly: AssemblyVersion("1.0.*")]
+                                ]]></ProjectItem>
               <BinaryItem
                 Name="ST_232fecafb70a4e8a904cc21f8870eed0.csproj.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
@@ -1514,7 +2277,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPreExecute]\SQL - initiate process batch"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:DTSID="{3CD9F6BD-4F62-4F42-A7BD-D4A5102DD0F6}"
+          DTS:DTSID="{FEA61BAF-0558-4C36-8301-ABEF5DBCF8AC}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL - initiate process batch"
@@ -1569,7 +2332,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package.EventHandlers[OnPreExecute].PrecedenceConstraints[Constraint_Branch Control Logic_To_SQL - initiate process batch]"
           DTS:CreationName=""
-          DTS:DTSID="{29B5D30A-505F-40AE-A226-7C5CDB2F6457}"
+          DTS:DTSID="{B378AB16-24A9-42CA-A636-1A9794DA64B7}"
           DTS:EvalOp="1"
           DTS:Expression="@[System::SourceID] ==  @[System::PackageID]"
           DTS:From="Package.EventHandlers[OnPreExecute]\Branch Control Logic"
@@ -1582,7 +2345,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnWarning]"
       DTS:CreationName="OnWarning"
-      DTS:DTSID="{4DDBCAC4-61A8-4210-8B9D-601C605B91E7}"
+      DTS:DTSID="{06E6BC78-7598-4302-B63C-4DEA43E18568}"
       DTS:EventID="0"
       DTS:EventName="OnWarning"
       DTS:LocaleID="-1">
@@ -1590,7 +2353,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{D7A60BEF-AC04-4527-8FD1-CB15447BC605}"
+          DTS:DTSID="{8CA39839-21DF-4BD6-83BE-C5B83526C24E}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -1602,7 +2365,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnWarning]\SQL - log process batch warning"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:DTSID="{F93DC13F-3B3A-4084-8E0C-6C12819249E3}"
+          DTS:DTSID="{B70D5C11-CA8B-4F80-A2AB-A67C7BB4ABC7}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL - log process batch warning"
@@ -1653,79 +2416,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="254,42"
-          Id="Package\SQL - calendar_closed_index_refresh"
-          TopLeft="252.000002997262,167.717649186606" />
+          Size="156,42"
+          Id="Package\Load Map Table"
+          TopLeft="255.785718548055,118.111764860318" />
         <NodeLayout
-          Size="219,42"
-          Id="Package\SQL - calendar_index_refresh"
-          TopLeft="193.14286043206,54.4470595871289" />
-        <NodeLayout
-          Size="186,42"
-          Id="Package\SQL - Get Closed Date"
-          TopLeft="445.142864723595,58.1176478739016" />
+          Size="171,42"
+          Id="Package\Lookup Source Key"
+          TopLeft="245.157146788617,19.5705884326288" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="302.64286043206,96.4470595871289">
+          Id="Package.PrecedenceConstraints[Constraint_SQL - get source key_To_DFT - map_referral_map]"
+          TopLeft="332.221432668336,61.5705884326288">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="35.357142565202,71.2705895994771"
+              EndConnector="0,56.5411764276892"
               Start="0,0"
-              End="35.357142565202,63.7705895994771">
+              End="0,49.0411764276892">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.4946707940544" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,38.4946707940544"
-                    Point2="0,42.4946707940544"
-                    Point3="4,42.4946707940544" />
-                  <mssgle:LineSegment
-                    End="31.357142565202,42.4946707940544" />
-                  <mssgle:CubicBezierSegment
-                    Point1="31.357142565202,42.4946707940544"
-                    Point2="35.357142565202,42.4946707940544"
-                    Point3="35.357142565202,46.4946707940544" />
-                  <mssgle:LineSegment
-                    End="35.357142565202,63.7705895994771" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="538.142864723595,100.117647873902">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-118.142861726333,67.6000013127044"
-              Start="0,0"
-              End="-118.142861726333,60.1000013127044">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.3061040690773" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,36.3061040690773"
-                    Point2="0,40.3061040690773"
-                    Point3="-4,40.3061040690773" />
-                  <mssgle:LineSegment
-                    End="-114.142861726333,40.3061040690773" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-114.142861726333,40.3061040690773"
-                    Point2="-118.142861726333,40.3061040690773"
-                    Point3="-118.142861726333,44.3061040690773" />
-                  <mssgle:LineSegment
-                    End="-118.142861726333,60.1000013127044" />
+                    End="0,49.0411764276892" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1743,11 +2456,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="222.4,41.6"
+          Size="222,42"
           Id="Package.EventHandlers[OnError]\EXP - mark package error flag"
           TopLeft="5.50000000000004,5.50000000000007" />
         <NodeLayout
-          Size="217.6,41.6"
+          Size="218,42"
           Id="Package.EventHandlers[OnError]\SQL - log process batch error"
           TopLeft="23.4714198618518,117.452942746568" />
       </GraphLayout>
@@ -1873,5 +2586,294 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Load Map Table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Load Map Table\Determine Action"
+          TopLeft="370.922045365047,307.671848776266" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Load Map Table\Target Table"
+          TopLeft="381.422045365047,561.789074882586" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Load Map Table\Source Query"
+          TopLeft="223.040819426667,53.5546226699459" />
+        <NodeLayout
+          Size="218,42"
+          Id="Package\Load Map Table\Unprocessed Record Counter"
+          TopLeft="607.063270213514,306.152099357262" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Load Map Table\Inject Variables"
+          TopLeft="374.922045365047,392.377590811706" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Load Map Table\Source Record Counter"
+          TopLeft="231.259181935725,138.260364705386" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Load Map Table\Target Query"
+          TopLeft="526.714294667147,134.983194931981" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\Load Map Table\Merge Join"
+          TopLeft="386.422045365047,222.966106740826" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Load Map Table\Inserted Record Counter"
+          TopLeft="353.422045365047,477.083332847146" />
+        <EdgeLayout
+          Id="Package\Load Map Table.Paths[OLE DB Source Output]"
+          TopLeft="295.540819426667,95.5546226699459">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="30.718362509058,42.70574203544"
+              Start="0,0"
+              End="30.718362509058,35.20574203544">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.35287101772" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.35287101772"
+                    Point2="0,21.35287101772"
+                    Point3="4,21.35287101772" />
+                  <mssgle:LineSegment
+                    End="26.718362509058,21.35287101772" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.718362509058,21.35287101772"
+                    Point2="30.718362509058,21.35287101772"
+                    Point3="30.718362509058,25.35287101772" />
+                  <mssgle:LineSegment
+                    End="30.718362509058,35.20574203544" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Map Table.Paths[Merge Join Output]"
+          TopLeft="451.922045365047,264.966106740826">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.70574203544"
+              Start="0,0"
+              End="0,35.20574203544">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.20574203544" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Map Table.Paths[DER - Inject Variables_Output_CNT - inserted Record Count]"
+          TopLeft="451.922045365047,434.377590811706">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.70574203544"
+              Start="0,0"
+              End="0,35.20574203544">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.20574203544" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Map Table.Paths[CSP - map_referral_map_New_DER - Inject Variables]"
+          TopLeft="451.922045365047,349.671848776266">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.70574203544"
+              Start="0,0"
+              End="0,35.20574203544">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.20574203544" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-10.23404296875,12.90414054897,20.4680859375,9.3974609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Map Table.Paths[CSP - map_referral_map_Default_CNT - Unprocessed Record Count]"
+          TopLeft="532.922045365047,327.911974066764">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74.1412248484668,0"
+              Start="0,0"
+              End="66.6412248484668,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.6412248484668,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="15.9976241429834,5,34.6459765625,11.384765625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Map Table.Paths[CNT - inserted Record Count_Output_OLE_DST map_referral_map]"
+          TopLeft="451.922045365047,519.083332847146">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.70574203544"
+              Start="0,0"
+              End="0,35.20574203544">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.20574203544" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Map Table.Paths[Output]"
+          TopLeft="326.259181935725,180.260364705386">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="105.162863429322,42.70574203544"
+              Start="0,0"
+              End="105.162863429322,35.20574203544">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.3142633784735" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.3142633784735"
+                    Point2="0,25.3142633784735"
+                    Point3="4,25.3142633784735" />
+                  <mssgle:LineSegment
+                    End="101.162863429322,25.3142633784735" />
+                  <mssgle:CubicBezierSegment
+                    Point1="101.162863429322,25.3142633784735"
+                    Point2="105.162863429322,25.3142633784735"
+                    Point3="105.162863429322,29.3142633784735" />
+                  <mssgle:LineSegment
+                    End="105.162863429322,35.20574203544" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Map Table.Paths[OLE DB Source Output1]"
+          TopLeft="598.214294667147,176.983194931981">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-125.7922493021,45.982911808845"
+              Start="0,0"
+              End="-125.7922493021,38.482911808845">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.2568391265099" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.2568391265099"
+                    Point2="0,27.2568391265099"
+                    Point3="-4,27.2568391265099" />
+                  <mssgle:LineSegment
+                    End="-121.7922493021,27.2568391265099" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-121.7922493021,27.2568391265099"
+                    Point2="-125.7922493021,27.2568391265099"
+                    Point3="-125.7922493021,31.2568391265099" />
+                  <mssgle:LineSegment
+                    End="-125.7922493021,38.482911808845" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Map Table\Target Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Map Table\Source Query">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Map Table\Target Query">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

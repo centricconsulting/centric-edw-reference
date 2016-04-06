@@ -52,12 +52,12 @@ NOT EXISTS (
 
 SET IDENTITY_INSERT map.source OFF;
 
+
 /*
 ############################################################
 Populate the source table.
 ############################################################
 */
-
 
 INSERT INTO dbo.source (
   source_key
@@ -109,3 +109,4 @@ WHERE
 NOT EXISTS (
 	SELECT 1 FROM dbo.source c WHERE c.source_key = m.source_key
 )
+;

@@ -7,10 +7,6 @@
     DTS:Name="ConnectionString">@[$Project::AuditConnectionString]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=172.16.2.7;User ID=centric_developer;Initial Catalog=warehouse_audit;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-      <DTS:Password
-        DTS:Name="Password"
-        Sensitive="1"></DTS:Password>
-    </DTS:ConnectionManager>
+      DTS:ConnectionString="Data Source=172.16.2.7;Initial Catalog=warehouse_audit;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

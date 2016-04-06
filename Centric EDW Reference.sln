@@ -19,9 +19,9 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Warehouse", "Database\Wareh
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Audit", "Database\Audit\Audit.sqlproj", "{1C3B0AE9-C3E9-4FF5-A3B6-996FD87C2FD7}"
 EndProject
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Staging Misc To Warehouse", "ETL\Misc Staging To Warehouse\Staging Misc To Warehouse.dtproj", "{E828CBBE-C480-45BF-9FAD-4C897D488342}"
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Staging Governance To Warehouse", "ETL\Staging Governance To Warehouse\Staging Governance To Warehouse.dtproj", "{E828CBBE-C480-45BF-9FAD-4C897D488342}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Staging Misc", "Database\Staging Misc\Staging Misc.sqlproj", "{E1CC4A8C-3AF9-4FF2-B66B-BFCA2648BB2E}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Staging Governance", "Database\Staging Governance\Staging Governance.sqlproj", "{E1CC4A8C-3AF9-4FF2-B66B-BFCA2648BB2E}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Mart", "Database\Mart\Mart.sqlproj", "{04A8CB7E-003E-44CB-8ADA-90720A6D56F1}"
 EndProject

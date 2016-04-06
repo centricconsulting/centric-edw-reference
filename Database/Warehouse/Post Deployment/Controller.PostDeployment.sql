@@ -20,10 +20,12 @@ Prepare Variables
 DECLARE
   @unknown_key int = 0
 , @unknown_uid varchar(20) = 'UNK'
+, @unknown_code varchar(20) = 'Unknown'
 , @unknown_desc varchar(200) = 'Unknown'
 
 , @not_applicable_key int = -1
 , @not_applicable_uid varchar(20) = 'NA'
+, @not_applicable_code varchar(200) = 'Not Applicable'
 , @not_applicable_desc varchar(200) = 'Not Applicable'
 
 , @unresolved_key int = -2
@@ -72,7 +74,12 @@ Seed additional tables
 #######################################################################
 */
 
+:r .\Seed.currency.sql
+
 :r .\Seed.customer.sql
+
+:r .\Seed.customer_type.sql
+
 
 
 

@@ -57,6 +57,7 @@
           <SSIS:Package SSIS:Name="Production_ProductCategory.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Production_ProductSubcategory.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Person_PersonPhone.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Schema_NewTable.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="Source AW.conmgr" />
@@ -411,10 +412,10 @@
                 <SSIS:Property SSIS:Name="Name">TEMPLATE Full Process With Delete</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">254</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">255</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{77DF9104-116C-4C04-BBCD-8A51AB404C5B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3D5A1E86-F2D9-405B-936F-02D1208CC6E0}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -755,6 +756,23 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{D2D8B9CD-C8D7-42EB-B378-9AB63AF5C0FD}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Schema_NewTable.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{784D7BD6-00D4-49DF-8398-CA0362E914E5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Person_PersonPhone</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">212</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{2C47F706-011A-4219-A93E-D368630F865D}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

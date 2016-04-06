@@ -28,46 +28,41 @@ the original IDENTITY seed value (usually 1000)
 */
 
 
-SET IDENTITY_INSERT map.customer_type ON;
+SET IDENTITY_INSERT map.currency ON;
 
-INSERT INTO map.customer_type (
-  customer_type_key
+INSERT INTO map.currency (
+  currency_key
 , source_key
-, customer_type_uid
+, currency_uid
 , process_batch_key
 )
 SELECT 
-  x.customer_type_key
+  x.currency_key
 , x.source_key
-, x.customer_type_uid
+, x.currency_uid
 , @unknown_key AS process_batch_key
 FROM (
 
 SELECT 
-  @unknown_key AS customer_type_key
-, @unknown_uid AS customer_type_uid
+  @unknown_key AS currency_key
+, @unknown_uid AS currency_uid
 , @warehouse_source_key AS source_key
+
 
 UNION ALL
 SELECT 
-  @not_applicable_key AS customer_type_key
-, @not_applicable_uid AS customer_type_uid
+  @not_applicable_key AS currency_key
+, @not_applicable_uid AS currency_uid
 , @warehouse_source_key AS source_key
-
-UNION ALL
-SELECT 100, 'BUSINESS', @governance_source_key
-
-UNION ALL
-SELECT 101, 'CONSUMER', @governance_source_key
 
 ) x
 WHERE
 NOT EXISTS (
-	SELECT 1 FROM map.customer_type m WHERE m.customer_type_key = x.customer_type_key
+	SELECT 1 FROM map.currency m WHERE m.currency_key = x.currency_key
 )
 ;
 
-SET IDENTITY_INSERT map.customer_type OFF;
+SET IDENTITY_INSERT map.currency OFF;
 
 
 /*
@@ -76,10 +71,10 @@ Populate the source table.
 ############################################################
 */
 
-INSERT INTO dbo.customer_type (
-  customer_type_key
-, customer_type_desc
-, customer_type_code
+INSERT INTO dbo.currency (
+  currency_key
+, currency_desc
+, currency_code
 , source_key
 , source_revision_actor
 , source_revision_dtm
@@ -87,9 +82,9 @@ INSERT INTO dbo.customer_type (
 , process_batch_key
 )
 SELECT 
-  m.customer_type_key
-, x.customer_type_desc
-, x.customer_type_code
+  m.currency_key
+, x.currency_desc
+, x.currency_code
 , x.source_key
 , NULL AS source_revision_actor
 , CURRENT_TIMESTAMP AS source_revision_dtm
@@ -99,38 +94,24 @@ SELECT
 FROM (
 
 SELECT 
-  @unknown_uid AS customer_type_uid
+  @unknown_uid AS currency_uid
 , @warehouse_source_key AS source_key
-, @unknown_desc AS customer_type_desc
-, @unknown_code AS customer_type_code
+, @unknown_desc AS currency_desc
+, @unknown_code AS currency_code
 
 UNION ALL 
 SELECT 
-  @not_applicable_uid AS customer_type_uid
+  @not_applicable_uid AS currency_uid
 , @warehouse_source_key AS source_key
-, @not_applicable_desc AS customer_type_desc
-, @not_applicable_code AS customer_type_code
-
-UNION ALL 
-SELECT 
-  'BUSINESS' AS customer_type_uid
-, @governance_source_key AS source_key
-, 'Business' AS customer_type_desc
-, 'BUS' AS customer_type_code
-
-UNION ALL 
-SELECT 
-  'CONSUMER' AS customer_type_uid
-, @governance_source_key AS source_key
-, 'Consumer' AS customer_type_desc
-, 'CON' AS customer_type_code
+, @not_applicable_desc AS currency_desc
+, @not_applicable_code AS currency_code
 
 ) x
-INNER JOIN map.customer_type m ON
+INNER JOIN map.currency m ON
   m.source_key = x.source_key
-  AND m.customer_type_uid = x.customer_type_uid
+  AND m.currency_uid = x.currency_uid
 
 WHERE
 NOT EXISTS (
-	SELECT 1 FROM dbo.customer_type c WHERE c.customer_type_key = m.customer_type_key
+	SELECT 1 FROM dbo.currency c WHERE c.currency_key = m.currency_key
 )
