@@ -30,6 +30,12 @@
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="map_currency.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="map_geography.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="dbo_currency.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Controller.Map.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="dbo_geography.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Controller.Content.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Controller.Master.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="Warehouse.conmgr" />
@@ -265,10 +271,112 @@
                 <SSIS:Property SSIS:Name="Name">map_currency</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">55</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">69</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{79E08915-5B2F-4E1E-B568-EF6A49A746FC}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{2802B542-73AC-486A-8FA3-5D24DD3A5563}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="map_geography.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{16C204EA-2CAA-4B73-ACFB-F09B164B81EA}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">map_geography</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">79</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A7D09CF1-8A1D-4105-908F-7A47AF958B61}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="dbo_currency.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{D29D6EB5-9CC3-412F-B114-8BF1AAFFF1C5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">dbo_currency</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">285</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{EAA57355-184D-469D-A549-650C1FA276DA}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Controller.Map.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{BB4ADD34-468A-429A-BE8C-D480B4E6CE60}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Controller Map</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">69</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{FADC4A89-D8CF-4898-964E-B4BE14E37653}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="dbo_geography.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{4EDE966A-F9C0-4539-BBD6-557DD0B21A6B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">dbo_geography</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">298</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{57AF9234-1C62-4F43-A098-09875A299A11}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Controller.Content.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{BDBF3428-C278-4472-AD2C-07A34466B387}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Controller Content</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">70</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{147E6C3E-5D01-4A69-83BC-BF57F89F294F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Controller.Master.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{9BD64957-053A-493E-A33A-F96E2E69F72D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Controller Master</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">70</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{19992C22-B86C-4D6A-8A44-A71077F357CA}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

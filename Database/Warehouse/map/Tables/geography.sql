@@ -8,16 +8,16 @@ grain (unique) index on the combined UID and source_key columns.
 ##################################################################
 */
 
-CREATE TABLE [map].[state_province] (
-    [state_province_key] INT           IDENTITY (1000, 1) NOT NULL,
+CREATE TABLE [map].[geography] (
+    [geography_key] INT           IDENTITY (1000, 1) NOT NULL,
     [source_key] INT           NOT NULL,
-    [state_province_uid] VARCHAR (200) NOT NULL,
+    [geography_uid] VARCHAR (200) NOT NULL,
     [process_batch_key]  INT           NOT NULL,
-    CONSTRAINT [map_state_province_pk] PRIMARY KEY CLUSTERED ([state_province_key] ASC)
+    CONSTRAINT [map_geography_pk] PRIMARY KEY CLUSTERED ([geography_key] ASC)
 );
 
 
 GO
-CREATE UNIQUE NONCLUSTERED INDEX [map_state_province_gx]
-    ON [map].[state_province]([state_province_uid] ASC, [source_key] ASC);
+CREATE UNIQUE NONCLUSTERED INDEX [map_geography_gx]
+    ON [map].[geography]([geography_uid] ASC, [source_key] ASC);
 

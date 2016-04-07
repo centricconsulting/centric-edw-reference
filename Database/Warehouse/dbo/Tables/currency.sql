@@ -1,7 +1,7 @@
 ﻿CREATE TABLE dbo.currency (
   currency_key int NOT NULL
 
-, currency_desc varchar(100) NOT NULL
+, currency_desc varchar(200) NOT NULL
 , currency_code varchar(20) NOT NULL
 , currency_symbol nvarchar(20) NULL
 

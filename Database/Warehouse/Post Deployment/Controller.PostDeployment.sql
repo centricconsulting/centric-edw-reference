@@ -78,6 +78,8 @@ Seed additional tables
 
 :r .\Seed.customer.sql
 
+:r .\Seed.geography.sql
+
 :r .\Seed.customer_type.sql
 
 

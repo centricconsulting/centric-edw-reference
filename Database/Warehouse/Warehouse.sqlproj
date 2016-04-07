@@ -138,9 +138,11 @@
     <None Include="Post Deployment\Seed.customer_type.sql" />
     <Build Include="dbo\Tables\customer_type.sql" />
     <Build Include="map\Tables\currency.sql" />
-    <Build Include="map\Tables\state_province.sql" />
+    <Build Include="map\Tables\geography.sql" />
     <None Include="Post Deployment\Seed.currency.sql" />
     <Build Include="dbo\Tables\currency.sql" />
+    <Build Include="dbo\Tables\geography.sql" />
+    <None Include="Post Deployment\Seed.geography.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Post Deployment\Seed.customer.sql" />
