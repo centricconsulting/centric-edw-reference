@@ -91,5 +91,5 @@ CREATE TABLE [dbo].[fiscal_calendar]
 , init_process_batch_key int NOT NULL
 , process_batch_key int NOT NULL
 
-, CONSTRAINT fiscal_calendar_pk PRIMARY KEY (date_key)
+, CONSTRAINT dbo_fiscal_calendar_pk PRIMARY KEY (date_key)
 );

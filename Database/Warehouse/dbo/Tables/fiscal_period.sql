@@ -26,7 +26,7 @@ CREATE TABLE [dbo].[fiscal_period]
 , init_audit_process_batch_key  int NOT NULL
 , process_batch_key int NOT NULL
 
-, CONSTRAINT fiscal_period_pk PRIMARY KEY (fiscal_period_key)
+, CONSTRAINT dbo_fiscal_period_pk PRIMARY KEY (fiscal_period_key)
 )
 ;
 GO

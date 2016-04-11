@@ -14,5 +14,5 @@
 , init_process_batch_key int NOT NULL
 , process_batch_key int NOT NULL
 
-, CONSTRAINT currency_pk PRIMARY KEY (currency_key)
+, CONSTRAINT dbo_currency_pk PRIMARY KEY (currency_key)
 );

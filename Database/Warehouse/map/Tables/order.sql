@@ -8,16 +8,16 @@ grain (unique) index on the combined UID and source_key columns.
 ##################################################################
 */
 
-CREATE TABLE [map].[invoice] (
-    [invoice_key] INT           IDENTITY (1000, 1) NOT NULL,
+CREATE TABLE [map].[order] (
+    [order_key] INT           IDENTITY (1000, 1) NOT NULL,
     [source_key]  INT           NOT NULL,
-    [invoice_uid] VARCHAR (200) NOT NULL,
+    [order_uid] VARCHAR (200) NOT NULL,
     [process_batch_key]   INT           NOT NULL,
-    CONSTRAINT [map_invoice_pk] PRIMARY KEY CLUSTERED ([invoice_key] ASC)
+    CONSTRAINT [map_order_pk] PRIMARY KEY CLUSTERED ([order_key] ASC)
 );
 
 
 GO
-CREATE UNIQUE NONCLUSTERED INDEX [map_invoice_gx]
-    ON [map].[invoice]([invoice_uid] ASC, [source_key] ASC);
+CREATE UNIQUE NONCLUSTERED INDEX [map_order_gx]
+    ON [map].[order]([order_uid] ASC, [source_key] ASC);
 

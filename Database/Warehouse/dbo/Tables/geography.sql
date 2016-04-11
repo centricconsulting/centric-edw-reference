@@ -19,5 +19,5 @@
 , init_process_batch_key int NOT NULL
 , process_batch_key int NOT NULL
 
-, CONSTRAINT geography_pk PRIMARY KEY (geography_key)
+, CONSTRAINT dbo_geography_pk PRIMARY KEY (geography_key)
 );

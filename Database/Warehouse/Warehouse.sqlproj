@@ -124,8 +124,8 @@
     <Build Include="dbo\Tables\fiscal_period.sql" />
     <Build Include="map\Tables\vendor.sql" />
     <Build Include="map\Tables\product.sql" />
-    <Build Include="map\Tables\invoice_line.sql" />
-    <Build Include="map\Tables\invoice.sql" />
+    <Build Include="map\Tables\order_line.sql" />
+    <Build Include="map\Tables\order.sql" />
     <Build Include="map\Tables\customer.sql" />
     <Build Include="map\Tables\customer_type.sql" />
     <Build Include="ver\Tables\customer.sql" />
@@ -143,6 +143,11 @@
     <Build Include="dbo\Tables\currency.sql" />
     <Build Include="dbo\Tables\geography.sql" />
     <None Include="Post Deployment\Seed.geography.sql" />
+    <Build Include="dbo\Tables\order_line_status_history.sql" />
+    <Build Include="dbo\Tables\order_line_status.sql" />
+    <Build Include="dbo\Tables\order.sql" />
+    <Build Include="dbo\Tables\order_line.sql" />
+    <Build Include="map\Tables\order_line_status.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Post Deployment\Seed.customer.sql" />

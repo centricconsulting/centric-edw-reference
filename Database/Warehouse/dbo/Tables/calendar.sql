@@ -98,5 +98,5 @@ CREATE TABLE dbo.calendar (
 , init_process_batch_key int NOT NULL
 , process_batch_key int NOT NULL
 
-, CONSTRAINT calendar_pk PRIMARY KEY (date_key)
+, CONSTRAINT dbo_calendar_pk PRIMARY KEY (date_key)
 );

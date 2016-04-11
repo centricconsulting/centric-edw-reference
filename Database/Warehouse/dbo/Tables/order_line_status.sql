@@ -1,8 +1,8 @@
-﻿CREATE TABLE dbo.customer_type (
-  customer_type_key int NOT NULL
+﻿CREATE TABLE dbo.order_line_status (
+  order_line_status_key int NOT NULL
 
-, customer_type_desc varchar(100) NOT NULL
-, customer_type_code varchar(20) NOT NULL
+, order_line_status_desc varchar(100) NOT NULL
+, order_line_status_code varchar(20) NOT NULL
 
   -- BOILERPLATE: source columns
 , source_key int NOT NULL
@@ -13,5 +13,5 @@
 , init_process_batch_key int NOT NULL
 , process_batch_key int NOT NULL
 
-, CONSTRAINT dbo_customer_type_pk PRIMARY KEY (customer_type_key)
+, CONSTRAINT dbo_order_line_status_pk PRIMARY KEY (order_line_status_key)
 );

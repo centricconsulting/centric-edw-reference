@@ -31,7 +31,6 @@
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="Sales_Customer.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Sales_Currency.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="CONTROLLER_MASTER.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Sales_SalesOrderDetail.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="TEMPLATE Incremental Load.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="TEMPLATE Truncate Load.dtsx" SSIS:EntryPoint="1" />
@@ -41,7 +40,6 @@
           <SSIS:Package SSIS:Name="Purchasing_Vendor.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Person_Address.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Person_AddressType.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="Person.BusinessEntity.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Person_BusinessEntityAddress.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Person_BusinessEntityContact.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Person_ContactType.dtsx" SSIS:EntryPoint="1" />
@@ -58,6 +56,8 @@
           <SSIS:Package SSIS:Name="Production_ProductSubcategory.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Person_PersonPhone.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Schema_NewTable.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Person_BusinessEntity.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Controller.Master.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="Source AW.conmgr" />
@@ -321,23 +321,6 @@
               </SSIS:Properties>
               <SSIS:Parameters />
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="CONTROLLER_MASTER.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{9E31CD9E-2527-4BB2-A9EF-67F6692B6213}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">CONTROLLER_MASTER</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">221</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{AFB50A3A-AE67-4623-9015-4401EAA299CA}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="Sales_SalesOrderDetail.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{85F27696-758D-47D0-8A5B-DFBE1FA40C42}</SSIS:Property>
@@ -484,23 +467,6 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{F6D4E37D-30E3-405C-ABB4-62A8CE3ACE66}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="Person.BusinessEntity.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{F306BB89-D189-438B-A9C3-C03BBFFCAD3F}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Person BusinessEntity</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">210</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{DD75899D-EBD4-4266-879A-FDCB6F69A8CA}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -773,6 +739,40 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{2C47F706-011A-4219-A93E-D368630F865D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Person_BusinessEntity.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{2B09D088-0587-4EF7-BFD4-3C2337F862F5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Person_BusinessEntity</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">211</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{2BB2FA26-6A93-40CC-A324-C0100AE3AD08}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Controller.Master.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{0E9C31C1-707B-478A-B854-27AA5AE38907}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Controller Master</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">222</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{214546B7-A880-4812-A3C3-17248DF48DD8}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
