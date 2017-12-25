@@ -110,7 +110,7 @@
     <Build Include="cdm\Stored Procedures\process_batch_conclude.sql" />
     <Build Include="cdm\Stored Procedures\process_batch_error_log.sql" />
     <Build Include="Security\cdm.sql" />
-    <Build Include="cdm\Sequences\batch_provider.sql" />
+    <Build Include="cdm\Sequences\process_batch_key_provider.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Audit.publish.xml" />

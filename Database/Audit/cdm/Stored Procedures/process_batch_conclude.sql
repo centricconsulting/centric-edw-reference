@@ -29,6 +29,8 @@ PARAMETERS:
   @unprocessed_record_ct INT Optional = Count of records that were not processed or ignored.
 
   @exception_record_ct INT Optional = Count of records that resulted in exceptions.
+
+  @comments VARCHAR(2000) Optional = Comments related to the batch execution.
   
 OUTPUT PARAMETERS: None.
   
@@ -46,7 +48,7 @@ HISTORY:
 
 CREATE PROCEDURE [cdm].[process_batch_conclude]
   @process_batch_key INTEGER
-, @completed_ind BIT = 0
+, @completed_ind SMALLINT = 0
 , @source_record_ct INTEGER = NULL
 , @inserted_record_ct INTEGER = NULL
 , @updated_record_ct INTEGER = NULL
@@ -56,22 +58,20 @@ CREATE PROCEDURE [cdm].[process_batch_conclude]
 , @revised_record_ct INTEGER = NULL
 , @unprocessed_record_ct INTEGER = NULL
 , @exception_record_ct INTEGER = NULL
+, @comments VARCHAR(2000) = NULL
 AS
 BEGIN
 
-  DECLARE
-    @status VARCHAR(50)
-  , @process_uid VARCHAR(100);
-
-
   -- set the status text according to flagss
   /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+  DECLARE @status VARCHAR(100);
   
   IF @completed_ind = 1
   BEGIN
   
     IF @exception_record_ct > 0
-      SET @status = 'Completed w. Exceptions';
+      SET @status = 'Completed With Exceptions';
     ELSE
       SET @status = 'Completed';
     
@@ -85,7 +85,7 @@ BEGIN
   /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
   UPDATE cdm.process_batch SET
-    status = @status
+    [status] = @status
   , completed_ind = @completed_ind
   , source_record_ct = @source_record_ct
   , inserted_record_ct = @inserted_record_ct
@@ -97,6 +97,7 @@ BEGIN
   , unprocessed_record_ct = @unprocessed_record_ct
   , exception_record_ct = @exception_record_ct
   , conclude_dtm = CURRENT_TIMESTAMP
+  , comments = @comments
   WHERE
   process_batch_key = @process_batch_key;
   
@@ -108,17 +109,19 @@ BEGIN
   BEGIN
       
     -- the completed sequences is taken from the limit of the corressponding process
-    UPDATE cdm SET
+    UPDATE p SET
       completed_process_batch_key = @process_batch_key
-    , completed_sequence_key = cdmb.end_sequence_key
-    , completed_sequence_dtm = cdmb.end_sequence_dtm
-    , initiate_dtm = cdmb.initiate_dtm
-    , conclude_dtm = cdmb.conclude_dtm
+    , completed_sequence_val = pb.end_sequence_val
+    , completed_sequence_dtm = pb.end_sequence_dtm
+    , initiate_dtm = pb.initiate_dtm
+    , conclude_dtm = pb.conclude_dtm
     FROM
-    cdm.process cdm
-    INNER JOIN cdm.process_batch cdmb ON cdmb.process_uid = cdm.process_uid
+    cdm.process p
+    INNER JOIN cdm.process_batch pb ON
+		pb.process_uid = p.process_uid 
+		AND pb.channel_uid = p.channel_uid
     WHERE
-    cdmb.process_batch_key = @process_batch_key
+    pb.process_batch_key = @process_batch_key
             
   END;
 
