@@ -30,38 +30,21 @@ HISTORY:
 
 CREATE VIEW dbo.customer WITH SCHEMABINDING AS
 SELECT 
-  c.customer_key
-, c.customer_type_key
-, c.geography_key
-, c.customer_name
-, c.primary_contact_name
-, c.primary_contact_phone_nbr
-, c.address_line1
-, c.address_line2
-, c.city
-, c.state_desc
-, c.country_desc
-, c.postal_code
-, c.address_lattitude
-, c.address_longitude
+  c.customer_version_key AS customer_key
+, c.customer_uid
+, c.customer_desc
+, c.customer_nbr
 
-, c.source_key
+, c.source_uid
+, c.source_revision_begin_dtm AS source_revision_dtm
 , c.source_revision_actor
 
--- present the standard content table column, source_revision_dtm
-, c.source_revision_begin_dtm AS source_revision_dtm
+, c.provision_batch_key
+, c.revision_batch_key
 
--- retain version key for reference purposes
-, c.customer_version_key
-
-, c.init_process_batch_key
-, c.process_batch_key
 FROM
 ver.customer c
+LEFT JOIN vex.customer cx ON cx.customer_version_key = c.customer_version_key
 WHERE
-c.version_latest_ind = 1
-GO
-
--- unique index on the grain column(s) from the version table.
-CREATE UNIQUE CLUSTERED INDEX dbo_customer_gx ON dbo.customer (customer_key);
+cx.version_latest_ind = 1
 GO

@@ -8,21 +8,24 @@ is called origin_source_key.
 */
 
 CREATE TABLE [dbo].[source] (
-    [source_key]       INT        NOT NULL,
-    [source_name]      VARCHAR (50)  NOT NULL,
-    [source_desc]      VARCHAR (100) NULL,
-    [source_code]      VARCHAR(20) NOT NULL
+  [source_key] INT  IDENTITY(1000,1) NOT NULL
+
+  -- GRAIN COLUMN(S)
+, [source_uid] VARCHAR(200) NOT NULL
+
+, [source_name] VARCHAR (50)  NOT NULL
+, [source_desc] VARCHAR (100) NULL
+, [source_code] VARCHAR(20) NOT NULL
     
-    -- BOILERPLATE: source columns
-    -- Special Case: "origin" prefix is used to differentiate from the table grain (source_key)
-  , origin_source_key INT NOT NULL
-  , origin_source_revision_actor varchar(50) NULL
-  , origin_source_revision_dtm datetime NOT NULL
+  -- BOILERPLATE: source columns
+, origin_source_uid VARCHAR(200) NOT NULL
+, source_revision_dtm DATETIME NOT NULL
+, source_revision_actor VARCHAR(200) NULL
 
-    -- BOILERPLATE: audit columns
-  , init_process_batch_key int NOT NULL
-  , process_batch_key int NOT NULL
+  -- BOILERPLATE: batch key columns
+, provision_batch_key int NOT NULL
+, revision_batch_key int NOT NULL
 
-    CONSTRAINT [dbo_source_pk] PRIMARY KEY CLUSTERED ([source_key] ASC)
+, CONSTRAINT [dbo_source_pk] PRIMARY KEY CLUSTERED ([source_uid] ASC)
 );
 GO

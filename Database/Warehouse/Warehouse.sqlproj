@@ -98,62 +98,39 @@
     <Folder Include="Properties" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
-    <Folder Include="map\" />
-    <Folder Include="map\Tables\" />
     <Folder Include="Security\" />
     <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\Views" />
     <Folder Include="Post Deployment" />
     <Folder Include="ver" />
-    <Folder Include="ver\Tables" />
-    <Folder Include="dbo\Views" />
+    <Folder Include="vex" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\calendar.sql" />
-    <Build Include="map\Tables\source.sql" />
     <Build Include="dbo\Tables\source.sql" />
     <Build Include="Security\centric_reader.sql" />
-    <Build Include="dbo\Stored Procedures\calendar_rebuild.sql" />
-    <Build Include="Security\map.sql" />
     <Build Include="Security\Permissions.sql" />
-    <None Include="Post Deployment\Seed.source.sql" />
-    <None Include="Post Deployment\Seed.calendar.sql" />
-    <Build Include="dbo\Stored Procedures\calendar_index_refresh.sql" />
-    <Build Include="dbo\Stored Procedures\source_key_lookup.sql" />
     <Build Include="Security\ver.sql" />
     <Build Include="Security\xref.sql" />
     <Build Include="dbo\Tables\fiscal_period.sql" />
-    <Build Include="map\Tables\vendor.sql" />
-    <Build Include="map\Tables\product.sql" />
-    <Build Include="map\Tables\order_line.sql" />
-    <Build Include="map\Tables\order.sql" />
-    <Build Include="map\Tables\customer.sql" />
-    <Build Include="map\Tables\customer_type.sql" />
-    <Build Include="ver\Tables\customer.sql" />
     <Build Include="dbo\Views\customer.sql" />
-    <Build Include="dbo\Tables\fiscal_calendar.sql" />
-    <Build Include="dbo\Stored Procedures\fiscal_calendar_rebuild.sql" />
-    <Build Include="dbo\Stored Procedures\fiscal_calendar_index_refresh.sql" />
-    <Build Include="dbo\Tables\calendar_holiday.sql" />
-    <None Include="Post Deployment\Seed.fiscal_calendar.sql" />
-    <None Include="Post Deployment\Seed.customer_type.sql" />
+    <Build Include="dbo\Tables\legal_entity_holiday_history.sql" />
     <Build Include="dbo\Tables\customer_type.sql" />
-    <Build Include="map\Tables\currency.sql" />
-    <Build Include="map\Tables\geography.sql" />
-    <None Include="Post Deployment\Seed.currency.sql" />
     <Build Include="dbo\Tables\currency.sql" />
     <Build Include="dbo\Tables\geography.sql" />
-    <None Include="Post Deployment\Seed.geography.sql" />
-    <Build Include="dbo\Tables\order_line_status_history.sql" />
-    <Build Include="dbo\Tables\order_line_status.sql" />
-    <Build Include="dbo\Tables\order.sql" />
-    <Build Include="dbo\Tables\order_line.sql" />
-    <Build Include="map\Tables\order_line_status.sql" />
+    <Build Include="dbo\Tables\sales_order_line_status_history.sql" />
+    <Build Include="dbo\Tables\sales_order_line_status.sql" />
+    <Build Include="dbo\Tables\sales_order.sql" />
+    <Build Include="dbo\Tables\sales_order_line.sql" />
+    <Build Include="dbo\Tables\legal_entity.sql" />
+    <PostDeploy Include="Post Deployment\_Master.PostDeployment1.sql" />
+    <Build Include="ver\customer.sql" />
+    <Build Include="vex\customer.sql" />
+    <Build Include="Security\vex.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Post Deployment\Seed.customer.sql" />
     <None Include="Warehouse.publish.xml" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Post Deployment\Controller.PostDeployment.sql" />
+    <None Include="Post Deployment\Source.PostDeployment.sql" />
   </ItemGroup>
 </Project>

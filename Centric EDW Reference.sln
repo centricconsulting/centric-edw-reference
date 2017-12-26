@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Warehouse Post Process", "ETL\Warehouse Post Process\Warehouse Post Process.dtproj", "{FF43F8C2-D282-4E45-A437-D098B3129640}"
 EndProject
@@ -21,7 +21,7 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Audit", "Database\Audit\Aud
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Staging Governance To Warehouse", "ETL\Staging Governance To Warehouse\Staging Governance To Warehouse.dtproj", "{E828CBBE-C480-45BF-9FAD-4C897D488342}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Staging Governance", "Database\Staging Governance\Staging Governance.sqlproj", "{E1CC4A8C-3AF9-4FF2-B66B-BFCA2648BB2E}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Staging Reference", "Database\Staging Governance\Staging Reference.sqlproj", "{E1CC4A8C-3AF9-4FF2-B66B-BFCA2648BB2E}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Mart", "Database\Mart\Mart.sqlproj", "{04A8CB7E-003E-44CB-8ADA-90720A6D56F1}"
 EndProject
@@ -558,5 +558,8 @@ Global
 		{2A5AC230-4227-4DEE-A30C-B91F6CD51130} = {06A4240A-CB2C-474D-83B0-CB0CDBD6E11F}
 		{B8B5EA76-2C4F-44EE-9A08-E5B90448A437} = {06A4240A-CB2C-474D-83B0-CB0CDBD6E11F}
 		{04D9758C-850A-4AAD-A475-F112A20FCC70} = {06A4240A-CB2C-474D-83B0-CB0CDBD6E11F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93F92E30-10F8-456F-97F5-74E4BFE8DC80}
 	EndGlobalSection
 EndGlobal

@@ -9,27 +9,35 @@ come from anywhere other than our manual control.
 ##################################################################
 */
 
-CREATE TABLE [dbo].[fiscal_period]
+CREATE TABLE [dbo].[legal_entity_fiscal_period]
 (
-  fiscal_period_key int NOT NULL
+  -- smart key computed "YYYYPP"
+  fiscal_period_key AS
+    CONVERT(int, fiscal_year * 100 + fiscal_period_of_year)
+
+  -- GRAIN COLUMN(S)
+, legal_entity_uid VARCHAR(200) NOT NULL
+, fiscal_period_uid VARCHAR(200) NOT NULL
+
 , fiscal_year int NOT NULL
 , fiscal_period_of_year int NOT NULL
-, begin_dt date NOT NULL
-, end_dt date NULL
-, display_month_of_year int NOT NULL
+, fiscal_period_begin_dt date NOT NULL
+
+  -- Fiscal Period End Date not required
+, fiscal_period_end_dt date NULL
+, display_month_desc VARCHAR(200) NOT NULL
 , fiscal_period_closed_ind bit NOT NULL
 
-, source_key int NOT NULL
-, source_revision_actor varchar(50) NULL
-, source_revision_dtm datetime NOT NULL
+  -- BOILERPLATE: source columns
+, source_uid VARCHAR(200) NOT NULL
+, source_revision_dtm DATETIME NOT NULL
+, source_revision_actor VARCHAR(200) NULL
 
-, init_audit_process_batch_key  int NOT NULL
-, process_batch_key int NOT NULL
+  -- BOILERPLATE: batch key columns
+, provision_batch_key int NOT NULL
+, revision_batch_key int NOT NULL
 
-, CONSTRAINT dbo_fiscal_period_pk PRIMARY KEY (fiscal_period_key)
+, CONSTRAINT sbo_fiscal_period_pk PRIMARY KEY CLUSTERED (fiscal_period_uid ASC, legal_entity_uid ASC)
 )
 ;
 GO
-
-CREATE UNIQUE INDEX fiscal_period_gx ON dbo.fiscal_period (fiscal_year, fiscal_period_of_year)
-;
