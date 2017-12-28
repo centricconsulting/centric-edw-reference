@@ -104,6 +104,9 @@
     <Folder Include="Post Deployment" />
     <Folder Include="ver" />
     <Folder Include="vex" />
+    <Folder Include="vex\Stored Procedures" />
+    <Folder Include="vex\Tables" />
+    <Folder Include="ver\Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\source.sql" />
@@ -123,12 +126,13 @@
     <Build Include="dbo\Tables\sales_order_line.sql" />
     <Build Include="dbo\Tables\legal_entity.sql" />
     <PostDeploy Include="Post Deployment\_Master.PostDeployment1.sql" />
-    <Build Include="ver\customer.sql" />
-    <Build Include="vex\customer.sql" />
     <Build Include="Security\vex.sql" />
+    <Build Include="vex\Tables\vex.customer.sql" />
+    <Build Include="ver\Tables\customer.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Warehouse.publish.xml" />
+    <None Include="vex\Stored Procedures\vex.customer_settlement.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Post Deployment\Source.PostDeployment.sql" />

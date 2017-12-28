@@ -28,23 +28,28 @@ HISTORY:
 ################################################################################
 */
 
-CREATE VIEW dbo.customer WITH SCHEMABINDING AS
+CREATE VIEW dbo.customer AS
 SELECT 
+  -- latest version key is used as the key
   c.customer_version_key AS customer_key
 , c.customer_uid
 , c.customer_desc
 , c.customer_nbr
 
 , c.source_uid
-, c.source_revision_begin_dtm AS source_revision_dtm
-, c.source_revision_actor
+, c.source_rev_dtm AS begin_source_rev_dtm
+, cx.end_source_rev_dtmx
+, c.source_rev_actor
 
-, c.provision_batch_key
-, c.revision_batch_key
+, c.version_batch_key AS begin_version_batch_key
+, cx.end_version_batch_key
+
+, c.version_dtm AS begin_version_dtm
+, cx.end_version_dtmx
 
 FROM
 ver.customer c
-LEFT JOIN vex.customer cx ON cx.customer_version_key = c.customer_version_key
+INNER JOIN vex.customer cx ON cx.customer_version_key = c.customer_version_key
 WHERE
 cx.version_latest_ind = 1
 GO
