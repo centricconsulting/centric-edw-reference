@@ -1,9 +1,8 @@
-﻿
-/* ################################################################################
+﻿/* ################################################################################
 
-OBJECT: vex.customer_settlement
+OBJECT: vex.[customer_settlement].
 
-DESCRIPTION: Settle versions of the related entity table.
+DESCRIPTION: Truncates corresponding VEX table and reloads it using settlement logic.
 
 PARAMETERS: None.
   
@@ -17,18 +16,17 @@ HISTORY:
 
   Date        Name            Version  Description
   ---------------------------------------------------------------------------------
-  2017-`12-27  Jeff Kanel      1.0      Created by Centric Consulting, LLC
+  2017-12-27  Jeff Kanel      1.0      Created by Centric Consulting, LLC
 
 ################################################################################ */
 
-CREATE PROCEDURE vex.customer_settlement AS
+CREATE PROCEDURE [vex].[customer_settlement] AS
 BEGIN
 
-TRUNCATE TABLE vex.customer;
+TRUNCATE TABLE vex.[customer];
 
 INSERT INTO vex.customer (
   customer_version_key
-, customer_key
 , version_index
 , version_current_ind
 , version_latest_ind
@@ -38,8 +36,6 @@ INSERT INTO vex.customer (
 )
 SELECT
   c.customer_version_key
-
-, MIN(c.customer_version_key) OVER (PARTITION BY customer_uid) AS customer_key
 
 , ROW_NUMBER() OVER (PARTITION BY customer_uid
     ORDER BY c.version_dtm, c.customer_version_key) AS version_index
@@ -65,4 +61,3 @@ FROM
 ver.customer c
 
 END;
-GO
