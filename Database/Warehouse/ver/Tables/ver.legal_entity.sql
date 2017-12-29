@@ -8,12 +8,12 @@
 
   -- FOREIGN KEY COLUMNS
 , parent_legal_entity_uid VARCHAR(200) NULL
-, legal_entity_geography_uid VARCHAR(200) NULL
+, incorporation_country_uid VARCHAR(200) NULL
 , gl_currency_uid VARCHAR(200) NULL
 
   -- ATTRIBUTE COLUMNS
 , legal_entity_desc VARCHAR(200) NOT NULL
-, legal_entity_country_code VARCHAR(20) NULL
+, legal_entity_code VARCHAR(200) NOT NULL
 
   -- SOURCE COLUMNS (Passive)
 , source_uid VARCHAR(200) NOT NULL

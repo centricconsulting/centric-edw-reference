@@ -9,8 +9,8 @@
   -- FOREIGN KEY COLUMNS
 
   -- ATTRIBUTE COLUMNS
-, sale_order_line_status_desc varchar(100) NOT NULL
-, sale_order_line_status_code varchar(20) NOT NULL
+, sales_order_line_status_desc varchar(100) NOT NULL
+, sales_order_line_status_code varchar(20) NOT NULL
 
   -- SOURCE COLUMNS (Passive)
 , source_uid VARCHAR(200) NOT NULL

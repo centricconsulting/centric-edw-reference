@@ -1,9 +1,9 @@
 ﻿/*
 ################################################################################
 
-OBJECT: VIEW dbo.customer
+OBJECT: VIEW dbo.country
 
-DESCRIPTION: Exposes the current view of the version customer table,
+DESCRIPTION: Exposes the current view of the version country table,
   either latest or current version records.
   
 RETURN DATASET:
@@ -29,20 +29,22 @@ HISTORY:
 ################################################################################
 */
 
-CREATE VIEW dbo.customer AS
+CREATE VIEW dbo.country AS
 SELECT 
   -- KEY COLUMNS
-  v.customer_version_key
-, vx.customer_key
+  v.country_version_key
+, vx.country_key
 
   -- GRAIN COLUMNS
-, v.customer_uid
+, v.country_uid
 
   -- FOREIGN KEY COLUMNS
 
   -- ATTRIBUTES
-, v.customer_desc
-, v.customer_nbr
+, v.country_code
+, v.country_desc
+, v.world_subregion_desc
+, v.world_region_desc
 
   -- SOURCE COLUMNS
 , v.source_uid
@@ -62,8 +64,7 @@ SELECT
 , vx.end_version_batch_key
 
 FROM
-ver.customer v
-INNER JOIN vex.customer vx ON vx.customer_version_key = v.customer_version_key
+ver.country v
+INNER JOIN vex.country vx ON vx.country_version_key = v.country_version_key
 WHERE
 vx.version_latest_ind = 1
-GO

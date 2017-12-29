@@ -38,6 +38,8 @@ SELECT
   -- GRAIN COLUMNS
 , v.currency_uid
 
+  -- FOREIGN KEY COLUMNS
+
   -- ATTRIBUTES
 , v.currency_desc
 , v.currency_code

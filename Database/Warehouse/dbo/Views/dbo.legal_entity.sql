@@ -1,9 +1,9 @@
 ﻿/*
 ################################################################################
 
-OBJECT: VIEW dbo.customer
+OBJECT: VIEW dbo.legal_entity
 
-DESCRIPTION: Exposes the current view of the version customer table,
+DESCRIPTION: Exposes the current view of the version legal_entity table,
   either latest or current version records.
   
 RETURN DATASET:
@@ -29,20 +29,23 @@ HISTORY:
 ################################################################################
 */
 
-CREATE VIEW dbo.customer AS
+CREATE VIEW dbo.legal_entity AS
 SELECT 
   -- KEY COLUMNS
-  v.customer_version_key
-, vx.customer_key
+  v.legal_entity_version_key
+, vx.legal_entity_key
 
   -- GRAIN COLUMNS
-, v.customer_uid
+, v.legal_entity_uid
 
   -- FOREIGN KEY COLUMNS
+, v.parent_legal_entity_uid
+, v.incorporation_country_uid
+, v.gl_currency_uid
 
-  -- ATTRIBUTES
-, v.customer_desc
-, v.customer_nbr
+  -- ATTRIBUTE COLUMNS
+, v.legal_entity_desc
+, v.legal_entity_code
 
   -- SOURCE COLUMNS
 , v.source_uid
@@ -62,8 +65,7 @@ SELECT
 , vx.end_version_batch_key
 
 FROM
-ver.customer v
-INNER JOIN vex.customer vx ON vx.customer_version_key = v.customer_version_key
+ver.legal_entity v
+INNER JOIN vex.legal_entity vx ON vx.legal_entity_version_key = v.legal_entity_version_key
 WHERE
 vx.version_latest_ind = 1
-GO

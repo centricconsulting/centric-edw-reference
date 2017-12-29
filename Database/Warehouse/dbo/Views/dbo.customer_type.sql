@@ -1,9 +1,9 @@
 ﻿/*
 ################################################################################
 
-OBJECT: VIEW dbo.customer
+OBJECT: VIEW dbo.customer_type
 
-DESCRIPTION: Exposes the current view of the version customer table,
+DESCRIPTION: Exposes the current view of the version customer_type table,
   either latest or current version records.
   
 RETURN DATASET:
@@ -29,20 +29,20 @@ HISTORY:
 ################################################################################
 */
 
-CREATE VIEW dbo.customer AS
+CREATE VIEW dbo.customer_type AS
 SELECT 
   -- KEY COLUMNS
-  v.customer_version_key
-, vx.customer_key
+  v.customer_type_version_key
+, vx.customer_type_key
 
   -- GRAIN COLUMNS
-, v.customer_uid
+, v.customer_type_uid
 
   -- FOREIGN KEY COLUMNS
 
   -- ATTRIBUTES
-, v.customer_desc
-, v.customer_nbr
+, v.customer_type_desc
+, v.customer_type_code
 
   -- SOURCE COLUMNS
 , v.source_uid
@@ -62,8 +62,7 @@ SELECT
 , vx.end_version_batch_key
 
 FROM
-ver.customer v
-INNER JOIN vex.customer vx ON vx.customer_version_key = v.customer_version_key
+ver.customer_type v
+INNER JOIN vex.customer_type vx ON vx.customer_type_version_key = v.customer_type_version_key
 WHERE
 vx.version_latest_ind = 1
-GO

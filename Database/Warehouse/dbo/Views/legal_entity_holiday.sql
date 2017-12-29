@@ -1,9 +1,9 @@
 ﻿/*
 ################################################################################
 
-OBJECT: VIEW dbo.customer
+OBJECT: VIEW dbo.legal_entity_holiday
 
-DESCRIPTION: Exposes the current view of the version customer table,
+DESCRIPTION: Exposes the current view of the version legal_entity_holiday table,
   either latest or current version records.
   
 RETURN DATASET:
@@ -29,20 +29,20 @@ HISTORY:
 ################################################################################
 */
 
-CREATE VIEW dbo.customer AS
+CREATE VIEW dbo.legal_entity_holiday AS
 SELECT 
   -- KEY COLUMNS
-  v.customer_version_key
-, vx.customer_key
+  v.legal_entity_holiday_version_key
+, vx.legal_entity_holiday_key
 
   -- GRAIN COLUMNS
-, v.customer_uid
+, v.legal_entity_uid
+, v.holiday_date
 
   -- FOREIGN KEY COLUMNS
 
-  -- ATTRIBUTES
-, v.customer_desc
-, v.customer_nbr
+  -- ATTRIBUTE COLUMNS
+, v.holiday_desc
 
   -- SOURCE COLUMNS
 , v.source_uid
@@ -62,8 +62,7 @@ SELECT
 , vx.end_version_batch_key
 
 FROM
-ver.customer v
-INNER JOIN vex.customer vx ON vx.customer_version_key = v.customer_version_key
+ver.legal_entity_holiday v
+INNER JOIN vex.legal_entity_holiday vx ON vx.legal_entity_holiday_version_key = v.legal_entity_holiday_version_key
 WHERE
 vx.version_latest_ind = 1
-GO

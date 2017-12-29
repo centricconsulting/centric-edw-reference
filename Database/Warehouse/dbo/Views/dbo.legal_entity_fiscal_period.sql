@@ -1,9 +1,9 @@
 ﻿/*
 ################################################################################
 
-OBJECT: VIEW dbo.customer
+OBJECT: VIEW dbo.legal_entity_fiscal_period
 
-DESCRIPTION: Exposes the current view of the version customer table,
+DESCRIPTION: Exposes the current view of the version legal_entity_fiscal_period table,
   either latest or current version records.
   
 RETURN DATASET:
@@ -29,20 +29,23 @@ HISTORY:
 ################################################################################
 */
 
-CREATE VIEW dbo.customer AS
+CREATE VIEW dbo.legal_entity_fiscal_period AS
 SELECT 
   -- KEY COLUMNS
-  v.customer_version_key
-, vx.customer_key
+  v.legal_entity_fiscal_period_version_key
+, vx.legal_entity_fiscal_period_key
 
   -- GRAIN COLUMNS
-, v.customer_uid
+, v.legal_entity_uid
+, v.fiscal_year
+, v.fiscal_period_of_year
 
   -- FOREIGN KEY COLUMNS
 
-  -- ATTRIBUTES
-, v.customer_desc
-, v.customer_nbr
+  -- ATTRIBUTE COLUMNS
+, v.fiscal_period_begin_dt
+, v.fiscal_period_end_dt
+, v.display_month_of_year
 
   -- SOURCE COLUMNS
 , v.source_uid
@@ -62,8 +65,8 @@ SELECT
 , vx.end_version_batch_key
 
 FROM
-ver.customer v
-INNER JOIN vex.customer vx ON vx.customer_version_key = v.customer_version_key
+ver.legal_entity_fiscal_period v
+INNER JOIN vex.legal_entity_fiscal_period vx 
+  ON vx.legal_entity_fiscal_period_version_key = v.legal_entity_fiscal_period_version_key
 WHERE
 vx.version_latest_ind = 1
-GO

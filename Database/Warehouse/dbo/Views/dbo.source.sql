@@ -1,9 +1,9 @@
 ﻿/*
 ################################################################################
 
-OBJECT: VIEW dbo.customer
+OBJECT: VIEW dbo.source
 
-DESCRIPTION: Exposes the current view of the version customer table,
+DESCRIPTION: Exposes the current view of the version source table,
   either latest or current version records.
   
 RETURN DATASET:
@@ -29,23 +29,24 @@ HISTORY:
 ################################################################################
 */
 
-CREATE VIEW dbo.customer AS
+CREATE VIEW dbo.source AS
 SELECT 
   -- KEY COLUMNS
-  v.customer_version_key
-, vx.customer_key
+  v.source_version_key
+, vx.source_key
 
   -- GRAIN COLUMNS
-, v.customer_uid
+, v.source_uid
 
   -- FOREIGN KEY COLUMNS
 
   -- ATTRIBUTES
-, v.customer_desc
-, v.customer_nbr
+, v.[source_name]
+, v.[source_desc]
+, v.[source_code]
 
   -- SOURCE COLUMNS
-, v.source_uid
+  -- MOVED source_uid to GRAIN COLUMNS for this table only
 , v.source_rev_dtm AS begin_source_rev_dtm
 , vx.end_source_rev_dtmx
 , v.source_rev_actor
@@ -62,8 +63,7 @@ SELECT
 , vx.end_version_batch_key
 
 FROM
-ver.customer v
-INNER JOIN vex.customer vx ON vx.customer_version_key = v.customer_version_key
+ver.source v
+INNER JOIN vex.source vx ON vx.source_version_key = v.source_version_key
 WHERE
 vx.version_latest_ind = 1
-GO

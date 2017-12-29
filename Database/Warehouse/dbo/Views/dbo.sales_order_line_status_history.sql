@@ -1,9 +1,9 @@
 ﻿/*
 ################################################################################
 
-OBJECT: VIEW dbo.customer
+OBJECT: VIEW dbo.sales_order_line_status_history
 
-DESCRIPTION: Exposes the current view of the version customer table,
+DESCRIPTION: Exposes the current view of the version sales_order_line_status_history table,
   either latest or current version records.
   
 RETURN DATASET:
@@ -29,20 +29,21 @@ HISTORY:
 ################################################################################
 */
 
-CREATE VIEW dbo.customer AS
+CREATE VIEW dbo.sales_order_line_status_history AS
 SELECT 
   -- KEY COLUMNS
-  v.customer_version_key
-, vx.customer_key
+  v.sales_order_line_status_history_version_key
+, vx.sales_order_line_status_history_key
 
   -- GRAIN COLUMNS
-, v.customer_uid
+, v.sales_order_line_uid
+, v.status_date DATE
 
   -- FOREIGN KEY COLUMNS
+, v.sales_order_line_status_uid
 
-  -- ATTRIBUTES
-, v.customer_desc
-, v.customer_nbr
+  -- ATTRIBUTE COLUMNS
+, v.status_comment
 
   -- SOURCE COLUMNS
 , v.source_uid
@@ -62,8 +63,7 @@ SELECT
 , vx.end_version_batch_key
 
 FROM
-ver.customer v
-INNER JOIN vex.customer vx ON vx.customer_version_key = v.customer_version_key
+ver.sales_order_line_status_history v
+INNER JOIN vex.sales_order_line_status_history vx ON vx.sales_order_line_status_history_version_key = v.sales_order_line_status_history_version_key
 WHERE
 vx.version_latest_ind = 1
-GO
