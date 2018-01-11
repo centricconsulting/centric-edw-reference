@@ -117,10 +117,10 @@
     <Build Include="ver\Tables\ver.customer.sql" />
     <Build Include="ver\Tables\ver.currency.sql" />
     <Build Include="vex\Tables\vex.currency.sql" />
-    <Build Include="vex\Stored Procedures\vex.generic_table_settlement.sql">
+    <None Include="vex\Stored Procedures\vex.generic_table_settlement.sql">
       <SuppressTSqlWarnings>
       </SuppressTSqlWarnings>
-    </Build>
+    </None>
     <Build Include="ver\Tables\ver.customer_type.sql" />
     <Build Include="ver\Tables\ver.state.sql" />
     <Build Include="ver\Tables\ver.legal_entity.sql" />
@@ -144,13 +144,10 @@
     <Build Include="vex\Tables\vex.state.sql" />
     <Build Include="vex\Tables\vex.source.sql" />
     <Build Include="dbo\Views\dbo.currency.sql" />
-    <Build Include="vex\Stored Procedures\vex.sales_order_settlement_merge.sql" />
-    <Build Include="vex\Stored Procedures\vex.generic_table_settlement_merge.sql" />
-    <Build Include="vex\Functions\vex.generate_phrase.sql" />
-    <Build Include="vex\Functions\vex.generate_phrase_version.sql" />
-    <Build Include="vex\Functions\vex.generate_version_grain_list.sql" />
-    <Build Include="vex\Stored Procedures\vex.customer_settlement.sql" />
-    <Build Include="ver\Tables\ver.country_xref.sql" />
+    <None Include="vex\Stored Procedures\vex.generic_table_settlement_merge.sql" />
+    <None Include="vex\Functions\vex.generate_phrase.sql" />
+    <None Include="vex\Functions\vex.generate_phrase_version.sql" />
+    <None Include="vex\Functions\vex.generate_version_grain_list.sql" />
     <Build Include="vex\Tables\vex.country_xref.sql" />
     <Build Include="dbo\Views\dbo.legal_entity.sql" />
     <Build Include="dbo\Views\dbo.customer_type.sql" />
@@ -160,9 +157,43 @@
     <Build Include="dbo\Views\dbo.sales_order_line_status_history.sql" />
     <Build Include="dbo\Views\dbo.sales_order_line_status.sql" />
     <Build Include="dbo\Views\dbo.sales_order_line.sql" />
-    <Build Include="dbo\Views\sales_order.sql" />
-    <Build Include="dbo\Views\legal_entity_holiday.sql" />
+    <Build Include="dbo\Views\dbo.sales_order.sql" />
+    <Build Include="dbo\Views\dbo.legal_entity_holiday.sql" />
     <Build Include="dbo\Views\dbo.legal_entity_fiscal_period.sql" />
+    <Build Include="vex\Tables\vex.customer_xref.sql" />
+    <Build Include="ver\Tables\ver.customer_xref.sql" />
+    <Build Include="dbo\Views\dbo.customer_xref.sql" />
+    <Build Include="vex\Functions\generate_version_grain_list.sql" />
+    <Build Include="vex\Functions\generate_phrase_version.sql" />
+    <Build Include="vex\Functions\generate_phrase.sql" />
+    <Build Include="vex\Stored Procedures\state_settle_merge.sql" />
+    <Build Include="vex\Stored Procedures\state_settle.sql" />
+    <Build Include="vex\Stored Procedures\source_settle_merge.sql" />
+    <Build Include="vex\Stored Procedures\source_settle.sql" />
+    <Build Include="vex\Stored Procedures\sales_order_settle_merge.sql" />
+    <Build Include="vex\Stored Procedures\sales_order_settle.sql" />
+    <Build Include="vex\Stored Procedures\sales_order_line_status_settle_merge.sql" />
+    <Build Include="vex\Stored Procedures\sales_order_line_status_settle.sql" />
+    <Build Include="vex\Stored Procedures\sales_order_line_status_history_settle_merge.sql" />
+    <Build Include="vex\Stored Procedures\sales_order_line_status_history_settle.sql" />
+    <Build Include="vex\Stored Procedures\sales_order_line_settle_merge.sql" />
+    <Build Include="vex\Stored Procedures\sales_order_line_settle.sql" />
+    <Build Include="vex\Stored Procedures\legal_entity_settle_merge.sql" />
+    <Build Include="vex\Stored Procedures\legal_entity_settle.sql" />
+    <Build Include="vex\Stored Procedures\legal_entity_holiday_settle_merge.sql" />
+    <Build Include="vex\Stored Procedures\legal_entity_holiday_settle.sql" />
+    <Build Include="vex\Stored Procedures\legal_entity_fiscal_period_settle_merge.sql" />
+    <Build Include="vex\Stored Procedures\legal_entity_fiscal_period_settle.sql" />
+    <Build Include="vex\Stored Procedures\customer_xref_settle_merge.sql" />
+    <Build Include="vex\Stored Procedures\customer_xref_settle.sql" />
+    <Build Include="vex\Stored Procedures\customer_type_settle_merge.sql" />
+    <Build Include="vex\Stored Procedures\customer_type_settle.sql" />
+    <Build Include="vex\Stored Procedures\customer_settle_merge.sql" />
+    <Build Include="vex\Stored Procedures\customer_settle.sql" />
+    <Build Include="vex\Stored Procedures\currency_settle_merge.sql" />
+    <Build Include="vex\Stored Procedures\currency_settle.sql" />
+    <Build Include="vex\Stored Procedures\country_settle_merge.sql" />
+    <Build Include="vex\Stored Procedures\country_settle.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Warehouse.publish.xml" />

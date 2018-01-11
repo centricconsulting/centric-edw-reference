@@ -1,7 +1,6 @@
-﻿/*
-################################################################################
+﻿/* ################################################################################
 
-OBJECT: VIEW dbo.customer_type
+OBJECT: VIEW dbo.[customer_type]
 
 DESCRIPTION: Exposes the current view of the version customer_type table,
   either latest or current version records.
@@ -10,9 +9,9 @@ RETURN DATASET:
 
   - Columns are identical to the corresponding version table.
   - The version key is retained for reference purposes.
-  - WITH SCHEMABINDING enables the unique index to be added to the view
   - Assumes that grain column in the version table is unique based on version latest/current
   - The filter "version_latest_ind = 1" is used for domain tables, whereas "version_current_ind = 1" is used for transaction tables.
+  - Because this only contains latest records, the end dates have been supressed; they are always null.
 
 NOTES:
 
@@ -29,40 +28,35 @@ HISTORY:
 ################################################################################
 */
 
-CREATE VIEW dbo.customer_type AS
+CREATE VIEW dbo.[customer_type] AS
 SELECT 
+
   -- KEY COLUMNS
-  v.customer_type_version_key
-, vx.customer_type_key
+  vx.customer_type_key
 
-  -- GRAIN COLUMNS
-, v.customer_type_uid
+  -- FOREIGN REFERENCE COLUMNS
 
-  -- FOREIGN KEY COLUMNS
-
-  -- ATTRIBUTES
-, v.customer_type_desc
+  -- ATTRIBUTE COLUMNS
+, v.customer_type_name
 , v.customer_type_code
 
   -- SOURCE COLUMNS
 , v.source_uid
-, v.source_rev_dtm AS begin_source_rev_dtm
-, vx.end_source_rev_dtmx
+, v.source_rev_dtm
 , v.source_rev_actor
 
   -- VERSION COLUMNS
+, v.customer_type_version_key
 , vx.version_index
-, v.version_dtm AS begin_version_dtm
-, vx.end_version_dtmx
-, vx.version_latest_ind
+, v.version_dtm
 , vx.version_current_ind
 
   -- BATCH COLUMNS
-, v.version_batch_key AS begin_version_batch_key
-, vx.end_version_batch_key
+, v.version_batch_key
 
 FROM
 ver.customer_type v
-INNER JOIN vex.customer_type vx ON vx.customer_type_version_key = v.customer_type_version_key
+INNER JOIN vex.customer_type vx ON
+  vx.customer_type_version_key = v.customer_type_version_key
 WHERE
 vx.version_latest_ind = 1
