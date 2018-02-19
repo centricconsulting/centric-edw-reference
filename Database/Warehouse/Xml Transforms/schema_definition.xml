@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<model multibyte="false" column-case="lower" column-whitespace-replace = "_">
+
+    <!-- NOTE: Only entities named in the render element will be scripted -->
+    <render all="false">
+    <entity>Sales Order Line Status History</entity>
+    
+    </render>
+
+    <entity name="Source" 
+      class="master" physical="Source"
+      definition="Source systems that provide data to the warehouse.">
+
+      <!-- NOTE that Source requires manual editing to remove the additional Source UID attribute. -->
+
+        <!-- GRAIN attributes -->
+        <attribute name ="Source" grain="true"
+          class="reference" physical="Source ."  
+          required="true" />
+
+        <!-- FOREIGN KEY attributes -->
+
+        <!-- ATTRIBUTE attributes -->
+        <attribute name ="Source Name"
+          class="name" physical="Source ."
+          definition="Name of the source system"        
+          required="true" visible="true" />    
+
+        <attribute name ="Source Code"
+          class="code" physical="Source ."
+          definition="Code representing the Source."        
+          required="true" visible="true" />
+
+        <attribute name ="Source Desc"
+          class="description" physical="Source ."
+          definition="Name of the Source."        
+          visible="true" />
+
+    </entity>
+
+    <entity name="Currency" 
+      class="master" physical="Currency"
+      definition="ISO Currency">
+
+        <!-- GRAIN attributes -->
+        <attribute name ="Currency" grain="true"
+          class="reference" physical="Currency ."  
+          required="true" />
+
+        <!-- FOREIGN KEY attributes -->
+
+        <!-- ATTRIBUTE attributes -->
+        <attribute name ="Currency Code"
+          class="code" physical="Currency ."
+          definition="ISO code representing the Currency."        
+          visible="true" />    
+
+        <attribute name ="Currency Name"
+          class="name" physical="Currency ."
+          definition="Name of the Currency."        
+          required="true" visible="true" />
+
+        <attribute name ="Currency Symbol"
+          class="code" physical="Currency Symbol"
+          data-type="multibyte-string" data-length="10"
+          definition="Symbol used to represent the currency."        
+          visible="true" />
+
+
+    </entity>
+
+    <entity name="State" 
+      class="master" physical="State"
+      definition="ISO State">
+
+        <!-- GRAIN attributes -->
+        <attribute name ="State" grain="true"
+          class="reference" physical="State ."  
+          required="true" />
+
+        <!-- FOREIGN KEY attributes -->
+        <attribute name ="Country"
+          class="reference" physical="Country ."  />
+
+        <!-- ATTRIBUTE attributes -->
+        <attribute name ="State Code"
+          class="code" physical="State ."
+          definition="ISO code representing the state."        
+          visible="true" />
+
+        <attribute name ="Country Code" 
+          class="code" physical="Country ."
+          definition="ISO code representing the country."        
+          visible="true" />        
+
+        <attribute name ="State Name"
+          class="name" physical="State ."
+          definition="Name of the State."        
+          required="true" visible="true" />
+
+        <attribute name ="Country Description"
+          class="description" physical="Country ."
+          definition="Description of the Country."        
+          visible="true" />
+
+
+    </entity>
+
+    <entity name="Country" 
+      class="master" physical="Country"
+      definition="ISO Country">
+
+        <!-- GRAIN attributes -->
+        <attribute name ="Country" grain="true"
+          class="reference" physical="Country ."  
+          required="true" />
+
+        <!-- FOREIGN KEY attributes -->
+        
+        <!-- ATTRIBUTE attributes -->
+        <attribute
+          name ="Country Code" class="code" physical="Country ."
+          definition="ISO code representing the country."        
+          visible="true" />
+
+        <attribute
+          name ="Country Name" class="name" physical="Country ."
+          definition="Name of the country."        
+          required="true" visible="true" />
+
+        <attribute
+          name ="World Subregion Description" class="description" physical="World Subregion ."
+          definition="Description of the subregion of the world in which the country resides."        
+          visible="true" />
+
+        <attribute
+          name ="World Region Description" class="description" physical="World Region ."
+          definition="Description of the region of the world in which the country resides."        
+          visible="true" />        
+
+    </entity>
+
+    <entity name="Legal Entity" 
+      class="master" physical="Customer"
+      definition="Organization or individual that has ever placed a sales order.">
+
+        <!-- GRAIN attributes -->
+        <attribute grain="true"
+          name ="Customer" class="reference" physical="Customer ."  
+          required="true" />
+
+        <!-- FOREIGN KEY attributes -->
+        
+        <!-- ATTRIBUTE attributes -->
+        <attribute
+          name ="Customer Name" class="name" physical="Customer Legal ."
+          definition="Name of the Customer organization."        
+          required="true" visible="true" />
+
+        <attribute
+          name ="Parent Organization Name" class="name" physical="Parent Organization ."
+          definition="Name of a parent organization, often owning multiple Customers."        
+          required="true" visible="true" />
+
+        <attribute 
+          name ="Customer Number" class="number" physical="Customer ."
+          definition="Identifier of the Customer created by internal systems.  Not necessarily unique."
+          data-length="50"  visible="true" />
+
+        <attribute
+          name ="Internal Risk Score" class="value" physical="Risk Score ."
+          definition="Rating of risk that the Customer will pay invoices by the specified term.  Higher score indicates greater risk."                
+          visible="true" />
+
+    </entity>
+
+    <entity name="Customer" 
+      class="master" physical="Customer"
+      definition="ISO Customer">
+
+        <!-- GRAIN attributes -->
+        <attribute name ="Customer" grain="true"
+          class="reference" physical="Customer ."  
+          required="true" />
+
+        <!-- FOREIGN KEY attributes -->
+        <attribute name ="Managing Legal Entity"
+          class="reference" physical="Managing Legal Entity ."  />
+
+        <attribute name ="Customer Type"
+          class="reference" physical="Customer Type ."  />        
+
+        <!-- ATTRIBUTE attributes -->
+        <attribute name ="Customer Name"
+          class="name" physical="Customer ."
+          definition="Name of the Customer."        
+          required="true" visible="true" />
+
+        <attribute name ="Customer Number"
+          class="number" physical="Customer ."
+          definition="Customer number in its parent system."        
+          visible="true" />
+
+    </entity>
+
+    <entity name="Customer Type" 
+      class="master" physical="Customer Type"
+      definition="Customer Type">
+
+        <!-- GRAIN attributes -->
+        <attribute name ="Customer Type" grain="true"
+          class="reference" physical="Customer Type ."  
+          required="true" />
+
+        <!-- FOREIGN KEY attributes -->
+
+        <!-- ATTRIBUTE attributes -->
+        <attribute name ="Customer Type Name"
+          class="name" physical="Customer Type ."
+          definition="Name of the Customer Type."        
+          required="true" visible="true" />
+
+        <attribute name ="Customer Type Code"
+          class="code" physical="Customer Type ."
+          definition="Code representing the Customer Type."        
+          visible="true" />
+
+    </entity>
+
+    <entity name="Customer Xref"
+      class="xref" physical="Customer ."
+      definition="Cross-reference for Customers">
+
+      <!-- GRAIN attributes -->
+      <attribute name ="Customer" grain="true"
+        class="reference" physical="Customer ."
+        required="true" />
+
+      <!-- FOREIGN KEY attributes -->
+      <attribute name ="Customer"
+        class="reference" physical="Master Customer ."
+        required="false" />
+
+    </entity>
+
+    <entity name="Legal Entity" 
+      class="master" physical="Legal Entity">
+
+        <!-- GRAIN attributes -->
+        <attribute grain="true" name ="Legal Entity"
+          class="reference" physical="Legal Entity ."  
+          required="true" />
+
+        <!-- FOREIGN KEY attributes -->
+        <attribute name ="Parent Legal Entity"
+          class="reference" physical="Parent Legal Entity ." />
+
+        <attribute name ="Incorporation Country"
+          class="reference" physical="Incorporation Country ." /> 
+
+        <attribute name ="GL Currency"
+          class="reference" physical="GL Currency ." />                  
+
+        <!-- ATTRIBUTE attributes -->
+        <attribute name ="Legal Entity Name"
+          class="name" physical="Legal Entity ."
+          definition="Name of the legal entity organization."        
+          required="true" visible="true" />
+
+        <attribute 
+          name ="Legal Entity Code" class="code" physical="Legal Entity ."
+          definition="Code representing the legal entity" 
+          visible="true" />
+
+    </entity>
+
+    <entity name="Legal Entity Holiday"
+      class="master"
+      definition="Holiday dates specified for a legal entity.">
+
+        <!-- GRAIN attributes -->
+        <attribute name ="Legal Entity" grain="true"
+          class="reference" physical="Legal Entity ." 
+          required="true" />
+
+        <attribute  name ="Holiday Date" grain="true"
+          class="date" physcial="Holiday ."
+          definition ="Date on which a holiday occurs for the legal entity."
+          required="true" />
+
+        <!-- FOREIGN KEY attributes -->
+        
+        <!-- ATTRIBUTE attributes -->
+        <attribute name ="Holiday Name"
+          class="name" physical="Holiday ."
+          definition="Name of the holiday."
+          visible="true" />
+
+    </entity>
+
+    <entity name="Legal Entity Fiscal Period"
+      class="master"
+      definition="Holiday dates specified for a legal entity.">
+
+        <!-- GRAIN attributes -->
+        <attribute name ="Legal Entity" grain="true"
+          class="reference" physical="Legal Entity ." 
+          required="true" />
+
+        <attribute  name ="Fiscal Year" grain="true"
+          class="index" physcial="Fiscal Year"
+          definition ="Fiscal year corresponding to the legal entity."
+          required="true" />
+
+        <attribute name ="Fiscal Period Of Year" grain="true"
+          class="index" physical="Fiscal Period Of Year ."
+          definition ="Index from 1..n where (n) is the number of periods in a Fiscal Year."
+          required="true" visible="true" />
+
+        <!-- FOREIGN KEY attributes -->
+        
+        <!-- ATTRIBUTE attributes -->
+        <attribute name ="Begin Fiscal Period Date"
+          class="date" physical="Begin Fiscal Period ."
+          definition="Date of the first day in the corresponding fiscal period."
+          required="true" visible="true" />
+
+        <attribute name ="End Fiscal Period Date"
+          class="date" physical="End Fiscal Period ."
+          definition="Date of the last day in the corresponding fiscal period."
+          required="false" visible="true" />
+
+        <attribute name ="Display Month of Year"
+          class="index" physical="Display Month of Year"
+          definition="Index of the calendar month (1..12) for the month used in the fiscal period label."
+          required="true" visible="true" />
+
+    </entity>
+
+    <entity name="Sales Order" 
+      class="master" physical="Sales Order"
+      definition="ISO Sales Order">
+
+        <!-- GRAIN attributes -->
+        <attribute name ="Sales Order" grain="true"
+          class="reference" physical="Sales Order ."  
+          required="true" />
+
+        <!-- FOREIGN KEY attributes -->
+        <attribute name ="Revenue Legal Entity"
+          class="reference" physical="Revenue Legal Entity ."  />
+
+        <attribute name ="Customer"
+          class="reference" physical="Customer ."  />
+
+        <!-- ATTRIBUTE attributes -->
+        <attribute name ="Sales Order Date"
+          class="date" physical="Sales Order ."
+          definition="Date on which the sales order is booked."        
+          visible="true" />
+
+        <attribute name ="Sales Order Number"
+          class="number" physical="Sales Order ."
+          definition="Sales Order number in its parent system."        
+          visible="true" />
+
+        <attribute name ="Tax Amount"
+          class="amount" physical="Tax ."
+          definition="Tax attributed to the sales order."        
+          visible="true" />
+
+        <attribute name ="Freight Amount"
+          class="amount" physical="Freight ."
+          definition="Freight attributed to the sales order."        
+          visible="true" />            
+
+    </entity>
+
+    <entity name="Sales Order Line" 
+      class="master" physical="Sales Order Line"
+      definition="ISO Sales Order">
+
+        <!-- GRAIN attributes -->
+        <attribute name ="Sales Order Line" grain="true"
+          class="reference" physical="Sales Order Line."  
+          required="true" />
+
+        <!-- FOREIGN KEY attributes -->
+      <attribute name ="Sales Order"
+          class="reference" physical="Sales Order ."  />
+
+      <attribute name ="Item"
+          class="reference" physical="Item ."  />
+        
+      <attribute name ="Current Sales Order Line Status"
+          class="reference" physical="Current Sales Order Line Status ."  />
+        
+
+        <!-- ATTRIBUTE attributes -->
+        <attribute name ="Sales Order Line Description"
+          class="description" physical="Sales Order Line ."
+          definition="Description of the line, often a product description."        
+          visible="true" />
+
+        <attribute name ="Sales Order Line Index"
+          class="index" physical="Sales Order Line ."
+          definition="Integer index of the line as ordered in the sales order."        
+          visible="true" />
+
+        <attribute name ="Sale Item Unit Quantity"
+          class="quantity" physical="Item Unit ."
+          definition="Number of units."        
+          visible="true" />
+
+        <attribute name ="Sales"
+          class="amount" physical="Sale ."
+          definition="Sales attributed to the line."        
+          visible="true" />  
+
+        <attribute name ="Standard Cost"
+          class="amount" physical="Standard Cost ."
+          definition="Standard cost attributed to the line."        
+          visible="true" />          
+
+    </entity>
+
+    <entity name="Sales Order Line Status" 
+      class="master" physical="Sales Order Line Status"
+      definition="Sales Order Line Status">
+
+        <!-- GRAIN attributes -->
+        <attribute name ="Sales Order Line Status" grain="true"
+          class="reference" physical="Sales Order Line Status ."  
+          required="true" />
+
+        <!-- FOREIGN KEY attributes -->
+
+        <!-- ATTRIBUTE attributes -->
+        <attribute name ="Sales Order Line Status Description"
+          class="desc" physical="Sales Order Line Status ."
+          definition="Name of the Sales Order Line Status."        
+          required="true" visible="true" />
+
+        <attribute name ="Sales Order Line Status Code"
+          class="code" physical="Sales Order Line Status ."
+          definition="Code representing the Sales Order Line Status."        
+          visible="true" />
+
+    </entity>
+
+    <entity name="Sales Order Line Status History"
+      class="history" physical="Sales Order Line Status ."
+      definition="Holiday dates specified for a legal entity.">
+
+        <!-- GRAIN attributes -->
+        <attribute name ="Sales Order Line" grain="true" 
+          class="reference" physical="Sales Order Line ." 
+          required="true" />
+
+        <attribute name ="Status Date" grain="true"
+          class="date" physical="Status ."
+          definition ="Date for which the sales order line status is specified."        
+          required="true" />
+
+        <!-- FOREIGN KEY attributes -->
+        <attribute name ="Sales Order Line Status"
+          class="reference" physical="Sales Order Line Status ."
+          definition ="Status of the sales order line at the close of the status date."        
+          visible="true" />
+        
+        <!-- ATTRIBUTE attributes -->
+        <attribute name ="Status Comment"
+          class="description" physical="Status Comment ."
+          definition="Date of the first day in the corresponding fiscal period."        
+          visible="true" />
+
+    </entity>
+
+</model>
+
