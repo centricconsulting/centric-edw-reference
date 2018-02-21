@@ -13,8 +13,8 @@
   <xsl:template match="/">
 <xsl:text>/* 
 ##################################################################################################</xsl:text>
-###########  INCLUDED ENTITIES:<xsl:for-each select="//model/entity[@name=//model/render/entity or //model/render[@all='true']]">
-###############  <xsl:value-of select="./@name" /></xsl:for-each><xsl:text>
+###########  INCLUDED ENTITIES:<xsl:for-each select="//model/entity[@caption=//model/render/entity or //model/render[@all='true']]">
+###############  <xsl:value-of select="./@caption" /></xsl:for-each><xsl:text>
 ##################################################################################################  
 
 ##################################################################################################  
@@ -38,8 +38,8 @@ EXEC sp_executesql N'CREATE SCHEMA [vex]';
 GO
 </xsl:text>
 
-    <xsl:apply-templates select="//model/entity[@name=//model/render/entity or //model/render[@all='true']]">
-      <xsl:sort select="@name" data-type="text"/>
+    <xsl:apply-templates select="//model/entity[@caption=//model/render/entity or //model/render[@all='true']]">
+      <xsl:sort select="@caption" data-type="text"/>
     </xsl:apply-templates>
 
   </xsl:template>
@@ -47,17 +47,17 @@ GO
   <!-- ######## TEMPLATE: ENTITY ############## -->
   <xsl:template match="entity">
     <xsl:variable name = "table-name"
-      select = "user:BuildPhysicalName(
+      select = "user:GetColumnName(
+        @caption,
         @name,
-        @physical,
         @class,
-        //model/@column-case,
-        //model/@column-whitespace-replace)" />
+        //model/@column-whitespace-replace,
+        //model/@column-case)" />
 
 <xsl:text>
 /*
 ##################################################################################################  
-###########  ENTITY OBJECT DEFINITIONS FOR [</xsl:text><xsl:value-of select="@name" /><xsl:text>]
+###########  ENTITY OBJECT DEFINITIONS FOR [</xsl:text><xsl:value-of select="@caption" /><xsl:text>]
 ##################################################################################################
 */
 </xsl:text>
@@ -538,21 +538,20 @@ GO
   <xsl:param name="column-prefix" />
   <xsl:param name="suppress-data-type" />
   <xsl:variable name = "column-name" 
-    select = "user:BuildPhysicalName(
+    select = "user:GetColumnName(
+      @caption,
       @name,
-      @physical,
       @class,
-      //model/@column-case,
-      //model/@column-whitespace-replace)" />
-, <xsl:value-of select="$column-prefix" /><xsl:value-of select="$column-name" /><xsl:if test="not($suppress-data-type='true')"><xsl:text> </xsl:text>
-  <xsl:value-of select="user:GetPhysicalDataType(
+      //model/@column-whitespace-replace,
+      //model/@column-case)" />
+ , <xsl:value-of select="$column-prefix" /><xsl:value-of select="$column-name" /><xsl:if test="not($suppress-data-type='true')"><xsl:text> </xsl:text>
+  <xsl:value-of select="user:GetColumnDataType(
       @class,
-      @data-type,
-      @data-length,
-      @data-precision,
       @required,
-      //model/@multibyte)" /></xsl:if></xsl:template>
-
+      (//model/@multibyte='true' or @multibyte='true'),
+      @qualified-data-type,
+      @data-length,
+      @data-precision)" /></xsl:if></xsl:template>
 
   <!-- ########################################### -->
   <!-- ######## TEMPLATE: GRAIN ATTRIBUTE LIST ### -->  
@@ -565,12 +564,12 @@ GO
     <xsl:param name="phrase-comparator" select="'='" />
     <xsl:param name="delimit-with-cr" select="'false'" />
     <xsl:for-each select="./attribute[@grain='true']"><xsl:variable name = "column-name"
-        select = "user:BuildPhysicalName(
-          @name,
-          @physical,
-          @class,
-          //model/@column-case,
-          //model/@column-whitespace-replace)" />
+        select = "user:GetColumnName(
+        @caption,
+        @name,
+        @class,
+        //model/@column-whitespace-replace,
+        //model/@column-case)" />          
       <xsl:if test="$delimit-with-cr='true'"><xsl:text>
       </xsl:text>
       </xsl:if><xsl:if test="position()>1"><xsl:value-of select="concat($phrase-delimiter,' ')"/></xsl:if>
@@ -579,250 +578,226 @@ GO
     </xsl:if>
   </xsl:for-each></xsl:template>
 
+  <!-- ########################################### -->
+  <!-- ######## C# Code  ########################## -->  
+  <!-- ########################################### -->
 
   <msxsl:script language="C#" implements-prefix="user">
+    <msxsl:assembly name="System.Core" />
+    <msxsl:using namespace="System.Linq" />
+    <msxsl:using namespace="System.Collections.Generic"/>
+
     <![CDATA[
+ 
+    // returns the attribute name with suffix
+    public string GetAttributeName(string AttributeName, string AttributeClassName)
+    {
+        AttributeClass ac = AttributeClass.GetAttributeClass(AttributeClassName);
+        return ac.GetAttributeName(AttributeName);
+    }
 
-    public string BuildPhysicalName(
-      string AttributeName,
-      string PhysicalName, 
-      string Class,
-      string ColumnCase,
-      string ColumnWhitespaceReplace)
-    { 
-      string result = null;
+    // returns the column name for database usage
+    public string GetColumnName(string AttributeName, string ColumnAttributeName, string AttributeClassName, string WhitespaceReplaceChar, string ColumnCase)
+    {
 
-      // determine the source of the physical name
-      if(PhysicalName.Trim().Length > 0)
-      {
-        result = PhysicalName.Trim();
+        string WorkingAttributeName = null;
+        WorkingAttributeName = (ColumnAttributeName != null) ? ColumnAttributeName : AttributeName;
 
-      } else if (AttributeName.Trim().Length > 0)
-      {
-        result = AttributeName.Trim();
-      }
+        AttributeClass ac = AttributeClass.GetAttributeClass(AttributeClassName);
+        return ac.GetColumnName(WorkingAttributeName, WhitespaceReplaceChar, ColumnCase);
+    }
 
-      string PhysicalClass = GetPhysicalClassSuffix(Class);
-      
-      if(PhysicalClass != null)
-      {
-
-        // replace "." with the physical class if applicable
-        if(result.Contains(".")) result = result.Replace(".", PhysicalClass);
-
-      }
-
-      // replace key words, usually with shorter version
-      result = ReplaceKeyWords(result);
-
-      if(ColumnWhitespaceReplace.Trim().Length > 0)
-      {
-        // replace spaces with underscores
-        result = result.Replace(" ", ColumnWhitespaceReplace.Trim());
-      }
-
-      // apply case logic
-      switch(ColumnCase.ToLower())
-      {
-        case "upper" : return result.ToUpper();
-        case "lower" : return result.ToLower();
-        case "proper" :
-
-          System.Globalization.TextInfo textInfo = new System.Globalization.CultureInfo("en-US", false).TextInfo;
-          return textInfo.ToTitleCase(result);
+    // returns the phyisical data type with "NOT NULL" as applicable
+    public string GetColumnDataType(string AttributeClassName, string RequiredText, bool MultiByte, 
+        string QualifiedDataType, string LengthText, string PrecisionText)
+    {
         
-        default: return result;
-      }
+        bool Required = (RequiredText=="true");           
+        int? Length = ResolveIntegerFromText(LengthText);
+        int? Precision = ResolveIntegerFromText(PrecisionText);
+        
+        AttributeClass ac = AttributeClass.GetAttributeClass(AttributeClassName);
+        string result = ac.GetDataTypePhrase(Required, MultiByte, QualifiedDataType, Length, Precision);
+        return result;
     }
 
-
-    public string ReplaceKeyWords(string Text)
+    // returns an integer value from valid text, or null if invalid text
+    private int? ResolveIntegerFromText(string IntegerText)
     {
-        System.Collections.Generic.Dictionary<string, string> ReplaceList = 
-          new System.Collections.Generic.Dictionary<string, string>();
+        int dtv;
+        if(!int.TryParse(IntegerText, out dtv)) {return null;}        
+        return dtv;        
+    }        
 
-        //ReplaceList.Add("Customer","Cust");
-        //ReplaceList.Add("Organization","Org");
 
-        foreach(System.Collections.Generic.KeyValuePair<string, string> item in ReplaceList)
-        {
-          if(Text.Contains(item.Key))
-          {
-            Text = Text.Replace(item.Key, item.Value);
-          }
-        }
-
-        return Text;
-    }
-
-    public string GetPhysicalClassSuffix(string Class)
+    public class AttributeClass
     {
-      switch (Class.ToUpper())
+
+      public enum AttributeClassTypes { None, Text, Time, Bit, Integer, Decimal, Numeric };
+
+      public string Name {get; set;}
+      public string Suffix {get; set;}
+      public string DataType {get; set;}
+      public int Length {get; set;}
+      public int Precision {get; set;}      
+      public AttributeClassTypes AttributeClassType {get; set;} 
+
+      public AttributeClass() {}
+
+      public string GetAttributeName(string AttributeName)
       {
-
-        // entity classes
-        case "REFERENCE": return "UID";
-        case "DATE": return "Date"; 
-        case "TIMESTAMP": return "Timestamp";
-        case "TIMESTAMP-EXCLUSIVE": return "TimestampEx";
-        case "DESC":
-        case "DESCRIPTION": return "Desc";
-        case "NAME": return "Name";
-        case "AMOUNT": return "Amount";
-        case "VALUE": return "Value";
-        case "CODE": return "Code";
-        case "INDEX": return "Index";
-        case "COUNT": return "Count";
-        case "IDENTIFIER": return "ID";
-        case "INDICATOR": return "Ind";
-        case "FLAG": return "Flag";
-        case "QUANTITY": return "Qty";
-        case "NUMBER": return "Number";
-
-        // table classes
-        case "HISTORY": return "History";
-        case "XREF": return "Xref";
-        default: return null;
-
-      }
-    }
-
-    
-
-
-    public string GetPhysicalDataType(
-      string Class,
-      string DataType,
-      string DataTypeLength,
-      string DataTypePrecision,
-      string Required,
-      string MultiByte)
-    {
-      
-      // Data Type is first derived from data type information
-      //   and is otherwise defaulted based on class
-      string pdt = null;
-
-      string RequiredSQL = (Required == "true") ? " NOT NULL" : " NULL";
-
-      if(DataType == null || DataType.Trim().Length == 0)
-      {
-        pdt = GetPhysicalDataTypeFromClass(Class, DataTypeLength, MultiByte);
-
-        if(pdt == null)
+        if(this.Suffix != null)
         {
-          return "{UNKNOWN DATA TYPE} " + RequiredSQL;
+            return AttributeName.Replace(".", this.Suffix);
         }
         else
         {
-          return pdt + " " + RequiredSQL;
+            return AttributeName.Replace(".", String.Empty).Trim();
         }
-        
       }
-      else
+
+      public string GetColumnName(string AttributeName, string WhitspaceReplaceChar, string ColumnCase)
       {
-      
-        switch (DataType.ToUpper())
+        string FinalAttributeName = this.GetAttributeName(AttributeName);
+        
+        // replace whitespace with other characters
+        string result = null;
+        if(!string.IsNullOrEmpty(WhitspaceReplaceChar))
         {
+            result = FinalAttributeName.Replace(" ", WhitspaceReplaceChar);
+        }
+        else
+        {
+            result = FinalAttributeName;
+        }
 
-          case "MULTIBYTE-STRING":
-          case "MB-STRING" : return "NVARCHAR(" + DataTypeLength + ")" + RequiredSQL;
-          case "STRING":
-          case "TEXT": 
-          
-            if(MultiByte == "true")
-            {
-              return "NVARCHAR(" + DataTypeLength + ")" + RequiredSQL;
+        // change case and return
+        switch (ColumnCase.ToUpper())
+        {
+            case "UPPER":
+                return result.ToUpper();
 
-            } else {
+            case "LOWER":
+                return result.ToLower();
 
-              return "VARCHAR(" + DataTypeLength + ")" + RequiredSQL;
-            }
+            case "PROPER":
+                System.Globalization.TextInfo textInfo = new System.Globalization.CultureInfo("en-US", false).TextInfo;
+                return textInfo.ToTitleCase(result);
 
-          case "CHARACTER":
-          case "CHAR":
-          
-            if(MultiByte == "true")
-            {
-              return "NCHAR(" + DataTypeLength + ")" + RequiredSQL;
+            default:
+                return result;
+        }
+      }
 
-            } else {
+      public string GetDataTypePhrase(bool Required, bool MultiByte, string QualifiedDataType = null, int? Length = null, int? Precision = null)
+      {
+        
+        if(!string.IsNullOrEmpty(QualifiedDataType))
+        {
+            return this.AppendRequiredPhrase(QualifiedDataType, Required);
+        }
 
-              return "CHAR(" + DataTypeLength + ")" + RequiredSQL;
+        if(Length == null) {Length = this.Length;}
+        if(Precision == null) {Precision = this.Precision;}
 
-            }
+        string dtp = null; 
 
-          case "DATE": return "DATE" + RequiredSQL;
-          case "DATETIME": 
-          case "TIMESTAMP": return "DATETIME2" + RequiredSQL;
-          case "INTEGER": 
-          case "INT":
-            return "INTEGER" + RequiredSQL;
-          case "MONEY": return "MONEY" + RequiredSQL;
-          case "NUMBER":
-          case "DECIMAL": return "DECIMAL(" + DataTypeLength + "," + DataTypePrecision + ")" + RequiredSQL;
-          case "FLOAT": return "FLOAT";
+        switch(this.AttributeClassType)
+        {
+            case AttributeClassTypes.Text:
 
-          default: return "{UNKNOWN DATA TYPE}" + RequiredSQL;
+                dtp = string.Format("{2}{0}({1})", this.DataType, Length.ToString(), MultiByte ? "N" : String.Empty);
+                return this.AppendRequiredPhrase(dtp, Required);
+            
+            case AttributeClassTypes.Numeric:
+            case AttributeClassTypes.Bit:
+            case AttributeClassTypes.Integer:
+            case AttributeClassTypes.Time:
+
+                dtp = this.DataType;
+                return this.AppendRequiredPhrase(dtp, Required);           
+
+            case AttributeClassTypes.Decimal:
+
+                dtp = string.Format("{0}({1},{2})", this.DataType, Length.ToString(), Precision.ToString());
+                return this.AppendRequiredPhrase(dtp, Required);
+
+            default:
+                return "{UNKNOWN DATA TYPE}";
+        }
+      }
+
+      private string AppendRequiredPhrase(string DataTypePhrase, bool Required)
+      {
+        string NewPhrase = (Required == true) ? DataTypePhrase + " NOT NULL" : DataTypePhrase;
+        return NewPhrase;
+      }
+
+      public static AttributeClass GetAttributeClass(string Name)
+      {
+        switch (Name.ToUpper())
+        {
+            case "REF":
+            case "REFERENCE":
+                return new AttributeClass(){Name="Reference", Suffix="UID", DataType="VARCHAR",Length=200, AttributeClassType = AttributeClassTypes.Text};
+            case "DESC":
+            case "DESCRIPTION":
+                return new AttributeClass(){Name="Description", Suffix="Desc", DataType="VARCHAR",Length=200, AttributeClassType = AttributeClassTypes.Text};
+            case "CODE":
+                return new AttributeClass(){Name="Code", Suffix="Code", DataType="VARCHAR",Length=20, AttributeClassType = AttributeClassTypes.Text};    
+            case "NAME":
+                return new AttributeClass(){Name="Name", Suffix="Name", DataType="VARCHAR",Length=200, AttributeClassType = AttributeClassTypes.Text};            
+            case "FLAG":
+                return new AttributeClass(){Name="Flag", Suffix="Flag", DataType="CHAR",Length=1, AttributeClassType = AttributeClassTypes.Text};
+            case "NUMBER":
+            case "IDENTIFIER":
+                return new AttributeClass(){Name="Identifier", Suffix="Nbr", DataType="VARCHAR",Length=100, AttributeClassType = AttributeClassTypes.Text};
+            case "GUID":
+                return new AttributeClass(){Name="Guid", Suffix="Guid", DataType="VARCHAR",Length=100, AttributeClassType = AttributeClassTypes.Text};                
+            case "DATE":
+                return new AttributeClass(){Name="Date", Suffix="Date", DataType="DATE", AttributeClassType = AttributeClassTypes.Time};
+            case "DATETIME":
+            case "TIMTESTAMP":
+                return new AttributeClass(){Name="Timestamp", Suffix="Dtm", DataType="DATETIME2", AttributeClassType = AttributeClassTypes.Time};
+            case "DATETIME-EXCLUSIVE":
+            case "TIMESTAMP-EXCLUSIVE":
+                return new AttributeClass(){Name="Timestamp-Exclusive", Suffix="Dtmx", DataType="DATETIME2", AttributeClassType = AttributeClassTypes.Time};
+            case "INDEX":
+                return new AttributeClass(){Name="Index", Suffix="Index", DataType="INT", AttributeClassType = AttributeClassTypes.Integer};
+            case "COUNT":
+                return new AttributeClass(){Name="Count", Suffix="Count", DataType="INT", AttributeClassType = AttributeClassTypes.Integer};
+            case "IND":
+            case "INDICATOR":
+                return new AttributeClass(){Name="Indicator", Suffix="Ind", DataType="BIT", AttributeClassType = AttributeClassTypes.Bit};
+            case "QTY":
+            case "QUANTITY":
+                return new AttributeClass(){Name="Quantity", Suffix="Qty", DataType="DECIMAL", Length=20, Precision=12, AttributeClassType = AttributeClassTypes.Decimal};
+            case "MONEY":
+            case "CURRENCY":
+                return new AttributeClass(){Name="Currency", Suffix="Amt", DataType="DECIMAL", Length=20, Precision=12, AttributeClassType = AttributeClassTypes.Decimal};
+            case "RATE":
+                return new AttributeClass(){Name="Rate", Suffix="Rate", DataType="DECIMAL", Length=20, Precision=12, AttributeClassType = AttributeClassTypes.Decimal};
+            case "VAL":
+            case "VALUE":
+                return new AttributeClass(){Name="Value", Suffix="Val", DataType="DECIMAL", Length=20, Precision=12, AttributeClassType = AttributeClassTypes.Decimal};
+            case "VAL-PRECISE":
+            case "VALUE-PRECISE":
+                return new AttributeClass(){Name="Value-Precise", Suffix="Val", DataType="FLOAT", AttributeClassType = AttributeClassTypes.Numeric};
+
+            // RESERVED FOR ENTITY CLASS NAMES
+            
+            case "HISTORY":
+                return new AttributeClass(){Name="History", Suffix="History"};
+            case "CROSS-REFERENCE":
+                return new AttributeClass(){Name="Cross-Reference", Suffix="Xref"}; 
+            case "MASTER":
+                return new AttributeClass(){Name="Master", Suffix=null};                  
+
+            default:
+               throw new Exception(string.Format("Invalid attribute class requested: \"{0}\".", Name));
 
         }
       }
-    }
-
-    public string GetPhysicalDataTypeFromClass(string Class, string DataTypeLength, string MultiByte)
-    {
-
-      string TextPrefix = null;
-      if(MultiByte.Equals("true"))
-      {
-        TextPrefix = "N";
-      }
-
-      switch (Class.ToUpper())
-      {
-
-        // entity classes
-        case "REFERENCE": return TextPrefix + "VARCHAR(" + IntegerText(DataTypeLength, 200) + ")";
-        case "DESC":
-        case "DESCRIPTION": return TextPrefix + "VARCHAR(" + IntegerText(DataTypeLength, 200) + ")";
-        case "CODE": return TextPrefix + "VARCHAR(" + IntegerText(DataTypeLength, 20) + ")";
-        case "FLAG": return TextPrefix + "CHAR(" + IntegerText(DataTypeLength, 20) + ")";
-        case "NAME": return TextPrefix + "VARCHAR(" + IntegerText(DataTypeLength, 200) + ")";
-
-        case "NUMBER": return TextPrefix + "VARCHAR(" + IntegerText(DataTypeLength, 100) + ")";
-
-        case "DATE": return "DATE"; 
-        case "TIMESTAMP": return "DATETIME2";
-        case "TIMESTAMP-EXCLUSIVE": return "DATETIME2";
-        
-        case "QUANTITY":
-        case "VALUE":
-        case "AMOUNT": return "DECIMAL(20,8)";
-
-        case "INDEX":
-        case "COUNT":
-        case "IDENTIFIER": return "INT";
-
-        case "IND":
-        case "INDICATOR": return "BIT";
-
-        default: return null;
-
-      }
-    }
-
-
-    public string IntegerText(string ProposedText, int DefaultValue)
-    {
-
-      int dtv;
-      if(!int.TryParse(ProposedText, out dtv))
-      {
-        // default the data type length
-        dtv = DefaultValue;
-      }
-
-      return dtv.ToString();
     }
 
   ]]>
