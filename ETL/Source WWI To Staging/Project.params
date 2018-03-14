@@ -1,10 +1,31 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <SSIS:Parameters xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
+  <SSIS:Parameter
+    SSIS:Name="StagingConnectionString">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{4c340f67-7a98-46a7-91b9-b7e0714bc672}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">Data Source=localhost;Initial Catalog=StagingWWI;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
   <SSIS:Parameter
     SSIS:Name="AuditConnectionString">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{74b8f921-521a-4b52-8cc0-7a565d965ad6}</SSIS:Property>
+        SSIS:Name="ID">{a6e364b8-e6ad-44c9-b357-de9b2a342fe6}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -22,10 +43,10 @@
     </SSIS:Properties>
   </SSIS:Parameter>
   <SSIS:Parameter
-    SSIS:Name="WarehouseConnectionString">
+    SSIS:Name="SourceConnectionString">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{3a7d9392-3ac0-4882-bb15-aefc7c03655d}</SSIS:Property>
+        SSIS:Name="ID">{f56a751d-36d9-4a0e-aca1-0b60cd2dacb9}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -37,16 +58,16 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=localhost;Initial Catalog=Warehouse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
+        SSIS:Name="Value">Data Source=localhost;Initial Catalog=WideWorldImporters;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
   </SSIS:Parameter>
   <SSIS:Parameter
-    SSIS:Name="MartConnectionString">
+    SSIS:Name="ProjectName">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{483cef6f-b6bc-41a3-8f07-d1d02dc71c9c}</SSIS:Property>
+        SSIS:Name="ID">{2bb4726c-078f-42a5-81c9-9561fb8cc52d}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -58,16 +79,16 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=localhost;Initial Catalog=Mart;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
+        SSIS:Name="Value">Source WWI To Staging</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
   </SSIS:Parameter>
   <SSIS:Parameter
-    SSIS:Name="CacheFolder">
+    SSIS:Name="CacheFolderPath">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{37c572c2-19b8-4ec9-bc62-61908d4cd64a}</SSIS:Property>
+        SSIS:Name="ID">{3e361946-95c5-4ff3-838c-2a5b3eda7ea5}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -80,27 +101,6 @@
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
         SSIS:Name="Value">C:\Temp</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="DataType">18</SSIS:Property>
-    </SSIS:Properties>
-  </SSIS:Parameter>
-  <SSIS:Parameter
-    SSIS:Name="ProjectName">
-    <SSIS:Properties>
-      <SSIS:Property
-        SSIS:Name="ID">{a518776d-3fb2-4887-93bf-b6b0f210b457}</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="CreationName"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Sensitive">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Value">Warehouse To Mart</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>

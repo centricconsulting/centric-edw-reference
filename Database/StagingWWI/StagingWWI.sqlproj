@@ -4,26 +4,25 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>Mart</Name>
+    <Name>StagingWWI</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{04a8cb7e-003e-44cb-8ada-90720a6d56f1}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql120DatabaseSchemaProvider</DSP>
+    <ProjectGuid>{bd71a4fd-348e-42bc-9a3a-4cc46c42d7b9}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>Mart</RootNamespace>
-    <AssemblyName>Mart</AssemblyName>
+    <RootNamespace>StagingWWI</RootNamespace>
+    <AssemblyName>StagingWWI</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <TargetLanguage>CS</TargetLanguage>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
-    <DacApplicationName>mart</DacApplicationName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -58,34 +57,23 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Security" />
-    <Folder Include="dbo" />
-    <Folder Include="dbo\Stored Procedures" />
-    <Folder Include="cube" />
-    <Folder Include="cube\Views" />
-    <Folder Include="dbo\Tables" />
-    <Folder Include="Post-Deployment" />
+    <Folder Include="Sales\" />
+    <Folder Include="Sales\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="Sales\Views" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Mart.publish.xml" />
-    <None Include="Post-Deployment\Seed.reference.sql" />
-    <None Include="Mart Compare.scmp" />
+    <Build Include="Sales\Tables\Sales.Customers.sql" />
+    <Build Include="Sales\Tables\Sales.OrderLines_LOG.sql" />
+    <Build Include="Sales\Tables\Sales.Orders_LOG.sql" />
+    <Build Include="Security\Warehouse.sql" />
+    <Build Include="Security\Sales.sql" />
+    <Build Include="Security\Purchasing.sql" />
+    <Build Include="Security\Application.sql" />
+    <Build Include="Sales\Views\Sales.Orders.sql" />
+    <Build Include="Sales\Views\Sales.OrderLines.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Security\cube.sql" />
-    <Build Include="Security\report.sql" />
-    <Build Include="Security\star.sql" />
-    <Build Include="dbo\Stored Procedures\calendar_index_refresh.sql" />
-    <Build Include="dbo\Stored Procedures\calendar_rebuild.sql" />
-    <Build Include="dbo\Stored Procedures\fiscal_calendar_index_refresh.sql" />
-    <Build Include="dbo\Stored Procedures\fiscal_calendar_rebuild.sql" />
-    <Build Include="dbo\Tables\reference.sql" />
-    <Build Include="dbo\Tables\calendar.sql" />
-    <Build Include="dbo\Tables\fiscal_calendar.sql" />
-    <Build Include="dbo\Tables\sales_order.sql" />
-    <Build Include="dbo\Tables\customer.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <PostDeploy Include="Post-Deployment\Main.PostDeployment.sql" />
+    <None Include="StagingWWI.publish.xml" />
   </ItemGroup>
 </Project>

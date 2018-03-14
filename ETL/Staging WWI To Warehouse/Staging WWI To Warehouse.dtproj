@@ -5,8 +5,8 @@
   <SchemaVersion>9.0.1.0</SchemaVersion>
   <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkZGw1MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAiIHhtbG5zOmRkbDUwMF81MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAvNTAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD50cnVlPC9FbmFibGVkPg0KICA8UHJvamVjdE5hbWU+U0FLPC9Qcm9qZWN0TmFtZT4NCiAgPEF1eFBhdGg+U0FLPC9BdXhQYXRoPg0KICA8TG9jYWxQYXRoPlNBSzwvTG9jYWxQYXRoPg0KICA8UHJvdmlkZXI+U0FLPC9Qcm92aWRlcj4NCjwvU291cmNlQ29udHJvbEluZm8+</State>
   <Database>
-    <Name>Warehouse To Mart.database</Name>
-    <FullPath>Warehouse To Mart.database</FullPath>
+    <Name>Staging WWI To Warehouse.database</Name>
+    <FullPath>Staging WWI To Warehouse.database</FullPath>
   </Database>
   <DataSources />
   <DataSourceViews />
@@ -14,14 +14,14 @@
     <Manifest>
       <SSIS:Project SSIS:ProtectionLevel="DontSaveSensitive" xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
         <SSIS:Properties>
-          <SSIS:Property SSIS:Name="ID">{bbcc9de7-5b8b-46a0-9fd0-c8bdb8510184}</SSIS:Property>
-          <SSIS:Property SSIS:Name="Name">Warehouse To Mart</SSIS:Property>
+          <SSIS:Property SSIS:Name="ID">{55d6572a-ee83-4c87-a3c1-8c7337b42fdd}</SSIS:Property>
+          <SSIS:Property SSIS:Name="Name">Reference To Warehouse</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionComments">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="CreationDate">2018-01-29T12:53:22.8462217-05:00</SSIS:Property>
+          <SSIS:Property SSIS:Name="CreationDate">2018-01-29T13:12:37.571471-05:00</SSIS:Property>
           <SSIS:Property SSIS:Name="CreatorName">NA\mrao0946</SSIS:Property>
           <SSIS:Property SSIS:Name="CreatorComputerName">084-NB5270</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
@@ -30,16 +30,13 @@
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="Controller.Master.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="reference.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="calendar.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="fiscal_calendar.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="customer.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="sales_order.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="customer.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="Audit.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="Warehouse.conmgr" />
-          <SSIS:ConnectionManager SSIS:Name="Mart.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="Staging.conmgr" />
         </SSIS:ConnectionManagers>
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters>
@@ -54,7 +51,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Audit</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">audit</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -127,7 +124,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Warehouse</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">warehouse</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -189,7 +186,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Mart.InitialCatalog">
+            <SSIS:Parameter SSIS:Name="CM.Staging.InitialCatalog">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -200,11 +197,11 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Mart</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">StagingWWI</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Mart.Password">
+            <SSIS:Parameter SSIS:Name="CM.Staging.Password">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -218,7 +215,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Mart.RetainSameConnection">
+            <SSIS:Parameter SSIS:Name="CM.Staging.RetainSameConnection">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -233,7 +230,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Mart.ServerName">
+            <SSIS:Parameter SSIS:Name="CM.Staging.ServerName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -248,7 +245,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Mart.UserName">
+            <SSIS:Parameter SSIS:Name="CM.Staging.UserName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -266,82 +263,14 @@
           <SSIS:PackageInfo>
             <SSIS:PackageMetaData SSIS:Name="Controller.Master.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{4F348930-17ED-4D73-A476-4C15DA9EFB0F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{E1AA7F01-2FA3-4F73-8F9B-06624BF2BB14}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Controller Master</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">233</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">232</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{FF0B2C57-18F2-44AA-A5AB-AA6E50ABFA92}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="reference.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{09A25E7A-EC22-40C6-AA2D-FFD419A28C6E}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">reference</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">489</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{CE708D86-D378-4970-9A38-F825760DC072}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="calendar.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{D1B06BBA-571F-481C-AB35-4224E749A597}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">calendar</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">490</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{F940D477-78B2-48AB-8D1E-B4BB3A511ED1}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="fiscal_calendar.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{42652095-9046-4387-A9F3-1C09C122AEBC}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">fiscal_calendar</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">490</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{76F6D843-E5F9-4294-B842-664A96A2E2F0}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="customer.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{BDAEBBCE-6F55-4BCF-9DC8-B0C11F2EB268}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">customer</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">492</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{76E8106D-1C4B-47E4-A79C-663C37D4D63E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3F4C5CD7-D9F8-4B04-BCFA-3D637C14A012}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -351,14 +280,31 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="sales_order.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{28FC1443-44AC-43AE-A474-DE08D0DDBFC8}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{898AF054-1FF8-4871-9A7A-B684AEE598E4}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">sales_order</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">493</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{EE23AEFC-9EFC-4C75-994B-A8A92440D930}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{BADB2ED0-2B98-4716-8E8F-178551CBE587}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="customer.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{6C53AE28-7588-48D3-8B7A-7AA0068B3574}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">customer</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">503</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{BB5555C7-CADB-49B3-80E1-2D2669F6C08E}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -387,7 +333,7 @@
           <ConfigurationSetting>
             <Id>LastModifiedTime</Id>
             <Name>LastModifiedTime</Name>
-            <Value xsi:type="xsd:dateTime">2018-02-13T22:18:14.5717526Z</Value>
+            <Value xsi:type="xsd:dateTime">2018-02-07T16:59:58.0458116Z</Value>
           </ConfigurationSetting>
         </ParameterConfigurationValues>
       </Options>
