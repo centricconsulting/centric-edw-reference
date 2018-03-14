@@ -16,11 +16,9 @@ INSERT INTO dbo.Currency (
   CurrencyCode
 , CurrencyDesc
 , CurrencySymbol
-, process_batch_key
 )
 SELECT
   x.*
-, @unknown_key AS process_batch_key
 FROM
 (
 

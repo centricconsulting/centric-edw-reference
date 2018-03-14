@@ -17,7 +17,6 @@ INSERT INTO dbo.FiscalPeriod (
 , EndDate
 , DisplayMonthOfYear
 , FiscalPeriodClosedFlag
-, process_batch_key
 )
 
 SELECT
@@ -27,7 +26,6 @@ SELECT
 , x.EndDate
 , x.DisplayMonthOfYear
 , CASE WHEN x.BeginDate < '2016-02-01' THEN 'Y' ELSE 'N' END AS FiscalPeriodClosedFlag
-, @unknown_key AS process_batch_key
 FROM
 ( 
 

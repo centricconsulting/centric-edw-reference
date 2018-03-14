@@ -371,10 +371,26 @@ HISTORY:
 
 CREATE PROCEDURE vex.[<xsl:value-of select="$table-name" />_settle_merge] 
   @begin_version_batch_key INT
+, @suspend_cleanup_ind BIT = 0  
 AS
 BEGIN
 
   SET NOCOUNT ON;
+
+  -- cleanup orphaned VEX records
+  IF @suspend_cleanup_ind = 0
+  BEGIN
+
+    DELETE vt FROM
+    vex.<xsl:value-of select="$table-name" /> vt
+    WHERE
+    NOT EXISTS (
+      SELECT 1 FROM ver.<xsl:value-of select="$table-name" /> vs
+      WHERE vs.<xsl:value-of select="$table-name" />_version_key = vt.<xsl:value-of select="$table-name" />_version_key
+    );
+
+  END
+
 
   MERGE vex.<xsl:value-of select="$table-name" /> WITH (HOLDLOCK) AS vt
 
@@ -481,23 +497,6 @@ BEGIN
     , end_version_batch_key = vs.end_version_batch_key
     , end_source_rev_dtmx = vs.end_source_rev_dtmx
 
-
-  WHEN NOT MATCHED BY SOURCE
-    AND EXISTS (
-
-	    SELECT 1 FROM ver.<xsl:value-of select="$table-name" /> vg
-	    WHERE vg.version_batch_key >= @begin_version_batch_key AND<xsl:call-template
-          name="grain-attribute-list">
-        <xsl:with-param name="column-prefix">vg.</xsl:with-param>
-        <xsl:with-param name="second-column-prefix">vt.</xsl:with-param>
-        <xsl:with-param name="phrase-delimiter">AND</xsl:with-param>
-        <xsl:with-param name="delimit-with-cr">true</xsl:with-param>
-      </xsl:call-template>
-
-    ) THEN
-    
-    DELETE
-
   WHEN NOT MATCHED BY TARGET THEN
 
     INSERT (
@@ -601,7 +600,15 @@ GO
     {
 
         string WorkingAttributeName = null;
-        WorkingAttributeName = (ColumnAttributeName != null) ? ColumnAttributeName : AttributeName;
+
+        if(ColumnAttributeName != null && ColumnAttributeName.Length > 0)
+        {
+          WorkingAttributeName = ColumnAttributeName;
+
+        } else {
+
+          WorkingAttributeName = AttributeName;
+        }
 
         AttributeClass ac = AttributeClass.GetAttributeClass(AttributeClassName);
         return ac.GetColumnName(WorkingAttributeName, WhitespaceReplaceChar, ColumnCase);
@@ -788,6 +795,7 @@ GO
             
             case "HISTORY":
                 return new AttributeClass(){Name="History", Suffix="History"};
+            case "XREF":
             case "CROSS-REFERENCE":
                 return new AttributeClass(){Name="Cross-Reference", Suffix="Xref"}; 
             case "MASTER":

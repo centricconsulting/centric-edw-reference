@@ -13,13 +13,11 @@ Post-Deployment Script Template
 INSERT INTO dbo.Holiday (
   HolidayDate
 , HolidayDesc
-, process_batch_key
 )
 
 SELECT
   x.HolidayDate
 , x.HolidayDesc
-, @unknown_key AS process_batch_key
 FROM
 ( 
 

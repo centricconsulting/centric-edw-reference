@@ -10,14 +10,4 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
-:r .\Seed.FiscalPeriod.sql
-
-:r .\Seed.Holiday.sql
-
-:r .\Seed.CurrencyExchangeRate.sql
-
-:r .\Seed.StateProvince.sql
-
-:r .\Seed.Currency.sql
-
-:r .\Seed.Source.sql
+:r .\Seed.reference.sql

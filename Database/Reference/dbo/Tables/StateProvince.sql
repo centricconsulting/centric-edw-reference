@@ -7,6 +7,5 @@
 , CountryDesc varchar(200) NOT NULL
 , WorldSubregion varchar(200) NOT NULL
 , WorldRegion varchar(200) NOT NULL
-, process_batch_key INT NOT NULL
 , CONSTRAINT dbo_StateProvince_PK PRIMARY KEY (StateProvinceCode, CountryCode)
 )

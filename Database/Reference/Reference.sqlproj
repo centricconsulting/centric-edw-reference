@@ -99,12 +99,12 @@
   <ItemGroup>
     <Build Include="dbo\Tables\Holiday.sql" />
     <Build Include="dbo\Tables\FiscalPeriod.sql" />
-    <Build Include="dbo\Tables\CountryForecast.sql" />
     <Build Include="dbo\Tables\CurrencyExchangeRate.sql" />
     <None Include="Post Deployment\Seed.CurrencyExchangeRate.sql" />
-    <None Include="Post Deployment\Seed.CountryForecast.sql" />
     <Build Include="dbo\Tables\Currency.sql" />
     <Build Include="dbo\Tables\StateProvince.sql" />
+    <Build Include="dbo\Tables\Source.sql" />
+    <None Include="Post Deployment\Seed.Source.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Reference.publish.xml" />

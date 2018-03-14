@@ -59,19 +59,28 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Security" />
-    <Folder Include="Stored Procedures" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="cube" />
+    <Folder Include="cube\Views" />
+    <Folder Include="dbo\Tables" />
+    <Folder Include="Post-Deployment" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Mart.publish.xml" />
+    <None Include="Post-Deployment\Seed.reference.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Security\cube.sql" />
     <Build Include="Security\report.sql" />
     <Build Include="Security\star.sql" />
-    <Build Include="Stored Procedures\calendar_index_refresh.sql" />
-    <Build Include="Stored Procedures\calendar_rebuild.sql" />
-    <Build Include="Stored Procedures\fiscal_calendar_index_refresh.sql" />
-    <Build Include="Stored Procedures\fiscal_calendar_rebuild.sql" />
-    <Build Include="Stored Procedures\source_key_lookup.sql" />
+    <Build Include="dbo\Stored Procedures\calendar_index_refresh.sql" />
+    <Build Include="dbo\Stored Procedures\calendar_rebuild.sql" />
+    <Build Include="dbo\Stored Procedures\fiscal_calendar_index_refresh.sql" />
+    <Build Include="dbo\Stored Procedures\fiscal_calendar_rebuild.sql" />
+    <Build Include="dbo\Tables\reference.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Post-Deployment\Main.PostDeployment.sql" />
   </ItemGroup>
 </Project>

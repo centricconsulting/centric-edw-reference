@@ -114,5 +114,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Audit.publish.xml" />
+    <None Include="Audit Compare.scmp" />
   </ItemGroup>
 </Project>

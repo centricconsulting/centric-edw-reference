@@ -21,11 +21,9 @@ INSERT INTO [dbo].[StateProvince]
 , CountryDesc
 , WorldSubregion
 , WorldRegion
-, process_batch_key
 )
 SELECT
   x.*
-, @unknown_key AS process_batch_key
 FROM
 (
 

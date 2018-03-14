@@ -16,7 +16,6 @@ INSERT INTO dbo.CurrencyExchangeRate (
 , BeginDate
 , EndDate
 , ExchangeRate
-, process_batch_key
 )
 
 SELECT
@@ -27,7 +26,6 @@ SELECT
     LEAD(x.BeginDate,1) OVER (PARTITION BY x.BaseCurrencyCode, x.TargetCurrencyCode ORDER BY x.BeginDate)
   ) AS EndDate
 , x.ExchangeRate
-, @unknown_key AS process_batch_key
 FROM
 ( 
 

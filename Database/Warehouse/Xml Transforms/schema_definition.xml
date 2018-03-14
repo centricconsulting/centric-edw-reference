@@ -2,9 +2,8 @@
 <model multibyte="false" column-case="lower" column-whitespace-replace = "_">
 
     <!-- NOTE: Only entities named in the render element will be scripted -->
-    <render all="false">
+    <render all="true">
     <entity>Currency</entity>
-    
     </render>
 
     <entity caption="Source" 
@@ -301,7 +300,7 @@
     </entity>
 
     <entity caption="Legal Entity Fiscal Period"
-      class="master"
+      class="master" name="Legal Entity Fiscal Period"
       definition="Holiday dates specified for a legal entity.">
 
         <!-- GRAIN attributes -->
@@ -367,12 +366,12 @@
           visible="true" />
 
         <attribute caption="Tax Amount"
-          class="amount" name="Tax ."
+          class="currency" name="Tax ."
           definition="Tax attributed to the sales order."        
           visible="true" />
 
         <attribute caption="Freight Amount"
-          class="amount" name="Freight ."
+          class="currency" name="Freight ."
           definition="Freight attributed to the sales order."        
           visible="true" />            
 
@@ -415,12 +414,12 @@
           visible="true" />
 
         <attribute caption="Sales"
-          class="amount" name="Sale ."
+          class="currency" name="Sale ."
           definition="Sales attributed to the line."        
           visible="true" />  
 
         <attribute caption="Standard Cost"
-          class="amount" name="Standard Cost ."
+          class="currency" name="Standard Cost ."
           definition="Standard cost attributed to the line."        
           visible="true" />          
 
