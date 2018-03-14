@@ -34,15 +34,17 @@ SELECT
   -- KEY COLUMNS
   vx.source_key
 
+  -- GRAIN COLUMNS
+ , v.source_uid
+
   -- FOREIGN REFERENCE COLUMNS
 
   -- ATTRIBUTE COLUMNS
-, v.source_name
-, v.source_code
-, v.source_desc
+ , v.source_name
+ , v.source_code
+ , v.source_desc
 
   -- SOURCE COLUMNS
-, v.source_uid
 , v.source_rev_dtm
 , v.source_rev_actor
 

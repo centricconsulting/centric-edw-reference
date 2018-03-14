@@ -325,14 +325,14 @@ HISTORY:
 
 CREATE PROCEDURE vex.[country_settle_merge] 
   @begin_version_batch_key INT
-, @suspend_cleanup_ind BIT = 0  
+, @supress_cleanup_ind BIT = 0  
 AS
 BEGIN
 
   SET NOCOUNT ON;
 
   -- cleanup orphaned VEX records
-  IF @suspend_cleanup_ind = 0
+  IF @supress_cleanup_ind = 0
   BEGIN
 
     DELETE vt FROM
@@ -738,14 +738,14 @@ HISTORY:
 
 CREATE PROCEDURE vex.[currency_settle_merge] 
   @begin_version_batch_key INT
-, @suspend_cleanup_ind BIT = 0  
+, @supress_cleanup_ind BIT = 0  
 AS
 BEGIN
 
   SET NOCOUNT ON;
 
   -- cleanup orphaned VEX records
-  IF @suspend_cleanup_ind = 0
+  IF @supress_cleanup_ind = 0
   BEGIN
 
     DELETE vt FROM
@@ -1153,14 +1153,14 @@ HISTORY:
 
 CREATE PROCEDURE vex.[customer_settle_merge] 
   @begin_version_batch_key INT
-, @suspend_cleanup_ind BIT = 0  
+, @supress_cleanup_ind BIT = 0  
 AS
 BEGIN
 
   SET NOCOUNT ON;
 
   -- cleanup orphaned VEX records
-  IF @suspend_cleanup_ind = 0
+  IF @supress_cleanup_ind = 0
   BEGIN
 
     DELETE vt FROM
@@ -1564,14 +1564,14 @@ HISTORY:
 
 CREATE PROCEDURE vex.[customer_type_settle_merge] 
   @begin_version_batch_key INT
-, @suspend_cleanup_ind BIT = 0  
+, @supress_cleanup_ind BIT = 0  
 AS
 BEGIN
 
   SET NOCOUNT ON;
 
   -- cleanup orphaned VEX records
-  IF @suspend_cleanup_ind = 0
+  IF @supress_cleanup_ind = 0
   BEGIN
 
     DELETE vt FROM
@@ -1973,14 +1973,14 @@ HISTORY:
 
 CREATE PROCEDURE vex.[customer_xref_settle_merge] 
   @begin_version_batch_key INT
-, @suspend_cleanup_ind BIT = 0  
+, @supress_cleanup_ind BIT = 0  
 AS
 BEGIN
 
   SET NOCOUNT ON;
 
   -- cleanup orphaned VEX records
-  IF @suspend_cleanup_ind = 0
+  IF @supress_cleanup_ind = 0
   BEGIN
 
     DELETE vt FROM
@@ -2388,14 +2388,14 @@ HISTORY:
 
 CREATE PROCEDURE vex.[customer_settle_merge] 
   @begin_version_batch_key INT
-, @suspend_cleanup_ind BIT = 0  
+, @supress_cleanup_ind BIT = 0  
 AS
 BEGIN
 
   SET NOCOUNT ON;
 
   -- cleanup orphaned VEX records
-  IF @suspend_cleanup_ind = 0
+  IF @supress_cleanup_ind = 0
   BEGIN
 
     DELETE vt FROM
@@ -2805,14 +2805,14 @@ HISTORY:
 
 CREATE PROCEDURE vex.[legal_entity_settle_merge] 
   @begin_version_batch_key INT
-, @suspend_cleanup_ind BIT = 0  
+, @supress_cleanup_ind BIT = 0  
 AS
 BEGIN
 
   SET NOCOUNT ON;
 
   -- cleanup orphaned VEX records
-  IF @suspend_cleanup_ind = 0
+  IF @supress_cleanup_ind = 0
   BEGIN
 
     DELETE vt FROM
@@ -3222,14 +3222,14 @@ HISTORY:
 
 CREATE PROCEDURE vex.[legal_entity_fiscal_period_settle_merge] 
   @begin_version_batch_key INT
-, @suspend_cleanup_ind BIT = 0  
+, @supress_cleanup_ind BIT = 0  
 AS
 BEGIN
 
   SET NOCOUNT ON;
 
   -- cleanup orphaned VEX records
-  IF @suspend_cleanup_ind = 0
+  IF @supress_cleanup_ind = 0
   BEGIN
 
     DELETE vt FROM
@@ -3635,14 +3635,14 @@ HISTORY:
 
 CREATE PROCEDURE vex.[legal_entity_holiday_settle_merge] 
   @begin_version_batch_key INT
-, @suspend_cleanup_ind BIT = 0  
+, @supress_cleanup_ind BIT = 0  
 AS
 BEGIN
 
   SET NOCOUNT ON;
 
   -- cleanup orphaned VEX records
-  IF @suspend_cleanup_ind = 0
+  IF @supress_cleanup_ind = 0
   BEGIN
 
     DELETE vt FROM
@@ -4055,14 +4055,14 @@ HISTORY:
 
 CREATE PROCEDURE vex.[sales_order_settle_merge] 
   @begin_version_batch_key INT
-, @suspend_cleanup_ind BIT = 0  
+, @supress_cleanup_ind BIT = 0  
 AS
 BEGIN
 
   SET NOCOUNT ON;
 
   -- cleanup orphaned VEX records
-  IF @suspend_cleanup_ind = 0
+  IF @supress_cleanup_ind = 0
   BEGIN
 
     DELETE vt FROM
@@ -4478,14 +4478,14 @@ HISTORY:
 
 CREATE PROCEDURE vex.[sales_order_line_settle_merge] 
   @begin_version_batch_key INT
-, @suspend_cleanup_ind BIT = 0  
+, @supress_cleanup_ind BIT = 0  
 AS
 BEGIN
 
   SET NOCOUNT ON;
 
   -- cleanup orphaned VEX records
-  IF @suspend_cleanup_ind = 0
+  IF @supress_cleanup_ind = 0
   BEGIN
 
     DELETE vt FROM
@@ -4889,14 +4889,14 @@ HISTORY:
 
 CREATE PROCEDURE vex.[sales_order_line_status_settle_merge] 
   @begin_version_batch_key INT
-, @suspend_cleanup_ind BIT = 0  
+, @supress_cleanup_ind BIT = 0  
 AS
 BEGIN
 
   SET NOCOUNT ON;
 
   -- cleanup orphaned VEX records
-  IF @suspend_cleanup_ind = 0
+  IF @supress_cleanup_ind = 0
   BEGIN
 
     DELETE vt FROM
@@ -5302,14 +5302,14 @@ HISTORY:
 
 CREATE PROCEDURE vex.[sales_order_line_status_history_settle_merge] 
   @begin_version_batch_key INT
-, @suspend_cleanup_ind BIT = 0  
+, @supress_cleanup_ind BIT = 0  
 AS
 BEGIN
 
   SET NOCOUNT ON;
 
   -- cleanup orphaned VEX records
-  IF @suspend_cleanup_ind = 0
+  IF @supress_cleanup_ind = 0
   BEGIN
 
     DELETE vt FROM
@@ -5716,14 +5716,14 @@ HISTORY:
 
 CREATE PROCEDURE vex.[source_settle_merge] 
   @begin_version_batch_key INT
-, @suspend_cleanup_ind BIT = 0  
+, @supress_cleanup_ind BIT = 0  
 AS
 BEGIN
 
   SET NOCOUNT ON;
 
   -- cleanup orphaned VEX records
-  IF @suspend_cleanup_ind = 0
+  IF @supress_cleanup_ind = 0
   BEGIN
 
     DELETE vt FROM
@@ -6133,14 +6133,14 @@ HISTORY:
 
 CREATE PROCEDURE vex.[state_settle_merge] 
   @begin_version_batch_key INT
-, @suspend_cleanup_ind BIT = 0  
+, @supress_cleanup_ind BIT = 0  
 AS
 BEGIN
 
   SET NOCOUNT ON;
 
   -- cleanup orphaned VEX records
-  IF @suspend_cleanup_ind = 0
+  IF @supress_cleanup_ind = 0
   BEGIN
 
     DELETE vt FROM

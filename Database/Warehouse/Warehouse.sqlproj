@@ -194,8 +194,10 @@
     <Build Include="vex\Stored Procedures\currency_settle.sql" />
     <Build Include="vex\Stored Procedures\country_settle_merge.sql" />
     <Build Include="vex\Stored Procedures\country_settle.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Warehouse.publish.xml" />
+    <None Include="Warehouse Compare.scmp" />
   </ItemGroup>
 </Project>

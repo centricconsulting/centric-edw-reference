@@ -34,11 +34,14 @@ SELECT
   -- KEY COLUMNS
   vx.sales_order_line_status_key
 
+  -- GRAIN COLUMNS
+ , v.sales_order_line_status_uid
+
   -- FOREIGN REFERENCE COLUMNS
 
   -- ATTRIBUTE COLUMNS
-, v.sales_order_line_status_desc
-, v.sales_order_line_status_code
+ , v.sales_order_line_status_desc
+ , v.sales_order_line_status_code
 
   -- SOURCE COLUMNS
 , v.source_uid

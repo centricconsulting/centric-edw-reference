@@ -34,14 +34,17 @@ SELECT
   -- KEY COLUMNS
   vx.state_key
 
+  -- GRAIN COLUMNS
+ , v.state_uid
+
   -- FOREIGN REFERENCE COLUMNS
-, v.country_uid
+ , v.country_uid
 
   -- ATTRIBUTE COLUMNS
-, v.state_code
-, v.country_code
-, v.state_name
-, v.country_desc
+ , v.state_code
+ , v.country_code
+ , v.state_name
+ , v.country_desc
 
   -- SOURCE COLUMNS
 , v.source_uid

@@ -34,13 +34,16 @@ SELECT
   -- KEY COLUMNS
   vx.country_key
 
+  -- GRAIN COLUMNS
+ , v.country_uid
+
   -- FOREIGN REFERENCE COLUMNS
 
   -- ATTRIBUTE COLUMNS
-, v.country_code
-, v.country_name
-, v.world_subregion_desc
-, v.world_region_desc
+ , v.country_code
+ , v.country_name
+ , v.world_subregion_desc
+ , v.world_region_desc
 
   -- SOURCE COLUMNS
 , v.source_uid

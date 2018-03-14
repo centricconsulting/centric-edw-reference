@@ -34,17 +34,20 @@ SELECT
   -- KEY COLUMNS
   vx.sales_order_line_key
 
+  -- GRAIN COLUMNS
+ , v.sales_order_lineuid
+
   -- FOREIGN REFERENCE COLUMNS
-, v.sales_order_uid
-, v.item_uid
-, v.current_sales_order_line_status_uid
+ , v.sales_order_uid
+ , v.item_uid
+ , v.current_sales_order_line_status_uid
 
   -- ATTRIBUTE COLUMNS
-, v.sales_order_line_desc
-, v.sales_order_line_index
-, v.item_unit_qty
-, v.sale_amount
-, v.standard_cost_amount
+ , v.sales_order_line_desc
+ , v.sales_order_line_index
+ , v.item_unit_qty
+ , v.sale_amt
+ , v.standard_cost_amt
 
   -- SOURCE COLUMNS
 , v.source_uid

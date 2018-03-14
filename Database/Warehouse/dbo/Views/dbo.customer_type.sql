@@ -34,11 +34,14 @@ SELECT
   -- KEY COLUMNS
   vx.customer_type_key
 
+  -- GRAIN COLUMNS
+ , v.customer_type_uid
+
   -- FOREIGN REFERENCE COLUMNS
 
   -- ATTRIBUTE COLUMNS
-, v.customer_type_name
-, v.customer_type_code
+ , v.customer_type_name
+ , v.customer_type_code
 
   -- SOURCE COLUMNS
 , v.source_uid

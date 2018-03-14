@@ -34,12 +34,17 @@ SELECT
   -- KEY COLUMNS
   vx.legal_entity_fiscal_period_key
 
+  -- GRAIN COLUMNS
+ , v.legal_entity_uid
+ , v.fiscal_year
+ , v.fiscal_period_of_year_index
+
   -- FOREIGN REFERENCE COLUMNS
 
   -- ATTRIBUTE COLUMNS
-, v.begin_fiscal_period_date
-, v.end_fiscal_period_date
-, v.display_month_of_year
+ , v.begin_fiscal_period_date
+ , v.end_fiscal_period_date
+ , v.display_month_of_year
 
   -- SOURCE COLUMNS
 , v.source_uid

@@ -34,12 +34,15 @@ SELECT
   -- KEY COLUMNS
   vx.currency_key
 
+  -- GRAIN COLUMNS
+ , v.currency_uid
+
   -- FOREIGN REFERENCE COLUMNS
 
   -- ATTRIBUTE COLUMNS
-, v.currency_code
-, v.currency_name
-, v.currency_symbol
+ , v.currency_code
+ , v.currency_name
+ , v.currency_symbol
 
   -- SOURCE COLUMNS
 , v.source_uid

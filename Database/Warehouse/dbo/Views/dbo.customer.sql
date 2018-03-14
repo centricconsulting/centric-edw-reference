@@ -34,13 +34,16 @@ SELECT
   -- KEY COLUMNS
   vx.customer_key
 
+  -- GRAIN COLUMNS
+ , v.customer_uid
+
   -- FOREIGN REFERENCE COLUMNS
 
   -- ATTRIBUTE COLUMNS
-, v.customer_legal_name
-, v.parent_organization_name
-, v.customer_number
-, v.risk_score_value
+ , v.customer_legal_name
+ , v.parent_organization_name
+ , v.customer_nbr
+ , v.risk_score_val
 
   -- SOURCE COLUMNS
 , v.source_uid

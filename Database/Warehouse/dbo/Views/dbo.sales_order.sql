@@ -34,15 +34,18 @@ SELECT
   -- KEY COLUMNS
   vx.sales_order_key
 
+  -- GRAIN COLUMNS
+ , v.sales_order_uid
+
   -- FOREIGN REFERENCE COLUMNS
-, v.revenue_legal_entity_uid
-, v.customer_uid
+ , v.revenue_legal_entity_uid
+ , v.customer_uid
 
   -- ATTRIBUTE COLUMNS
-, v.sales_order_date
-, v.sales_order_number
-, v.tax_amount
-, v.freight_amount
+ , v.sales_order_date
+ , v.sales_order_nbr
+ , v.tax_amt
+ , v.freight_amt
 
   -- SOURCE COLUMNS
 , v.source_uid

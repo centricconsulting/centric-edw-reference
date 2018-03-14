@@ -34,8 +34,11 @@ SELECT
   -- KEY COLUMNS
   vx.customer_xref_key
 
+  -- GRAIN COLUMNS
+ , v.customer_uid
+
   -- FOREIGN REFERENCE COLUMNS
-, v.master_customer_uid
+ , v.master_customer_uid
 
   -- ATTRIBUTE COLUMNS
 

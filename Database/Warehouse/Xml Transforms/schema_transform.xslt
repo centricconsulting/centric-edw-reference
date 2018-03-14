@@ -371,14 +371,14 @@ HISTORY:
 
 CREATE PROCEDURE vex.[<xsl:value-of select="$table-name" />_settle_merge] 
   @begin_version_batch_key INT
-, @suspend_cleanup_ind BIT = 0  
+, @supress_cleanup_ind BIT = 0  
 AS
 BEGIN
 
   SET NOCOUNT ON;
 
   -- cleanup orphaned VEX records
-  IF @suspend_cleanup_ind = 0
+  IF @supress_cleanup_ind = 0
   BEGIN
 
     DELETE vt FROM

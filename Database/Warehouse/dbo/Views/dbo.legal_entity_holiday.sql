@@ -34,10 +34,14 @@ SELECT
   -- KEY COLUMNS
   vx.legal_entity_holiday_key
 
+  -- GRAIN COLUMNS
+ , v.legal_entity_uid
+ , v.holiday_date
+
   -- FOREIGN REFERENCE COLUMNS
 
   -- ATTRIBUTE COLUMNS
-, v.holiday_name
+ , v.holiday_name
 
   -- SOURCE COLUMNS
 , v.source_uid

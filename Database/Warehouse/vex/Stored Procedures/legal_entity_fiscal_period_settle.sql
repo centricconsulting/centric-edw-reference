@@ -53,15 +53,19 @@ SELECT
     PARTITION BY v.legal_entity_uid, v.fiscal_year, v.fiscal_period_of_year_index
     ORDER BY v.legal_entity_fiscal_period_version_key ASC) AS version_index
 
-  -- XOR "^" inverts the deleted indicator
-, LAST_VALUE(v.source_delete_ind) OVER (
-    PARTITION BY v.legal_entity_uid, v.fiscal_year, v.fiscal_period_of_year_index
-    ORDER BY v.legal_entity_fiscal_period_version_key ASC) ^ 1 AS version_current_ind
+    -- XOR "^" inverts the deleted indicator
+  , CASE
+    WHEN LAST_VALUE(v.legal_entity_fiscal_period_version_key) OVER (
+      PARTITION BY v.legal_entity_uid, v.fiscal_year, v.fiscal_period_of_year_index
+      ORDER BY v.legal_entity_fiscal_period_version_key ASC
+      RANGE BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING) = v.legal_entity_fiscal_period_version_key THEN v.source_delete_ind ^ 1
+    ELSE 0 END AS version_current_ind
 
 , CASE
   WHEN LAST_VALUE(v.legal_entity_fiscal_period_version_key) OVER (
     PARTITION BY v.legal_entity_uid, v.fiscal_year, v.fiscal_period_of_year_index
-    ORDER BY v.legal_entity_fiscal_period_version_key ASC) = v.legal_entity_fiscal_period_version_key THEN 1
+    ORDER BY v.legal_entity_fiscal_period_version_key ASC
+    RANGE BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING) = v.legal_entity_fiscal_period_version_key THEN 1
   ELSE 0 END AS version_latest_ind
 
 , LEAD(v.version_dtm, 1) OVER (

@@ -27,12 +27,28 @@ HISTORY:
 
 CREATE PROCEDURE vex.[customer_xref_settle_merge] 
   @begin_version_batch_key INT
+, @supress_cleanup_ind BIT = 0  
 AS
 BEGIN
 
   SET NOCOUNT ON;
 
-  MERGE vex.customer_xref AS vt
+  -- cleanup orphaned VEX records
+  IF @supress_cleanup_ind = 0
+  BEGIN
+
+    DELETE vt FROM
+    vex.customer_xref vt
+    WHERE
+    NOT EXISTS (
+      SELECT 1 FROM ver.customer_xref vs
+      WHERE vs.customer_xref_version_key = vt.customer_xref_version_key
+    );
+
+  END
+
+
+  MERGE vex.customer_xref WITH (HOLDLOCK) AS vt
 
   USING (
   
@@ -52,14 +68,18 @@ BEGIN
         ORDER BY v.customer_xref_version_key ASC) AS version_index
 
       -- XOR "^" inverts the deleted indicator
-    , LAST_VALUE(v.source_delete_ind) OVER (
+    , CASE
+      WHEN LAST_VALUE(v.customer_xref_version_key) OVER (
         PARTITION BY v.customer_uid
-        ORDER BY v.customer_xref_version_key ASC) ^ 1 AS version_current_ind
+        ORDER BY v.customer_xref_version_key ASC
+        RANGE BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING) = v.customer_xref_version_key THEN v.source_delete_ind ^ 1
+      ELSE 0 END AS version_current_ind
 
     , CASE
       WHEN LAST_VALUE(v.customer_xref_version_key) OVER (
         PARTITION BY v.customer_uid
-        ORDER BY v.customer_xref_version_key ASC) = v.customer_xref_version_key THEN 1
+        ORDER BY v.customer_xref_version_key ASC
+        RANGE BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING) = v.customer_xref_version_key THEN 1
       ELSE 0 END AS version_latest_ind
 
     , LEAD(v.version_dtm, 1) OVER (
@@ -81,8 +101,7 @@ BEGIN
     EXISTS (
 
 	    SELECT 1 FROM ver.customer_xref vg
-	    WHERE vg.version_batch_key >= @begin_version_batch_key
-	    AND 
+	    WHERE vg.version_batch_key >= @begin_version_batch_key AND
       vg.customer_uid = v.customer_uid
 
     )
@@ -104,11 +123,6 @@ BEGIN
     , end_version_dtmx = vs.end_version_dtmx
     , end_version_batch_key = vs.end_version_batch_key
     , end_source_rev_dtmx = vs.end_source_rev_dtmx
-
-
-  WHEN NOT MATCHED BY SOURCE THEN
-    
-    DELETE
 
   WHEN NOT MATCHED BY TARGET THEN
 

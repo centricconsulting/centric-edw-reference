@@ -53,15 +53,19 @@ SELECT
     PARTITION BY v.sales_order_uid
     ORDER BY v.sales_order_version_key ASC) AS version_index
 
-  -- XOR "^" inverts the deleted indicator
-, LAST_VALUE(v.source_delete_ind) OVER (
-    PARTITION BY v.sales_order_uid
-    ORDER BY v.sales_order_version_key ASC) ^ 1 AS version_current_ind
+    -- XOR "^" inverts the deleted indicator
+  , CASE
+    WHEN LAST_VALUE(v.sales_order_version_key) OVER (
+      PARTITION BY v.sales_order_uid
+      ORDER BY v.sales_order_version_key ASC
+      RANGE BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING) = v.sales_order_version_key THEN v.source_delete_ind ^ 1
+    ELSE 0 END AS version_current_ind
 
 , CASE
   WHEN LAST_VALUE(v.sales_order_version_key) OVER (
     PARTITION BY v.sales_order_uid
-    ORDER BY v.sales_order_version_key ASC) = v.sales_order_version_key THEN 1
+    ORDER BY v.sales_order_version_key ASC
+    RANGE BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING) = v.sales_order_version_key THEN 1
   ELSE 0 END AS version_latest_ind
 
 , LEAD(v.version_dtm, 1) OVER (

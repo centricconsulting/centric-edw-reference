@@ -34,14 +34,17 @@ SELECT
   -- KEY COLUMNS
   vx.legal_entity_key
 
+  -- GRAIN COLUMNS
+ , v.legal_entity_uid
+
   -- FOREIGN REFERENCE COLUMNS
-, v.parent_legal_entity_uid
-, v.incorporation_country_uid
-, v.gl_currency_uid
+ , v.parent_legal_entity_uid
+ , v.incorporation_country_uid
+ , v.gl_currency_uid
 
   -- ATTRIBUTE COLUMNS
-, v.legal_entity_name
-, v.legal_entity_code
+ , v.legal_entity_name
+ , v.legal_entity_code
 
   -- SOURCE COLUMNS
 , v.source_uid
