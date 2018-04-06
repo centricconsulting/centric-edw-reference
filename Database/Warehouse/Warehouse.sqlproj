@@ -117,7 +117,7 @@
     <Build Include="ver\Tables\ver.customer.sql" />
     <Build Include="ver\Tables\ver.currency.sql" />
     <Build Include="vex\Tables\vex.currency.sql" />
-    <None Include="vex\Stored Procedures\vex.generic_table_settlement.sql">
+    <None Include="vex\Stored Procedures\generic_settle_merge.sql">
       <SuppressTSqlWarnings>
       </SuppressTSqlWarnings>
     </None>
@@ -144,10 +144,7 @@
     <Build Include="vex\Tables\vex.state.sql" />
     <Build Include="vex\Tables\vex.source.sql" />
     <Build Include="dbo\Views\dbo.currency.sql" />
-    <None Include="vex\Stored Procedures\vex.generic_table_settlement_merge.sql" />
-    <None Include="vex\Functions\vex.generate_phrase.sql" />
-    <None Include="vex\Functions\vex.generate_phrase_version.sql" />
-    <None Include="vex\Functions\vex.generate_version_grain_list.sql" />
+    <None Include="vex\Stored Procedures\generic_settle.sql" />
     <Build Include="vex\Tables\vex.country_xref.sql" />
     <Build Include="dbo\Views\dbo.legal_entity.sql" />
     <Build Include="dbo\Views\dbo.customer_type.sql" />
@@ -163,9 +160,10 @@
     <Build Include="vex\Tables\vex.customer_xref.sql" />
     <Build Include="ver\Tables\ver.customer_xref.sql" />
     <Build Include="dbo\Views\dbo.customer_xref.sql" />
-    <Build Include="vex\Functions\generate_version_grain_list.sql" />
-    <Build Include="vex\Functions\generate_phrase_version.sql" />
-    <Build Include="vex\Functions\generate_phrase.sql" />
+    <Build Include="vex\Functions\build_grain_phrase.sql">
+      <SuppressTSqlWarnings>
+      </SuppressTSqlWarnings>
+    </Build>
     <Build Include="vex\Stored Procedures\state_settle_merge.sql" />
     <Build Include="vex\Stored Procedures\state_settle.sql" />
     <Build Include="vex\Stored Procedures\source_settle_merge.sql" />
@@ -199,5 +197,12 @@
   <ItemGroup>
     <None Include="Warehouse.publish.xml" />
     <None Include="Warehouse Compare.scmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\120\SqlSchemas\master.dacpac">
+      <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\120\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+    </ArtifactReference>
   </ItemGroup>
 </Project>
